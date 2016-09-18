@@ -1,0 +1,97 @@
+﻿<Window x:Class="JinHong.View.Dialogs.EnterpriseInfoAddDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="入租登记"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        x:Name="_this">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- TODO -->
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel DataContext="{Binding ElementName=_this}">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonOK" Content="确定" IsDefault="True" Margin="4" 
+                    Click="buttonOK_Click" IsEnabled="False"/>
+            <Button x:Name="buttonCancel" Content="取消" IsCancel="True" Margin="4" 
+                    Click="buttonCancel_Click"/>
+        </StackPanel>
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock Text="入园租赁单位名称:"/>
+                    <TextBox x:Name="textBoxSocialUnitName" Text="{Binding LeasingInfo.SocialUnitName}" MinWidth="360"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="1" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="入园日期:"/>
+                    <tk:DateTimePicker Value="{Binding LeasingInfo.LeaseBeginDate}" Width="96" Format="Custom" Margin="4,0,0,0" FormatString="yyyy年MM月dd日" />
+                    <ComboBox x:Name="comboBoxBuildingId" IsEditable="True" ItemsSource="{Binding AvailableBuildingIds}" 
+                              Text="{Binding LeasingInfo.BuildingId}" Margin="8,0,0,0" Width="80"
+                              SelectionChanged="comboBoxBuildingId_SelectionChanged"/>
+                    <TextBlock Text="座"/>
+                    <ComboBox x:Name="comboBoxRoomId" IsEditable="True" ItemsSource="{Binding AvailableRoomIds}" 
+                              Text="{Binding LeasingInfo.RoomId}" Margin="8,0,0,0" Width="80"
+                              GotFocus="comboBoxRoomId_GotFocus"
+                              SelectionChanged="comboBoxRoomId_SelectionChanged"/>
+                    <TextBlock Text="室"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="2" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="室钥匙交接:"/>
+                    <TextBlock Text="共" Margin="4,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="32"/>
+                    <TextBlock Text="把"/>
+                    <TextBlock Text="把收件人(姓名):" Margin="16,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="80"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="电表读数:"/>
+                    <TextBox Text="{Binding TODO}" Width="32" Margin="8,0,0,0" TextAlignment="Right"/>
+                    <TextBlock Text="字"/>
+                    <TextBlock Text="租赁户确认人:" Margin="64,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="80"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="4" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="租赁户联系人:"/>
+                    <TextBox Text="{Binding TODO}" Width="80" Margin="8,0,0,0"/>
+                    <TextBlock Text="电话:" Margin="8,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="80"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="5" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel>
+                    <DockPanel HorizontalAlignment="Right" Margin="0,4,8,4">
+                        <TextBlock Text="经办人:"/>
+                        <TextBox Text="{Binding TODO}" Width="80" Margin="8,4,0,4"/>
+                    </DockPanel>
+                    <TextBlock Text="锦宏产业园物业部" HorizontalAlignment="Right" Margin="0,4,8,4"/>
+                    <!--<TextBox Text="____年__月__日" Margin="0,0,8,0" HorizontalAlignment="Right"/>-->
+                    <tk:DateTimePicker Value="{Binding LeasingInfo.LeaseBeginTime}" Width="96" Format="Custom" Margin="0,0,8,0"
+                                       FormatString="yyyy年MM月dd日" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

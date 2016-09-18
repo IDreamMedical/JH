@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9B4242F-A752-4496-B9CF-5288692BDF7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniGuy.Report</RootNamespace>
+    <AssemblyName>UniGuy.Report</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.73.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MigraDoc.DocumentObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MigraDoc.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="pdfsharp, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\pdfsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="pdfsharp.charting, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\pdfsharp.charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExcelExporter.cs" />
+    <Compile Include="PdfExporter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject.htm" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\animated.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\animated_loading_blue.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\arrow-down-16.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\article.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\bookmark24.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\circle-cross.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF.htm" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\animated.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\animated_loading_blue.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\arrow-down-16.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\article.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\bookmark24.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\circle-cross.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\help_sm.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\icn-member-16.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\jquery.min.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\LibraryItemThumbnail_65_100x129.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\LibraryItemThumbnail_86_100x113.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\logo250x135.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\Main.css" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_admin.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_answer.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_bug.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_general.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_idea.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_joke.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_news.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_question.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\msg_rant.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\navbar.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\Notifications.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\pdfImg.jpg" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\pin.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\PK.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\pollcol.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\print24.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\search.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\smiley_smile.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\stars-empty-lg.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\stars-fill-lg.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\t%281%29.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\t.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\write13.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Exporting-a-DataTable-to-PDF_files\{45052187-e8df-4ba6-b4d2-881c604fe583}.jpg" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\help_sm.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\icn-member-16.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\jquery.min.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\LibraryItemThumbnail_64_100x129.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\LibraryItemThumbnail_65_100x129.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\logo250x135.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Main.css" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_admin.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_answer.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_bug.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_general.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_idea.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_joke.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_news.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_question.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\msg_rant.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\navbar.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\Notifications.js" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\pdfImg.jpg" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\pin.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\PK.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\pollcol.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\print24.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\search.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\smiley_smile.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\stars-empty-lg.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\stars-fill-lg.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\t%281%29.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\t.gif" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\write13.png" />
+    <Content Include="Docs\Exporting a DataTable to PDF - CodeProject_files\{45052187-e8df-4ba6-b4d2-881c604fe583}.jpg" />
+    <Content Include="Lib\ClosedXML.dll" />
+    <Content Include="Lib\ClosedXML.xml" />
+    <Content Include="Lib\EPPlus.dll" />
+    <Content Include="Lib\EPPlus.XML" />
+    <Content Include="Lib\ExcelPackage.dll" />
+    <Content Include="Lib\ExcelPackageXmlDocumentationFile.xml" />
+    <Content Include="Lib\MigraDoc.DocumentObjectModel.dll" />
+    <Content Include="Lib\MigraDoc.Rendering.dll" />
+    <Content Include="Lib\MigraDoc.RtfRendering.dll" />
+    <Content Include="Lib\pdfsharp.charting.dll" />
+    <Content Include="Lib\pdfsharp.dll" />
+    <Content Include="Lib\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\ClosedXML.dll.refresh" />
+    <None Include="Lib\GacReg.bat" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

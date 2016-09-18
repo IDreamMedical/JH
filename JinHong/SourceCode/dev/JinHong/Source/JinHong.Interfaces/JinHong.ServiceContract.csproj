@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4633671D-2CDD-441D-A146-4D935B528CCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JinHong.ServiceContract</RootNamespace>
+    <AssemblyName>JinHong.ServiceContract</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseInfo\ISocialUnitService.cs" />
+    <Compile Include="Financial\IPropertyManagementFeeService.cs" />
+    <Compile Include="Financial\IRentalFeeService.cs" />
+    <Compile Include="Model\ParkingFeeDetailRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Estate\ICheckInService.cs" />
+    <Compile Include="Estate\IGrantKeyService.cs" />
+    <Compile Include="Estate\IInstallAirService.cs" />
+    <Compile Include="Estate\IMonitorProbeService.cs" />
+    <Compile Include="Estate\IRepairService.cs" />
+    <Compile Include="Financial\IDepositFeeService.cs" />
+    <Compile Include="BaseInfo\IAirConditioneService.cs" />
+    <Compile Include="Common\IApplicationService.cs" />
+    <Compile Include="BaseInfo\IAreaService.cs" />
+    <Compile Include="Services\IBasicInfoService.cs" />
+    <Compile Include="Services\IBroadBandService.cs" />
+    <Compile Include="BaseInfo\IBulidingService.cs" />
+    <Compile Include="Services\ICompanyIndexService.cs" />
+    <Compile Include="Commercial\IContractDetailService.cs" />
+    <Compile Include="Commercial\IContractService.cs" />
+    <Compile Include="BaseInfo\IEmployeeService.cs" />
+    <Compile Include="BaseInfo\IFeeItemService.cs" />
+    <Compile Include="BaseInfo\IModuleService.cs" />
+    <Compile Include="Financial\IParkingFeeService.cs" />
+    <Compile Include="Services\IParkingLotRentalService.cs" />
+    <Compile Include="BaseInfo\IParkingLotService.cs" />
+    <Compile Include="Services\IRoleOfUserManagementService.cs" />
+    <Compile Include="BaseInfo\IRoleService.cs" />
+    <Compile Include="BaseInfo\IRoomService.cs" />
+    <Compile Include="Estate\ITelFeeService.cs" />
+    <Compile Include="BaseInfo\IUserService.cs" />
+    <Compile Include="BaseInfo\IWareHouseService.cs" />
+    <Compile Include="ViewModels\IRoleViewModel.cs" />
+    <Compile Include="Views\IRoleView.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.Core\UniGuy.Core.csproj">
+      <Project>{1ada76da-ad8f-4a70-8f68-bac6db3ffcfd}</Project>
+      <Name>UniGuy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.EntityFramework\UniGuy.EntityFramework.csproj">
+      <Project>{2d90e484-973e-42c8-b3d7-b139c5e82ebc}</Project>
+      <Name>UniGuy.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.PresentationFramework\UniGuy.PresentationFramework.csproj">
+      <Project>{8960cc15-fa8e-4194-a247-bf660f8e170f}</Project>
+      <Name>UniGuy.PresentationFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JinHong.Core\JinHong.Core.csproj">
+      <Project>{d513d8ae-1f46-4d37-b847-1ce9b3f8c096}</Project>
+      <Name>JinHong.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

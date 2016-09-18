@@ -1,0 +1,355 @@
+﻿<Window x:Class="JinHong.View.Dialogs.LeasingStatusEditDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:pf="http://schemas.uniguy.com/presentation"
+                xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
+
+        Title="租赁户情况"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        x:Name="_this">
+    <Window.Resources>
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <RoutedCommand x:Key="rcDelInRentalDetail"/>
+        <RoutedCommand x:Key="rcAddInRentalDetail"/>
+
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource rcAddInRentalDetail}" CanExecute="Add_CanExecute" Executed="Add_Executed"/>
+        <CommandBinding Command="{StaticResource rcDelInRentalDetail }" CanExecute="Del_CanExecute" Executed="Del_Executed"/>
+
+    </Window.CommandBindings>
+    <DockPanel DataContext="{Binding ElementName=_this}">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button x:Name="btnOk" Content="确定" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Click="btnOk_Click"/>
+        </StackPanel>
+        <DockPanel x:Name="dpMain">
+            <TextBlock DockPanel.Dock="Top" Text="上海锦宏产业园租赁商户情况登记一览表" FontSize="16" TextAlignment="Center" Margin="4" FontWeight="Bold"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <TextBlock Text="租赁户名"/>
+                    </Border>
+                    <Border Grid.Row="1" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租赁起止年限"/>
+                    </Border>
+                    <Border Grid.Row="2" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租赁户注册地"/>
+                    </Border>
+                    <Border Grid.Row="3" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租金支付方式"/>
+                    </Border>
+                    <Border Grid.Column="1" BorderThickness="0,1,1,1" BorderBrush="Black" MinWidth="160">
+                        <TextBlock Text="{Binding SocialUnitInfo.Name,FallbackValue='#Fallback'}" Foreground="Blue"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <DockPanel>
+                            <tk:DateTimePicker Value="{Binding FeesInfoTbl.Rows[0][EffectiveDate]}" MinWidth="120" Format="Custom" Margin="4,0,0,0" FormatString="yyyy年MM月dd日" />
+                            <TextBlock DockPanel.Dock="Left" Text="至"/>
+                            <tk:DateTimePicker Value="{Binding FeesInfoTbl.Rows[0][ExpirateDate]}" MinWidth="120" Format="Custom" Margin="4,0,0,0" FormatString="yyyy年MM月dd日" />
+                        </DockPanel>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="{Binding SocialUnitInfo.SocialUnitAddress}"/>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="1" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <ComboBox SelectedValue="{Binding FeesInfoTbl.Rows[0][PayWay]}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={pf:CaseWhenConverter Format='0|转帐|1|汇款|2|现金|3|支票|4|其他|UNKNOWN'}}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <sys:String>0</sys:String>
+                            <sys:String>1</sys:String>
+                            <sys:String>2</sys:String>
+                            <sys:String>3</sys:String>
+                            <sys:String>4</sys:String>
+                        </ComboBox>
+
+                    </Border>
+                    <Border Grid.Column="2" BorderThickness="0,1,1,1" BorderBrush="Black">
+                        <TextBlock Text="企业性质"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租赁室号"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="注册资金"/>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="一月押金"/>
+                    </Border>
+                    <Border Grid.Column="3" BorderThickness="0,1,1,1" BorderBrush="Black" >
+                        <ComboBox SelectedValue="{Binding SocialUnitInfo.SocialUnitType}" Height="21" VerticalAlignment="Bottom">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={pf:CaseWhenConverter Format='0|外企|1|国企|2|台企|3|民企|4|办事处|UNKNOWN'}}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <sys:String>0</sys:String>
+                            <sys:String>1</sys:String>
+                            <sys:String>2</sys:String>
+                            <sys:String>3</sys:String>
+                            <sys:String>4</sys:String>
+                        </ComboBox>
+
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="3" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="{Binding FeesInfoTbl.Rows[0][RoomId] }"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="3" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="{Binding SocialUnitInfo.SocialUnitCapital,StringFormat='{}{0:F2}'}"/>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="3" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="\元"/>
+                            <TextBox Text="{Binding FeesInfoTbl.Rows[0][MonthRentalFee],StringFormat='{}{0:F2}'}" TextAlignment="Right"/>
+                        </DockPanel>
+                    </Border>
+                    <Border Grid.Column="4" BorderThickness="0,1,1,1" BorderBrush="Black">
+                        <TextBlock Text="法定代表人"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="4" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租赁面积㎡"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="4" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="平方租金\日"/>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="4" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="每期租金"/>
+                    </Border>
+                    <Border Grid.Column="5" BorderThickness="0,1,1,1" BorderBrush="Black"  MinWidth="64">
+                        <TextBox Text="{Binding SocialUnitInfo.SocialUnitLeader}" MinWidth="80"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="5" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="{Binding FeesInfoTbl.Rows[0][Area]}"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="5" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="{Binding  FeesInfoTbl.Rows[0][DayRentalFee],StringFormat='{}{0:F2}'}"/>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="5" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="{Binding  FeesInfoTbl.Rows[0][JDRentalFee],StringFormat='{}{0:F2}'}"/>
+                    </Border>
+                    <Border Grid.Column="6" BorderThickness="0,1,1,1" BorderBrush="Black">
+                        <TextBlock Text="租赁电话"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="6" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="文档案号"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="平方物业费\日"/>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="每期物业费"/>
+                    </Border>
+                    <Border Grid.Column="7" Grid.ColumnSpan="2" BorderThickness="0,1,1,1" BorderBrush="Black" MinWidth="80">
+                        <TextBox Text="{Binding SocialUnitInfo.TelNo}"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox  IsEnabled="False" Text="{Binding FeesInfoTbl.Rows[0][ContractNo]}"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="8"  BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="\元"/>
+                            <TextBox Text="{Binding  FeesInfoTbl.Rows[0][DayPropManageFee],StringFormat='{}{0:F2}'}"/>
+                        </DockPanel>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="8" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="\元"/>
+                            <TextBox Text="{Binding FeesInfoTbl.Rows[0][JDPropManageFee],StringFormat='{}{0:F2}'}"/>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.ColumnSpan="7" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock  Text="租 赁 合 同 变 更 记 录" TextAlignment="Center" FontSize="14"/>
+                    </Border>
+                    <Border Grid.Row="1" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="变更原因"/>
+                    </Border>
+                    <Border Grid.Row="2" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock  Text="租金物费变更"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Content="续租"/>
+                            <RadioButton Content="退租"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Content="递增"/>
+                            <RadioButton Content="减免"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租期续签年限"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="2" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="平方租金\日"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text="____年__月__日"/>
+                            <TextBlock Text="至"/>
+                            <TextBox Text="____年__月__日"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="3" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="\元"/>
+                            <TextBox Text="{Binding TODO_平方租金}" MinWidth="48"/>
+                        </DockPanel>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="4" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="平方物业费\日"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="5" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="\元"/>
+                            <TextBox Text="{Binding TODO_平方物业费}" MinWidth="48"/>
+                        </DockPanel>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="6" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="退租日期"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="6" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <TextBox Text="____年__月__日"/>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.ColumnSpan="7" BorderThickness="1,0,1,1" BorderBrush="Black">
+                        <TextBlock Text="租 金 收 入 明 细 记 录"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,0,1,1" BorderBrush="Black">
+                        <StackPanel>
+                            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                                <Button Command="{StaticResource rcAddInRentalDetail}" CommandParameter="{Binding SelectedValue, ElementName=treeViewContracts}"
+                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                    <Image Style="{StaticResource iconImageStyle}" Source="/JinHong;component/Resources/Images/add_over.png" />
+                                </Button>
+                                <Button Command="{StaticResource rcDelInRentalDetail}" CommandParameter="{Binding SelectedValue, ElementName=treeViewContracts}"
+                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                    <Image Style="{StaticResource iconImageStyle}" Source="/JinHong;component/Resources/Images/delete_over.png" />
+                                </Button>
+                            </StackPanel>
+
+                            <DataGrid x:Name="dataGridDailyIncomeInfoTbl" ItemsSource="{Binding FeesInfoTbl1}" SelectionUnit="CellOrRowHeader" SelectionMode="Single"
+                          AutoGenerateColumns="False"
+                          CanUserReorderColumns="False"
+                                 CanUserAddRows="False" 
+                           CanUserDeleteRows="True"
+                                      SelectionChanged="dataGridDailyIncomeInfoTbl_SelectionChanged" 
+                                      
+                                  >
+                                <DataGrid.Columns>
+                                    <!-- TODO 点击可以赚到对饮合同内容 -->
+                                    <DataGridTemplateColumn Header="应收日期" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <tk:DateTimePicker Value="{Binding YSDate}" MinWidth="120" Format="Custom" Margin="4,0,0,0" FormatString="yyyy年MM月dd日" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn Header="应收租金" Binding="{Binding RentalFeeAmout}" />
+                                    <DataGridTextColumn Header="应收物业费" Binding="{Binding WYFeeAmout}" />
+                                    <DataGridTemplateColumn Header="实收日期" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <tk:DateTimePicker Value="{Binding FactDate}" MinWidth="120" Format="Custom" Margin="4,0,0,0" FormatString="yyyy年MM月dd日" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="实收租金" Binding="{Binding FactRentalFeeeAmout}" />
+                                    <DataGridTextColumn Header="实收物业费" Binding="{Binding FactWYAmout}" />
+                                    <DataGridTextColumn Header="本期租金,物业费有效期限" Binding="{Binding TimeSlot}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <DockPanel>
+                        <Border BorderThickness="1,0,1,1" BorderBrush="Black">
+                            <TextBlock Text="其他情况说明"/>
+                        </Border>
+                        <Border BorderThickness="1,0,1,1" BorderBrush="Black">
+                            <TextBlock Text="{Binding TODO_其他情况说明}"/>
+                        </Border>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+</Window>

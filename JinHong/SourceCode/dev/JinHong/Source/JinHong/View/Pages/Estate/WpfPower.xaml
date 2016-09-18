@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="JinHong.View.WpfPower"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             x:Name="_this">
+    <DockPanel DataContext="{Binding ViewModel,ElementName=_this}">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBlock Text="抄电表数: " VerticalAlignment="Center" FontWeight="Bold"/>
+            <!-- 年份 -->
+            <TextBox x:Name="textBoxYear" Text="{Binding Year}" Width="64" 
+                      Style="{StaticResource {x:Static ToolBar.TextBoxStyleKey}}"/>
+            <Label Content="年"/>
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+            <Button x:Name="buttonExportToExcel" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                   Click="buttonExportToExcel_Click"  >
+                <DockPanel>
+                    <Path Width="16" Height="18" Canvas.Left="12" Canvas.Top="11" Stretch="Fill" Fill="#FF000000" Data="F1 M 30,26C 31.539,26 32.962,26.4967 34.1175,27.3385L 30,33L 36.6426,35.2142C 35.7161,37.995 33.0922,40 30,40C 26.134,40 23,36.866 23,33C 23,29.134 26.134,26 30,26 Z M 12,11L 26.5,11L 34,18.5L 34,25.9685L 32,24.9371L 32,21L 24,21L 24,13L 14,13L 14,35L 21.6473,35C 21.8623,35.7224 22.1908,36.396 22.6121,37L 12,37L 12,11 Z M 26,13.5001L 26,19L 31.4999,19L 26,13.5001 Z M 21,33L 16,33L 16,31L 21,31L 21,33 Z M 22,30L 16,30L 16,28L 22,28L 22,30 Z M 16,27L 16,25L 24,25L 24,27L 16,27 Z "/>
+                    <TextBlock Text="Excel" VerticalAlignment="Center"/>
+                </DockPanel>
+            </Button>
+            <Button x:Name="buttonExportToPdf" Content="Pdf"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Click="buttonExportToPdf_Click"/>
+        </StackPanel>
+        <Grid>
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top" Text="抄电表数" FontSize="20" HorizontalAlignment="Center"/>
+                <DataGrid x:Name="dataGridPowerValues" ItemsSource="{Binding PowerValues}" SelectionUnit="CellOrRowHeader" SelectionMode="Single"
+                          AutoGenerateColumns="False"
+                          CanUserReorderColumns="False" CellEditEnding="dataGridPowerValues_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="室号" Binding="{Binding Item1}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="1" Width="80" Binding="{Binding Item2[0]}"/>
+                        <DataGridTextColumn Header="2" Width="80" Binding="{Binding Item2[1]}"/>
+                        <DataGridTextColumn Header="3" Width="80" Binding="{Binding Item2[2]}"/>
+                        <DataGridTextColumn Header="4" Width="80" Binding="{Binding Item2[3]}" />
+                        <DataGridTextColumn Header="5" Width="80" Binding="{Binding Item2[4]}" />
+                        <DataGridTextColumn Header="6" Width="80" Binding="{Binding Item2[5]}"/>
+                        <DataGridTextColumn Header="7" Width="80" Binding="{Binding Item2[6]}"/>
+                        <DataGridTextColumn Header="8" Width="80" Binding="{Binding Item2[7]}"/>
+                        <DataGridTextColumn Header="9" Width="80" Binding="{Binding Item2[8]}"/>
+                        <DataGridTextColumn Header="10" Width="80" Binding="{Binding Item2[9]}"/>
+                        <DataGridTextColumn Header="11" Width="80" Binding="{Binding Item2[10]}" />
+                        <DataGridTextColumn Header="12" Width="80" Binding="{Binding Item2[11]}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

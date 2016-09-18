@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D513D8AE-1F46-4D37-B847-1CE9B3F8C096}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JinHong.Core</RootNamespace>
+    <AssemblyName>JinHong.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Basic\Area.cs" />
+    <Compile Include="Model\Basic\FeeItem.cs" />
+    <Compile Include="Model\Basic\Module.cs" />
+    <Compile Include="Model\Basic\MonitorProbe.cs" />
+    <Compile Include="Model\Basic\RoleMapToUser.cs" />
+    <Compile Include="Model\DepositFee.cs" />
+    <Compile Include="Model\GrantKey.cs" />
+    <Compile Include="Model\MonthFeeDetail.cs" />
+    <Compile Include="Model\RepairRecord.cs" />
+    <Compile Include="Model\InstallAirRecord.cs" />
+    <Compile Include="Model\AmmeterDataInfo.cs" />
+    <Compile Include="Model\Basic\AirConditioner.cs" />
+    <Compile Include="Model\Basic\BuildingInfo.cs" />
+    <Compile Include="Model\Basic\ContactRecords.cs" />
+    <Compile Include="Model\Basic\ContractInfo.cs" />
+    <Compile Include="Model\Basic\CompanyInfo.cs" />
+    <Compile Include="Model\Basic\EmployeeInfo.cs" />
+    <Compile Include="Model\Basic\EnterpriseInfo.cs" />
+    <Compile Include="Model\Basic\IndividualInfo.cs" />
+    <Compile Include="Model\Basic\RoomInfo.cs" />
+    <Compile Include="Model\Basic\SocialUnitInfo.cs" />
+    <Compile Include="Model\Basic\WareHouseInfo.cs" />
+    <Compile Include="Model\ContractActivity.cs" />
+    <Compile Include="Model\Basic\ContractDetail.cs" />
+    <Compile Include="Model\FireFightingEquipmentInfo.cs" />
+    <Compile Include="Model\IncomeAndExpenditure.cs" />
+    <Compile Include="Model\InRentalFeeDetail.cs" />
+    <Compile Include="Model\JHEmployeeInfo.cs" />
+    <Compile Include="Model\CheckIn.cs" />
+    <Compile Include="Model\LeasingStatusInfo.cs" />
+    <Compile Include="Model\MonthlyWaterAndElectricityFeesInfo.cs" />
+    <Compile Include="Model\FeeRecord.cs" />
+    <Compile Include="Model\ParkingLotInfo.cs" />
+    <Compile Include="Model\ParkingLotRentalInfo.cs" />
+    <Compile Include="Model\EstateRentPriceInfo.cs" />
+    <Compile Include="Model\PropertyManagementFeesInfo.cs" />
+    <Compile Include="Model\ParkingFeesInfo.cs" />
+    <Compile Include="Model\RentalDepositFeesInfo.cs" />
+    <Compile Include="Model\SecurityManagementContractInfo.cs" />
+    <Compile Include="Model\WaterFeeInfo.cs" />
+    <Compile Include="Model\BroadBandFee.cs" />
+    <Compile Include="Model\UnLeaseDetail.cs" />
+    <Compile Include="Model\UnLeaseRoomStatusDetail.cs" />
+    <Compile Include="Model\UnLeaseFeeDetail.cs" />
+    <Compile Include="Model\WareHouseLeasingInfo.cs" />
+    <Compile Include="Model\WareHouseLeasingStatusInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.Core\UniGuy.Core.csproj">
+      <Project>{1ada76da-ad8f-4a70-8f68-bac6db3ffcfd}</Project>
+      <Name>UniGuy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.EntityFramework\UniGuy.EntityFramework.csproj">
+      <Project>{2d90e484-973e-42c8-b3d7-b139c5e82ebc}</Project>
+      <Name>UniGuy.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

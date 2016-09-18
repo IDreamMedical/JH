@@ -1,0 +1,414 @@
+﻿<Window x:Class="JinHong.View.Dialogs.LeaseCancelDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:pf="http://schemas.uniguy.com/presentation"
+
+        Title="退租登记"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        x:Name="_this">
+    <Window.Resources>
+        <!--xmlns:local="clr-namespace:UniGuy.Controls.Converters"-->
+        <pf:BoolToIntConverter x:Key="BoolToIntConverter"/>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel DataContext="{Binding ElementName=_this}">
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock  FontSize="20" TextAlignment="Center" Text="租赁户退租流程表"   />
+        </StackPanel>
+
+        <Grid   DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Column="0"   Text="退租人"   />
+            <TextBlock    Grid.Row="2"  Text="经办人"   />
+            <TextBox Grid.Row="0" Grid.Column="1"  Text="{Binding CurrentUnLeaseDetail.UnLeaseName}"  />
+
+
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CurrentUnLeaseDetail.UnLeaseSureName}" MinWidth="80" />
+
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="物业部"   />
+
+
+            <TextBlock Grid.Row="2" Grid.Column="2" Text="经办人"   />
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="物业部" MinWidth="80"   />
+
+            <TextBox  Grid.Row="2" Grid.Column="3"  Text="{Binding CurrentUnLeaseDetail.WYSureName}"  MinWidth="80"  />
+
+            <TextBlock  Grid.Row="0" Grid.Column="4" Text="招商部"   />
+
+            <TextBlock  Grid.Row="2" Grid.Column="4" Text="经办人"   />
+
+            <TextBlock Grid.Row="0" Grid.Column="5" Text="招商部"  MinWidth="80"  />
+
+
+            <TextBox     Grid.Row="2" Grid.Column="5" Text="{Binding CurrentUnLeaseDetail.ZSSureName}"  MinWidth="80" />
+
+            <StackPanel  Grid.Row="3"  Grid.Column="6" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="buttonOK" Content="确定" IsDefault="True" Margin="4" 
+                    Click="buttonOK_Click" />
+                <Button x:Name="buttonCancel" Content="取消" IsCancel="True" Margin="4" 
+                    Click="buttonCancel_Click"/>
+            </StackPanel>
+
+
+        </Grid>
+
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.ColumnSpan="2"  BorderThickness="1" BorderBrush="Black" Padding="4">
+
+                <TextBlock  Grid.ColumnSpan="2"  Text="退租单位名称"   />
+            </Border>
+            <Border  Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="{Binding CurrentUnLeaseVM.SocalUnitName}"   />
+            </Border>
+            <Border  Grid.Row="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="原合同起止日"   />
+            </Border>
+            <Border Grid.Row="3"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="合同中止日期"   />
+            </Border>
+            <Border  Grid.Row="4" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="合同租金"   />
+            </Border>
+            <Border Grid.Row="5"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="合同物业费"   />
+            </Border>
+            <Border  Grid.Row="6" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="车辆停车费"   />
+            </Border>
+            <Border Grid.Row="7" Grid.ColumnSpan="2"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="物业部验收情况" TextAlignment="Center"  />
+            </Border>
+            <Border Grid.Row="8"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="电费交纳"   />
+            </Border>
+            <Border  Grid.Row="9" BorderThickness="1" BorderBrush="Black" >
+                <TextBlock  Text="水费交纳"   />
+            </Border>
+            <Border Grid.Row="10"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="室内结构"   />
+            </Border>
+            <Border Grid.Row="11"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="门钥匙"   />
+            </Border>
+            <Border  Grid.Row="12" BorderThickness="1" BorderBrush="Black">
+                <TextBlock  Text="空调机器"   />
+            </Border>
+            <Border Grid.Row="13"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="空调遥控器"   />
+            </Border>
+            <Border Grid.Row="14"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="车辆停车证"   />
+            </Border>
+            <Border Grid.Row="15"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="电话\宽带"   />
+            </Border>
+            <Border  Grid.Row="16" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="发票收回或扣税"   />
+            </Border>
+            <Border Grid.Row="17" Grid.ColumnSpan="1"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="其他"   />
+            </Border>
+
+
+
+            <Border  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock  MinWidth="50" DockPanel.Dock="Left"  Text="{ Binding  CurrentUnLeaseVM.ContractStartDate}"   />
+                    <TextBlock DockPanel.Dock="Left"  Text="_"  />
+                    <TextBlock  MinWidth="50" DockPanel.Dock="Right"  Text="{ Binding  CurrentUnLeaseVM.ContractEndDate}"   />
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <tk:DateTimePicker Name="dtpLicenceDate"   Value="{Binding CurrentUnLeaseDetail.TerminateDate}"  Format="Custom"  FormatString="yyyy年MM月dd日" />
+            </Border>
+            <Border  Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock  Text="月租金"   />
+                    <TextBlock  Text="{Binding  CurrentUnLeaseVM.RentalFee,StringFormat='{}{0:F2}'}"   />
+                    <TextBlock  Text="元"  DockPanel.Dock="Right"  />
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="5"  Grid.Column="1"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <DockPanel>
+                    <TextBlock  Text="月物业"   />
+                    <TextBlock  Text="{Binding  CurrentUnLeaseVM.PropertyManagementFee,StringFormat='{}{0:F2}'}"   />
+                    <TextBlock  Text="元"   />
+                </DockPanel>
+            </Border>
+            <Border  Grid.Row="6"  Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock  Text="月停车费"   />
+                    <TextBlock  Text="{Binding  CurrentUnLeaseVM.ParkingFee,StringFormat='{}{0:F2}'}"   />
+                    <TextBlock  Text="元"   />
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Row="8"   Grid.Column="1" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.PowerStatus}"  />
+            </Border>
+            <Border  Grid.Row="9"  Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.WaterStatus}"   />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="1" BorderThickness="1,1,1,1"  >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.RoomStatus }"   />
+            </Border>
+            <Border Grid.Row="11"   Grid.Column="1" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.KeyStatus }" />
+            </Border>
+            <Border  Grid.Row="12"  Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.AirStatus }"   />
+            </Border>
+            <Border Grid.Row="13"  Grid.Column="1"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.AirCtrlStatus }"   />
+            </Border>
+            <Border Grid.Row="14"  Grid.Column="1" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox Text="{Binding CurrentUnLeaseVM.ParkingStatus }"   />
+            </Border>
+            <Border Grid.Row="15"  Grid.Column="1" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.TelStatus }" Height="23" VerticalAlignment="Bottom"    />
+            </Border>
+            <Border  Grid.Row="16"  Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.InvoiceStatus }"   />
+            </Border>
+            <Border  Grid.Row="17"  Grid.Column="1" Grid.ColumnSpan="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseDetail.Notes}"  />
+            </Border>
+
+
+
+            <Border Grid.Column="2"  BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="座室号"   />
+            </Border>
+            <Border  Grid.Row="1" Grid.Column="2"   BorderThickness="1" BorderBrush="Black" >
+                <TextBlock  Text="{Binding  CurrentUnLeaseVM.Buliding}"   />
+
+                <!--<ComboBox x:Name="comboBoxBuildingId"  ItemsSource="{Binding AvailableBuildingIds }" 
+                              Text="{Binding LeasingInfo.BuildingId}" Margin="0,0,0,0" 
+                             SelectedValue="{Binding LeasingInfo.BuildingId}"
+                              
+                             />-->
+            </Border>
+
+            <Border Grid.Row="3" Grid.Column="2" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text=""   />
+            </Border>
+            <Border  Grid.Row="4" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock  Text="租金已付至日期"   />
+
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="5"  Grid.Column="2"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <DockPanel>
+                    <TextBlock  Text="物业费已付至日期"   />
+
+                </DockPanel>
+            </Border>
+            <Border  Grid.Row="6"  Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="停车费已付至日期"   />
+            </Border>
+            <Border Grid.Row="7"  Grid.Column="2"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="验收人签字"   />
+            </Border>
+            <Border Grid.Row="8"   Grid.Column="2" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.PowerSureName}" Height="23" VerticalAlignment="Bottom" />
+            </Border>
+            <Border  Grid.Row="9"  Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.WaterSureName}"  />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="2"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox Text="{Binding CurrentUnLeaseVM.RoomSureName }"   />
+            </Border>
+            <Border Grid.Row="11"   Grid.Column="2" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox   Text="{Binding CurrentUnLeaseVM.KeySureName }" />
+            </Border>
+            <Border  Grid.Row="12"  Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.AirSureName }"  />
+            </Border>
+            <Border Grid.Row="13"  Grid.Column="2"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.AirSureName }" Height="15" VerticalAlignment="Top"   />
+            </Border>
+            <Border Grid.Row="14"  Grid.Column="2" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text=""   />
+            </Border>
+            <Border Grid.Row="15"  Grid.Column="2" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="" Height="15" VerticalAlignment="Top"   />
+            </Border>
+            <Border  Grid.Row="16"  Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM .InvoiceSureName}"  />
+            </Border>
+
+
+            <Border Grid.Column="3"  BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="面积"   />
+            </Border>
+            <Border  Grid.Row="1" Grid.Column="3"  Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBlock  Text="{Binding CurrentUnLeaseVM.Area}"   />
+
+            </Border>
+            <Border  Grid.Row="2" Grid.Column="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock  Text="合同编号"   />
+                    <TextBlock Text="{Binding  CurrentUnLeaseDetail.ContractNo}" />
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="3" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <DockPanel>
+                    <CheckBox IsChecked="{Binding CurrentUnLeaseDetail.IsExpired ,Converter={StaticResource BoolToIntConverter}}" Height="18" VerticalAlignment="Bottom">合同到期
+                    </CheckBox>
+                </DockPanel>
+            </Border>
+            <Border  Grid.Row="4" Grid.Column="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <tk:DateTimePicker Name="dtpRental"  Value="{Binding   CurrentUnLeaseDetail.RentalTimeToDate}"  Format="Custom"  FormatString="yyyy年MM月dd日"   />
+            </Border>
+            <Border Grid.Row="5"  Grid.Column="3"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <tk:DateTimePicker  Name="dtpPropertyManagent"   Format="Custom"  FormatString="yyyy年MM月dd日" />
+            </Border>
+            <Border  Grid.Row="6"  Grid.Column="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <tk:DateTimePicker  Name="dtpParking"  Value="{Binding CurrentUnLeaseDetail.ParkingFeeTimeToDate}" Format="Custom"  FormatString="yyyy年MM月dd日" />
+            </Border>
+            <Border Grid.Row="7"  Grid.Column="3"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBlock  Text="说明"   />
+            </Border>
+            <Border Grid.Row="8"   Grid.Column="3" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox   Text="{Binding CurrentUnLeaseVM.PowerNotes}" Margin="1,-1,-1,1"   />
+            </Border>
+            <Border  Grid.Row="9"  Grid.Column="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.WaterNotes}"   />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="3" BorderThickness="1,1,1,1"  >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.RoomNotes}"  />
+            </Border>
+            <Border Grid.Row="11"   Grid.Column="3" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox  Text="{Binding CurrentUnLeaseVM.KeyNotes}"  />
+            </Border>
+            <Border  Grid.Row="12"  Grid.Column="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox Text="{Binding CurrentUnLeaseVM.AirNotes}"  />
+            </Border>
+            <Border Grid.Row="13"  Grid.Column="3"  BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox Text="{Binding CurrentUnLeaseVM.AirCtrlNotes}"  Margin="-1,1,1,-1" Height="23" VerticalAlignment="Top"   />
+            </Border>
+            <Border Grid.Row="14"  Grid.Column="3" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox Text="{Binding CurrentUnLeaseVM.ParkingNotes}"   />
+            </Border>
+            <Border Grid.Row="15"  Grid.Column="3" BorderThickness="1,1,1,1" BorderBrush="Black" >
+                <TextBox Text="{Binding CurrentUnLeaseVM.TelNotes}"  />
+            </Border>
+            <Border  Grid.Row="16"  Grid.Column="3" BorderThickness="1" BorderBrush="Black" Padding="4">
+                <TextBox  Text="{Binding CurrentUnLeaseVM.InvoiceNotes}"  />
+            </Border>
+
+
+            <!--<Border BorderThickness="1" BorderBrush="Black" Padding="4">
+                <DockPanel>
+                    <TextBlock Text="入园租赁单位名称:"/>
+                    <TextBox Text="{Binding TODO}" MinWidth="360"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="1" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="入园日期:"/>
+                    <TextBox Text="____年__月__日" Margin="4,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Margin="8,0,0,0" Width="80" TextAlignment="Right"/>
+                    <TextBlock Text="座"/>
+                    <TextBox Text="{Binding TODO}" Width="80" TextAlignment="Right"/>
+                    <TextBlock Text="室"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="2" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="室钥匙交接:"/>
+                    <TextBlock Text="共" Margin="4,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="32"/>
+                    <TextBlock Text="把"/>
+                    <TextBlock Text="把收件人(姓名):" Margin="16,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="80"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="电表读数:"/>
+                    <TextBox Text="{Binding TODO}" Width="32" Margin="8,0,0,0" TextAlignment="Right"/>
+                    <TextBlock Text="字"/>
+                    <TextBlock Text="租赁户确认人:" Margin="64,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="80"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="4" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="租赁户联系人:"/>
+                    <TextBox Text="{Binding TODO}" Width="80" Margin="8,0,0,0"/>
+                    <TextBlock Text="电话:" Margin="8,0,0,0"/>
+                    <TextBox Text="{Binding TODO}" Width="80"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="5" BorderThickness="1,0,1,1" BorderBrush="Black" Padding="4">
+                <StackPanel>
+                    <DockPanel HorizontalAlignment="Right" Margin="0,4,8,4">
+                        <TextBlock Text="经办人:"/>
+                        <TextBox Text="{Binding TODO}" Width="80" Margin="8,4,0,4"/>
+                    </DockPanel>
+                    <TextBlock Text="锦宏产业园物业部" HorizontalAlignment="Right" Margin="0,4,8,4"/>
+                    <TextBox Text="____年__月__日" Margin="0,0,8,0" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Border>-->
+        </Grid>
+    </DockPanel>
+</Window>

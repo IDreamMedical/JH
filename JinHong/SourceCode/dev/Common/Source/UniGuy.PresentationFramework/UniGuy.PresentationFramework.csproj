@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8960CC15-FA8E-4194-A247-BF660F8E170F}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniGuy.Windows</RootNamespace>
+    <AssemblyName>UniGuy.PresentationFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Binary\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\DependencyObjectExtensions.cs" />
+    <Compile Include="Extensions\UIElementExtensions.cs" />
+    <Compile Include="Extensions\Windows_1.cs" />
+    <Compile Include="Helpers\ArrowKeyTraversal.cs" />
+    <Compile Include="Helpers\EnterKeyTraversal.cs" />
+    <Compile Include="Helpers\HomeEndTraversal.cs" />
+    <Compile Include="Helpers\TreeViewHelper.cs" />
+    <Compile Include="Model\AbstractApplicationStatusInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\Resources.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ExceptionHelper2.cs" />
+    <Compile Include="Themes\SkinProvider.cs" />
+    <Compile Include="Themes\ThemeManager.cs" />
+    <Compile Include="ViewModels\GenericViewModel.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
+    <Compile Include="ViewModels\NotificationObject.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="View\IView.cs" />
+    <Compile Include="Windows\Animations\PennerDoubleAnimation.cs" />
+    <Compile Include="Windows\Animations\PennerInterpolator.cs" />
+    <Compile Include="Windows\Controls\Behaviors\Binding\AutoRefreshBindingBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\Binding\AutoRefreshBindingsBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\ClickToPopupEditorService.cs" />
+    <Compile Include="Windows\Controls\Behaviors\ComboBoxAutoTextToItemsBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\ComboBoxItemQuickSelectBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\Command\MouseDoubleClickCommandService.cs" />
+    <Compile Include="Windows\Controls\Behaviors\DataBinder.cs" />
+    <Compile Include="Windows\Controls\Behaviors\DataChangedTimeRecording.cs" />
+    <Compile Include="Windows\Controls\Behaviors\EditablePopup.cs" />
+    <Compile Include="Windows\Controls\Behaviors\EditablePopupService.cs" />
+    <Compile Include="Windows\Controls\Behaviors\FocusOnLoadBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\InputMaskBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\ListBoxForPopup.cs" />
+    <Compile Include="Windows\Controls\Behaviors\PathCompleteService.cs" />
+    <Compile Include="Windows\Controls\Behaviors\PopupEditor.cs" />
+    <Compile Include="Windows\Controls\Behaviors\PopupKeyboard.xaml.cs">
+      <DependentUpon>PopupKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Controls\Behaviors\RadioButtonEnumBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\SelectAllOnFocusBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\TextBoxMaskBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\TextBoxNumberOnlyBehavior.cs" />
+    <Compile Include="Windows\Controls\Behaviors\ToggleBetweenValues.cs" />
+    <Compile Include="Windows\Controls\Behaviors\ValidationBehavior.cs" />
+    <Compile Include="Windows\Controls\ListViewSorting\DataGridViewColumn.cs" />
+    <Compile Include="Windows\Controls\ListViewSorting\GridViewCustomComparer.cs" />
+    <Compile Include="Windows\Controls\ListViewSorting\GridViewSortHandler.cs" />
+    <Compile Include="Windows\Controls\ListViewSorting\MaskedTextBox.cs" />
+    <Compile Include="Windows\Controls\Panels\AnimatedPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\AnimatedWrapPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\Animated\AnimatedWrapPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\Animated\AnimatedWrapPanel_1.cs" />
+    <Compile Include="Windows\Controls\Panels\BoxSizer.cs" />
+    <Compile Include="Windows\Controls\Panels\ColumnWrapPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\DockWrapPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\GridSizer.cs" />
+    <Compile Include="Windows\Controls\Panels\IndexingStackPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\OrientatedUniformGrid.cs" />
+    <Compile Include="Windows\Controls\Panels\PolarPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\RadialPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\SingleShowPanel.cs" />
+    <Compile Include="Windows\Controls\Panels\SmartGrid.cs" />
+    <Compile Include="Windows\Controls\Panels\VirtualizingTilePanel.cs" />
+    <Compile Include="Windows\Controls\Validation\AndCompositeValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\DelegateValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\DoubleRangeValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\EnumValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\IntRangeValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\ListValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\NotEmptyValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\NotNullValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\NotValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\OrCompositeValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\RegexValidationRule.cs" />
+    <Compile Include="Windows\Controls\Validation\StringRangeValidationRule.cs" />
+    <Compile Include="Windows\Data\Bindings\BindingHub.cs" />
+    <Compile Include="Windows\Data\Bindings\BindingHubConnection.cs" />
+    <Compile Include="Windows\Data\Bindings\BindingHubConnectionConverter.cs" />
+    <Compile Include="Windows\Data\Bindings\BindingHubEnums.cs" />
+    <Compile Include="Windows\Data\Bindings\BindingUtils.cs" />
+    <Compile Include="Windows\Data\Converters\Converters.cs" />
+    <Compile Include="Windows\Data\Converters\ConvertionObjectArrayList.cs" />
+    <Compile Include="Windows\Data\Converters\DataHolder.cs" />
+    <Compile Include="Windows\Data\Converters\DateTimeConversionMode.cs" />
+    <Compile Include="Windows\Data\Converters\EnumEqualsConverter.cs" />
+    <Compile Include="Windows\Data\Converters\EnumerableHolder.cs" />
+    <Compile Include="Windows\Data\Converters\FallbackBehavior.cs" />
+    <Compile Include="Windows\Data\Converters\IO\TrimExtensionConverter.cs" />
+    <Compile Include="Windows\Data\Converters\IPAddressConverter.cs" />
+    <Compile Include="Windows\Data\Converters\Mapping.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\AdditionMultiConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\AddMultiConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\ConverterParent.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\DefaultMultiValueConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\DelegateMultiConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\EnumerableMultiValueConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\EqualsMultiConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\FirstMultiValueConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\FuzzyMultiConverter.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\MultiConverterGroup.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\MultiConverterGroupStep.cs" />
+    <Compile Include="Windows\Data\Converters\MultiValueConverters\MultiplyConverter.cs" />
+    <Compile Include="Windows\Data\Converters\PreviewableMultiConverter.cs" />
+    <Compile Include="Windows\Data\Converters\Specific\LevelToIndentConverter.cs" />
+    <Compile Include="Windows\Data\Converters\UI\IndexConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\AdditionConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\AndConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\AppendSuffixConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\BoolToIntConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\BoolToNullableBoolConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\BoolToOppositeBoolConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\BoolToOppositeConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\BrushValueConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\CaseConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\CaseWhenConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\ComposingConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\ConverterGroup.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\DateTimeConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\DebugConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\DelegateConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\DoNothingCheater.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\DoNothingIfNullConverterWrapper.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\DoubleTypeConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\EnumBooleanConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\EnumerableToHolderConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\EnumTypeConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\EqualsConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\FormatConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\HaltConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IfFalseConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IfNullConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IfNullOrEmptyConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IndexedObjectConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IndexedObjectsConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IsNotOrEmptyConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IsNullConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\IsNullToVisibilityConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\LessThanEqualsConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\MapConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\MarkupExtensionConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\NotConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\NotNullConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\NullableBoolToBoolConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\NullableBoolToOppositeNullableBoolConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\ObjectsToArrayConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\PathToNameConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\PercentageConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\PercentageFormatConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\PercentageZoomConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\ReversableMarkupExtensionConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\ReversableStandardizableMarkupExtensionConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\ReverseConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\SingleToArrayConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\StandardizableMarkupExtensionConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\StringToBoolConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\StringToNullableBoolConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\StrokeCollectionToStringConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\TimeOffsetConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\TypeConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\UniversalDelegateConverters.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\UniversalValueConverter.cs" />
+    <Compile Include="Windows\Data\Converters\ValueConverters\XmlDocumentToXmlDataProviderConverter.cs" />
+    <Compile Include="Windows\Data\DispatchingCollection.cs" />
+    <Compile Include="Windows\Data\DispatchingList.cs" />
+    <Compile Include="Windows\IInputValidationElement.cs" />
+    <Compile Include="Windows\Input\Commands\DelegateCommand.cs" />
+    <Compile Include="Windows\Input\Commands\GenericDelegateCommand.cs" />
+    <Compile Include="Windows\Input\MultiKeyBinding.cs" />
+    <Compile Include="Windows\Input\MultiKeyGesture.cs" />
+    <Compile Include="Windows\Input\MultiKeyGestureConverter.cs" />
+    <Compile Include="Windows\Markup\ArrayTypeExtension.cs" />
+    <Compile Include="Windows\Markup\BoundValueExtension.cs" />
+    <Compile Include="Windows\Markup\DependencyObjectReference.cs" />
+    <Compile Include="Windows\Markup\EnumValuesExtension.cs" />
+    <Compile Include="Windows\Markup\GenericTypeExtension.cs" />
+    <Compile Include="Windows\Markup\LazyBindingExtension.cs" />
+    <Compile Include="Windows\Markup\ProvideSelfMarkupExtension.cs" />
+    <Compile Include="Windows\Markup\StringJoinExtension.cs" />
+    <Compile Include="Windows\PropertyObservableWindow.cs" />
+    <Compile Include="Windows\SplashScreenManager.cs" />
+    <Compile Include="Windows\Styles\ThemeManager.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Windows\Controls\Panels\Animated\AnimatedWrapPanel.docx" />
+    <None Include="Windows\Controls\Panels\Animated\AnimatedWrapPanel2.docx" />
+    <None Include="Windows\Controls\Panels\Documents\An Animated Custom Panel base class for WPF and Silverlight.docx" />
+    <None Include="Windows\Controls\Panels\Documents\VirtualizingTilePanel.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\Xceed.Wpf.Toolkit.dll" />
+    <Resource Include="Themes\Styles\PaperLike\Readme.txt" />
+    <Resource Include="Windows\Styles\Simple\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Windows\Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueDark\Brush_RD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueDark\Color_RD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueDark\CoreControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueDark\ScrollBars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueDark\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueLight\Brush_RD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueLight\Color_RD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueLight\CoreControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueLight\ScrollBars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\BlueLight\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\PaperLike\checkBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\PaperLike\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\PaperLike\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\PaperLike\radiobutton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\PaperLike\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\PaperLike\textbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Controls\Behaviors\PopupKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\checkbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\combobox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\DocumentViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\frame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\groupbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\listbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\listview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\navigationwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\progressbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\radiobutton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\resizegrip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\scrollbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\scrollviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\separator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\statusbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\tabcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\textbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\toolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\tooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\treeview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Simple\window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\BubbleCreme\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\BureauBlack\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\BureauBlue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\DavesGlossyControls\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\DummyDemo\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ExpressionDark\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ExpressionLight\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\RainierOrange\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\RainierPurple\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\RainierRadialBlue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ShinyBlue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ShinyDarkGreen\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ShinyDarkPurple\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ShinyDarkTeal\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\ShinyRed\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\TwilightBlue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\UXMusingsBubblyBlue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\UXMusingsGreen\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\UXMusingsRed\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\UXMusingsRoughGreen\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\UXMusingsRoughRed\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Styles\Standard\WhistlerBlue\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UniGuy.Core\UniGuy.Core.csproj">
+      <Project>{1ADA76DA-AD8F-4A70-8F68-BAC6DB3FFCFD}</Project>
+      <Name>UniGuy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniGuy.Net\UniGuy.Net.csproj">
+      <Project>{4F816355-2929-4CBF-A071-832FFE620CE2}</Project>
+      <Name>UniGuy.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniGuy.PresentationCore\UniGuy.PresentationCore.csproj">
+      <Project>{3B2488B2-BF23-428C-AE3E-3EE395F908ED}</Project>
+      <Name>UniGuy.PresentationCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

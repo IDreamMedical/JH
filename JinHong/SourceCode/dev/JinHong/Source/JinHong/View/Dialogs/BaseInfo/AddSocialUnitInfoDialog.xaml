@@ -1,0 +1,142 @@
+﻿<Window x:Class="JinHong.View.Dialogs.AddSocialUnitInfoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ug_w="http://schemas.uniguy.com/presentation"
+           xmlns:pf="http://schemas.uniguy.com/presentation"
+         xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+
+           xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="新增客户" SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        x:Name="_this">
+    <Grid DataContext="{Binding }">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+
+            <TextBlock  Text="名     称"   />
+        </Border>
+        <Border Grid.Column="1" Grid.ColumnSpan="3" BorderThickness="1" BorderBrush="Black" >
+            <TextBox  TabIndex="1"   x:Name="txtName" VerticalAlignment="Center" >
+                <TextBox.Text>
+                    <Binding Path="SocialUnit.Name" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ug_w:NotEmptyValidationRule ErrorMessage="客户名不能为空"/>
+                            <ug_w:RegexValidationRule RegexText="^\w.{1,}$" ErrorMessage="客户名必须在2位以上"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4" >
+            <TextBlock  Text="客户描述"  />
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="Black"  >
+            <TextBox TabIndex="2" Text="{Binding SocialUnit.Description}" MinWidth="200"   />
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4" >
+            <TextBlock  Text="客户意向"  />
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="3" BorderThickness="1" BorderBrush="Black"  >
+            <ComboBox  TabIndex="3" SelectedValue="{Binding  SocialUnit.TrendId}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={pf:CaseWhenConverter Format='0|今天入住签合同|1|预定时间入住|2|再看看|UNKNOWN'}}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <sys:Int32>0</sys:Int32>
+                <sys:Int32>1</sys:Int32>
+                <sys:Int32>2</sys:Int32>
+            </ComboBox>
+        </Border>
+
+        <Border  Grid.Row="2" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4" >
+            <TextBlock  Text="客户性质"  ></TextBlock>
+        </Border>
+        <Border Grid.Row="2"  Grid.Column="1" MinWidth="80" BorderThickness="1" BorderBrush="Black"  >
+            <ComboBox TabIndex="4"  SelectedValue="{Binding  SocialUnit.SocialUnitType}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={pf:CaseWhenConverter Format='0|外企|1|国企|2|台企|3|民企|4|办事处|UNKNOWN'}}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <sys:String>0</sys:String>
+                <sys:String>1</sys:String>
+                <sys:String>2</sys:String>
+                <sys:String>3</sys:String>
+                <sys:String>4</sys:String>
+            </ComboBox>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4"  >
+            <TextBlock  Text="法人代表" Width="75"  />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="3" BorderThickness="1" BorderBrush="Black"  >
+            <TextBox TabIndex="5" Text="{Binding SocialUnit.SocialUnitLeader}" Grid.Column="1" Grid.Row="2"  MinWidth="128"   Margin="4,0,0,0"/>
+        </Border>
+        <Border  Grid.Row="3" Grid.Column="0" BorderBrush="Black" Padding="4"  >
+            <TextBlock  Grid.Column="0" Text="客户电话"   />
+        </Border>
+        <Border  Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="Black"   >
+            <TextBox  TabIndex="6"  Text="{Binding SocialUnit.TelNo}"     />
+        </Border>
+        <Border  Grid.Row="3" Grid.Column="2" BorderBrush="Black" Padding="4"  >
+            <TextBlock  Text="注册资金"  />
+        </Border>
+        <Border  Grid.Row="3" Grid.Column="3" BorderThickness="1" BorderBrush="Black"   >
+            <DockPanel>
+                <TextBox TabIndex="7" DockPanel.Dock="Left" MinWidth="100"  Text="{Binding SocialUnit.SocialUnitCapital}"    />
+                <TextBlock Text="万" ></TextBlock>
+            </DockPanel>
+        </Border >
+        <Border  Grid.Row="4" Grid.Column="0"  BorderThickness="1" BorderBrush="Black" Padding="4" >
+            <TextBlock  Text="注册地址"  />
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4"  >
+
+            <TextBox TabIndex="8" Grid.Column="1"  Text="{Binding SocialUnit.SocialUnitAddress}"    Margin="4,0,0,0"/>
+
+        </Border>
+        <Border  Grid.Row="4" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Padding="4"  >
+            <TextBlock  Text="营业执照"  />
+        </Border>
+        <Border  Grid.Row="4" Grid.Column="3" BorderThickness="1" BorderBrush="Black"   >
+            <tk:DateTimePicker TabIndex="9" Name="dtpLicenceDate"   Value="{Binding  SocialUnit.LicenceDate}"  Format="Custom"  FormatString="yyyy年MM月dd日" Margin="0,0,0,2" VerticalAlignment="Bottom" />
+        </Border>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="5" Grid.ColumnSpan="4">
+            <Button TabIndex="10" Margin="4"  Command="{Binding BtnOKCommand}" IsDefault="True" Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushOK}" Width="16"/>
+                    <TextBlock   Text="确定"/>
+                </StackPanel>
+            </Button>
+            <Button TabIndex="11" Margin="8,4,4,4"  Command="{Binding BtnCancelCommand}" IsCancel="True"  Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushCancel}" Width="16"/>
+                    <TextBlock Text="取消"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

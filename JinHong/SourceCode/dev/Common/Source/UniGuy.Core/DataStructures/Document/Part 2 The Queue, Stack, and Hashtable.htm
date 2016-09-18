@@ -1,0 +1,1135 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0062)http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Part 2: The Queue, Stack, and Hashtable</TITLE><LINK 
+href="http://msdn.microsoft.com/en-us/library/ms379571(v=vs.80).aspx" 
+rel=canonical><LINK 
+href="Part 2 The Queue, Stack, and Hashtable.files/024d86ac3c0dde3e6a230199128bdfe4.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="http://msdn.microsoft.com/en-US/library/ms379571(d=printer,v=VS.80).aspx" 
+rel=alternate>
+<META http-equiv=content-type content="text/html; charset=utf-8">
+<META content=/en-us/library/ms379571(d=lightweight,l=en-us,v=VS.80).aspx 
+name=DCS.dcsuri>
+<META 
+content=http://msdn.microsoft.com/en-us/library/ms379571(d=lightweight,l=en-us,v=VS.80).aspx 
+name=NormalizedUrl>
+<META 
+content=http://msdn.microsoft.com/en-us/library/ms379571(l=en-us,v=VS.80).aspx 
+name=VotingContextUrl>
+<META content="C0384794-11:20:09 AM" name=MN>
+<META content=ms379571 name=Search.ShortId>
+<META content=en-us name=Ms.Locale>
+<META content="MSHTML 6.00.2900.6049" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=header>
+<TABLE class="headerBar cl_lightweight_topnav_slice" cellSpacing=0 cellPadding=0 
+border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    class="leftSection cl_lightweight_header_leftSection_wave leftSectionImageClusterOverride">
+      <DIV class=tabContainer><A class=" headerTab" title=Home 
+      href="http://msdn.microsoft.com/en-US/">Home</A> <A 
+      class="headerTabSelected cl_lightweight_selected_tab_repeatX " 
+      title=Library href="http://msdn.microsoft.com/en-US/library">Library</A> 
+      <A class=" headerTab" title=Learn 
+      href="http://msdn.microsoft.com/en-US/bb188199.aspx">Learn</A> <A 
+      class=" headerTab" title=Downloads 
+      href="http://msdn.microsoft.com/en-US/aa570309.aspx">Downloads</A> <A 
+      class=" headerTab" title=Support 
+      href="http://msdn.microsoft.com/en-US/aa570318.aspx">Support</A> <A 
+      class=" headerTab" title=Community 
+      href="http://msdn.microsoft.com/en-US/aa497440.aspx">Community</A> 
+    </DIV></TD>
+    <TD 
+    class="rightSection cl_lightweight_header_rightSection_wave rightSectionImageClusterOverride">
+      <DIV class=tabContainer><A title="Sign in" 
+      href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1303496409&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http:%2F%2Fmsdn.microsoft.com%2Fen-US%2Flibrary%2Fms379571%2528v%3DVS.80%2529.aspx&amp;lc=1033&amp;cb=&amp;id=254354">Sign 
+      in </A><SPAN class=pipe>|</SPAN> <A title=中国（简体中文） 
+      href="http://msdn.microsoft.com/en-US/library/preferences/locale/?returnurl=%252fen-US%252flibrary%252fms379571(v%253dVS.80).aspx">中国（简体中文） 
+      </A><SPAN class=pipe>|</SPAN> <A title=Preferences 
+      href="http://msdn.microsoft.com/en-US/library/preferences/experience/?returnurl=%252fen-US%252flibrary%252fms379571(v%253dVS.80).aspx">Preferences</A> 
+      </DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV class=contentPlaceHolder>
+<DIV class=navigation id=Navigation style="PADDING-BOTTOM: 96px; WIDTH: 280px">
+<DIV class=searchcontainer>
+<FORM id=SearchForm 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+action=http://social.msdn.microsoft.com/Search/en-US method=get>
+<DIV class=searchBoxContainer>
+<TABLE class=searchBox cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=searchTextBoxTd><INPUT class=searchTextBox id=searchTextBox 
+      onblur="document.onkeydown = Presskey;WatermarkBlur(this, 'Search MSDN with Bing', 'searchTextBox')" 
+      onfocus="document.onkeydown = ''; WatermarkFocus(this, 'Search MSDN with Bing', 'searchTextBoxTrue') " 
+      maxLength=200 value="Search MSDN with Bing" name=query> </TD>
+    <TD class=searchButtonTd><A 
+      style="PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 19px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 19px" 
+      onclick="javascript:if(document.getElementById('searchTextBox').value == 'Search MSDN with Bing')document.getElementById('searchTextBox').value=''; document.getElementById('SearchForm').submit();" 
+      href="javascript:void(0)"><IMG class=cl_search_icon title=Search 
+      style="POSITION: relative" alt=Search 
+      src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"></A> 
+    </TD></TR></TBODY></TABLE></DIV></FORM></DIV>
+<DIV class=navcontainer>
+<DIV class=nav>
+<DIV class="toclevel0 ancestry">
+<DIV class="clip5x9 nav_root"><IMG class=cl_nav_bullet alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="MSDN Library" 
+href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN 
+Library</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Development Tools and Languages" 
+href="http://msdn.microsoft.com/en-us/library/aa187916.aspx">Development Tools 
+and Languages</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Visual Studio 2005" 
+href="http://msdn.microsoft.com/en-us/library/ms950416.aspx">Visual Studio 
+2005</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Technical Articles" 
+href="http://msdn.microsoft.com/en-us/library/aa468085.aspx">Technical 
+Articles</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title=C# 
+href="http://msdn.microsoft.com/en-us/library/ms391942(v=VS.80).aspx">C#</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A 
+title="An Extensive Examination of Data Structures Using C# 2.0" 
+href="http://msdn.microsoft.com/en-us/library/ms364091(v=VS.80).aspx">An 
+Extensive Examination of Data Structures Using C# 2.0</A></DIV></DIV>
+<DIV class="clip13x9 nav_dots_current"><IMG class=cl_nav_dots alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class="toclevel1 current"><A 
+title="Part 2: The Queue, Stack, and Hashtable" 
+href="http://msdn.microsoft.com/en-us/library/ms379571(v=VS.80).aspx">Part 2: 
+The Queue, Stack, and Hashtable</A></DIV>
+<DIV class="toclevel2 children" 
+style="BORDER-BOTTOM: #bbbbbb 1px solid"></DIV><IMG 
+class="communityContentNavigationSeparator cl_lt_cc_line_top" alt=Separator 
+src="Part 2 The Queue, Stack, and Hashtable.files/030c41d9079671d09a62d8e2c1db6973.gif"> 
+</DIV></DIV></DIV><A class=tocResize id=TocResize style="LEFT: 280px" 
+onclick=onIncreaseToc() 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#"><IMG 
+class=cl_nav_resize_open onmousedown=onIncreaseToc() id=ResizeImageIncrease 
+title=Expand alt=Expand 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+<IMG class=cl_nav_resize_close onmousedown=onResetToc() id=ResizeImageReset 
+title=Minimize style="DISPLAY: none" alt=Minimize 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</A>
+<DIV class=content><IMG class="TOC_Fade_Top cl_lw_toc_fade_top" alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/030c41d9079671d09a62d8e2c1db6973.gif"> 
+
+<DIV class="clip117x31 logo"><A 
+href="http://msdn.microsoft.com/en-US/default.aspx"><IMG class=msdn_body_logo 
+title=MSDN alt=MSDN 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</A></DIV>
+<DIV class=topicContainer>
+<DIV class=topic xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:mtps="http://msdn2.microsoft.com/mtps">
+<H1 class=title>An Extensive Examination of Data Structures Using C# 2.0</H1>
+<DIV class=lw_vs>
+<DIV id=curversion><STRONG>Visual Studio 2005</STRONG> </DIV></DIV>
+<DIV style="CLEAR: right"></DIV>
+<DIV id=nstext valign="bottom">&nbsp; 
+<P>Scott Mitchell<BR>4GuysFromRolla.com</P>
+<P>Update January 2005</P>
+<P><B>Summary: </B>This article, the second in a six-part series on data 
+structures in the .NET Framework, examines three of the most commonly studied 
+data structures: the Queue, the Stack, and the Hashtable. As we'll see, the 
+Queue and Stack are specialized Lists, providing storage for a variable number 
+of objects, but restricting the order in which the items may be accessed. The 
+Hashtable provides an array-like abstraction with greater indexing flexibility. 
+Whereas an array requires that its elements be indexed by an ordinal value, 
+Hashtables allow items to be indexed by any type of object, such as a string. 
+(19 printed pages)</P>
+<BLOCKQUOTE class=dtBlock><B>Editor's note&nbsp;&nbsp;&nbsp;</B>This six-part 
+  article series originally appeared on MSDN Online starting in November 2003. 
+  In January 2005 it was updated to take advantage of the new data structures 
+  and features available with the .NET Framework version 2.0, and C# 2.0. The 
+  original articles are still available at <A 
+  href="http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp">http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp</A>. 
+</BLOCKQUOTE>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>This article assumes 
+  the reader is familiar with C#.</BLOCKQUOTE>
+<H4 class=dtH1>Contents</H4>
+<P><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic1">Introduction</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic2">Providing 
+First Come, First Served Job Processing</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic3">A 
+Look at the Stack Data Structure: First Come, Last Served</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic4">The 
+Limitations of Ordinal Indexing</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic5">The 
+System.Collections.Hashtable Class</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic6">The 
+System.Collections.Generic.Dictionary Class</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#datastructures20_2_topic7">Conclusion</A></P>
+<H2 class=dtH1><A name=datastructures20_2_topic1></A>Introduction</H2>
+<P>In Part 1 of An Extensive Examination of Data Structures, we looked at what 
+data structures are, how their performance can be evaluated, and how these 
+performance considerations play into choosing which data structure to utilize 
+for a particular algorithm. In addition to reviewing the basics of data 
+structures and their analysis, we also looked at the most commonly used data 
+structure, the array. </P>
+<P>The array holds a set of homogeneous elements indexed by ordinal value. The 
+actual contents of an array are laid out as a contiguous block, thereby making 
+reading from or writing to a specific array element very fast. In addition to 
+the standard array, the .NET Framework Base Class Library offers the <B>List</B> 
+class. Like the array, the <B>List</B> is a collection of homogeneous data 
+items. With a <B>List</B>, you don't need to worry about resizing or capacity 
+limits, and there are numerous <B>List</B> methods for searching, sorting, and 
+modifying the <B>List</B>'s data. As discussed in the previous article, the 
+<B>List</B> class uses Generics to provide a type-safe, reusable collection data 
+structure.</P>
+<P>In this second installment of the article series, we'll continue our 
+examination of array-like data structures by first examining the Queue and 
+Stack. These two data structures are similar in some aspects to the 
+<B>List</B>—they both are implemented using Generics to contain a type-safe 
+collection of data items. The Queue and Stack differ from the <B>List</B> class 
+in that there are limitations on how the Queue and Stack data can be accessed. 
+</P>
+<P>Following our look at the Queue and Stack, we'll spend the rest of this 
+article digging into the Hashtable data structure. A <I>Hashtable</I>, which is 
+sometimes referred to as an associative array, stores a collection of elements, 
+but indexes these elements by an arbitrary object (such as a string), as opposed 
+to an ordinal index.</P>
+<H2 class=dtH1><A name=datastructures20_2_topic2></A>Providing First Come, First 
+Served Job Processing</H2>
+<P>If you are creating any kind of computer service—that is, a computer program 
+that can receive multiple requests from multiple sources for some task to be 
+completed—then part of the challenge of creating the service is deciding the 
+order in which the incoming requests will be handled. The two most common 
+approaches used are: </P>
+<UL type=disc>
+  <LI>First come, first served 
+  <LI>Priority-based processing </LI></UL>
+<P>First come, first served is the job-scheduling task you'll find at your 
+grocery store, the bank, and licensing departments. Those waiting for service 
+stand in a line. The people in front of you will be served before you while the 
+people behind you will be served after. Priority-based processing serves those 
+with a higher priority before those with a lesser priority. For example, a 
+hospital emergency room uses this strategy, opting to help someone with a 
+potentially fatal wound before someone with a less threatening wound, regardless 
+of who arrived first.</P>
+<P>Imagine that you need to build a computer service and that you want to handle 
+requests in the order in which they were received. Because the number of 
+incoming requests might happen quicker than you can process them, you'll need to 
+place the requests in some sort of buffer that can preserve the order in which 
+they arrived.</P>
+<P>One option is to use a List and an integer variable called <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">nextJobPos</TT> to indicate the 
+position of the next job to be completed. When each new job request comes in, 
+simply use the List's <TT xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> 
+method to add it to the end of the List. Whenever you are ready to process a job 
+in the buffer, grab the job at the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">nextJobPos</TT> position in the List 
+and increment <TT xmlns:asp="http://msdn2.microsoft.com/asp">nextJobPos</TT>. 
+The following simple program illustrates this algorithm:</P><PRE class=code>public class JobProcessing
+{
+   private static List&lt;string&gt; jobs = new List&lt;string&gt;(16);
+   private static int nextJobPos = 0;
+   
+   public static void AddJob(string jobName)
+   {
+      jobs.Add(jobName);
+   }
+   
+   public static string GetNextJob()
+   {
+      if (nextJobPos &gt; jobs.Count - 1)
+         return "NO JOBS IN BUFFER";
+      else
+      {
+         string jobName = jobs[nextJobPos];
+         nextJobPos++;
+         return jobName;
+      }
+   }
+   
+   public static void Main()
+   {
+      AddJob("1");
+      AddJob("2");
+      Console.WriteLine(GetNextJob());
+      AddJob("3");
+Console.WriteLine(GetNextJob());
+      Console.WriteLine(GetNextJob());
+      Console.WriteLine(GetNextJob());
+      Console.WriteLine(GetNextJob());
+      AddJob("4");
+      AddJob("5");
+      Console.WriteLine(GetNextJob());
+   }
+}
+</PRE>
+<P>The output of this program is as follows:</P><PRE class=code>1
+2
+3
+NO JOBS IN BUFFER
+NO JOBS IN BUFFER
+4
+</PRE>
+<P>While this approach is fairly simply and straightforward, it is horribly 
+inefficient. For starters, the List will continue to grow unabated with each job 
+that's added to the buffer, even if the jobs are processed immediately after 
+being added to the buffer. Consider the case where every second a new job is 
+added to the buffer and a job is removed from the buffer. This means that once a 
+second the <TT xmlns:asp="http://msdn2.microsoft.com/asp">AddJob()</TT> method 
+is called, which calls the List's <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method. As the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method is continually 
+called, the List's internal array's size is continually redoubled as needed. 
+After five minutes (300 seconds) the List's internal array will be dimensioned 
+for 512 elements, even though there has never been more than one job in the 
+buffer at a time. This trend, of course, will continue so long as the program 
+continues to run and the jobs continue to come in.</P>
+<P>The reason the List grows in such ridiculous proportions is because the 
+buffer locations used for old jobs are not reclaimed. That is, when the first 
+job is added to the buffer, and then processed, clearly the first spot in the 
+List is ready to be reused again. Consider the job schedule presented in the 
+previous code sample. After the first two lines—<TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddJob("1")</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddJob("2")</TT>—the List will look 
+like Figure 1.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC90320.gif" border=0></P>
+<P class=label><B>Figure 1. The ArrayList after the first two lines of 
+code</B></P>
+<P>Note that there are 16 elements in the List at this point because the List 
+was initialized with a capacity of 16 in the code above. Next, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT> method is invoked, 
+which removes the first job, resulting in Fiure 2.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC72817.gif" border=0></P>
+<P class=label><B>Figure 2. Program after the GetNextJob() method is 
+invoked</B></P>
+<P>When <TT xmlns:asp="http://msdn2.microsoft.com/asp">AddJob("3")</TT> 
+executes, we need to add another job to the buffer. Clearly the first List 
+element (index 0) is available for reuse. Initially it might make sense to put 
+the third job in the 0 index. However, this approach can be eliminated by 
+considering what would happen if after <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddJob("3")</TT> we did <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddJob("4")</TT>, followed by two 
+calls to <TT xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT>. If we 
+placed the third job in the 0 index and then the fourth job in the 2 index, we'd 
+have something like the problem displayed in Figure 3.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC81299.gif" border=0></P>
+<P class=label><B>Figure 3.Issue created by placing jobs in the O index</B></P>
+<P>Now, when <TT xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT> 
+was called, the second job would be removed from the buffer, and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">nextJobPos</TT> would be incremented 
+to point to index 2. Therefore, when <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT> was called again, 
+the <I>fourth</I> job would be removed and processed prior to the third job, 
+thereby violating the first come, first served order we need to maintain.</P>
+<P>The crux of this problem arises because the List represents the list of jobs 
+in a linear ordering. That is, we need to keep adding the new jobs to the right 
+of the old jobs to guarantee that the correct processing order is maintained. 
+Whenever we hit the end of the List, the List is doubled, even if there are 
+unused List elements due to calls to <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT>. </P>
+<P>To fix this problem, we need to make our List <I>circular.</I> A circular 
+array is one that has no definite start or end. Rather, we have to use variables 
+to remember the beginning and end positions of the array. A graphical 
+representation of a circular array is shown in Figure 4. </P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC35970.gif" border=0></P>
+<P class=label><B>Figure 4. Example of a circular array</B></P>
+<P>With a circular array, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddJob()</TT> method adds the new job 
+in index <TT xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT> and then 
+"increments" <TT xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT>. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT> method plucks the 
+job from <TT xmlns:asp="http://msdn2.microsoft.com/asp">startPos</TT>, sets the 
+element at the <TT xmlns:asp="http://msdn2.microsoft.com/asp">startPos</TT> 
+index to <TT xmlns:asp="http://msdn2.microsoft.com/asp">null</TT>, and 
+"increments" <TT xmlns:asp="http://msdn2.microsoft.com/asp">startPos</TT>. I put 
+the word increments in quotation marks because here incrementing is a trifle 
+more complex than simply adding one to the variable's current value. To see why 
+we can't just add 1, consider the case when <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT> equals 15. If we 
+increment <TT xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT> by adding 
+1, <TT xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT> will equal 16. In 
+the next <TT xmlns:asp="http://msdn2.microsoft.com/asp">AddJob()</TT> call, the 
+index 16 will attempt to be accessed, which will result in an <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">IndexOutOfRangeException</TT>. </P>
+<P>Rather, when <TT xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT> 
+equals 15, we want to increment <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">endPos</TT> by resetting it to 0. 
+This can either be done by creating an <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">increment(<I>variable</I>)</TT> 
+function that checks to see if the passed-in variable equals the array's size 
+and, if so, reset it to 0. Alternatively, the variable can have its value 
+incremented by 1 and then <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">mod</TT>-ed by the size of the array. 
+In such a case, the code for <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">increment()</TT> would look like:</P><PRE class=code>int increment(int variable)
+{
+  return (variable + 1) % theArray.Length;
+}
+</PRE>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>The modulus operator, 
+  <TT xmlns:asp="http://msdn2.microsoft.com/asp">%</TT>, when used like <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">x % y</TT>, calculates the 
+  remainder of <TT xmlns:asp="http://msdn2.microsoft.com/asp">x</TT> divided by 
+  <TT xmlns:asp="http://msdn2.microsoft.com/asp">y</TT>. The remainder will 
+  always be between 0 and <TT xmlns:asp="http://msdn2.microsoft.com/asp">y – 
+  1</TT>.</BLOCKQUOTE>
+<P>This approach works well if our buffer will never have more than 16 elements, 
+but what happens if we wish to add a new job to the buffer when there's already 
+16 jobs present? Like with the List's <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method, we'll need to 
+resize the circular array appropriately by, say, doubling the size of the 
+array.</P>
+<H3 class=dtH1>The System.Collections.Generic.Queue Class</H3>
+<P>The functionality we have just described—adding and removing items to a 
+buffer in first come, first served order while maximizing space utilization—is 
+provided in a standard data structure, the Queue. The .NET Framework Base Class 
+Library provides the System.Collections.Generic.Queue class, which uses Generics 
+to provide a type-safe Queue implementation. Whereas our earlier code provided 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">AddJob()</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetNextJob()</TT> methods, the 
+<B>Queue</B> class provides identical functionality with its <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Enqueue(<I>item</I>)</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Dequeue()</TT> methods, respectively. 
+Behind the scenes, the <B>Queue</B> class maintain an internal circular array 
+and two variables that serve as markers for the beginning and ending of the 
+circular array: <TT xmlns:asp="http://msdn2.microsoft.com/asp">head</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">tail</TT>. </P>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp">Enqueue()</TT> method 
+starts by determining if there is sufficient capacity for adding the new item to 
+the queue. If so, it merely adds the element to the circular array at the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">tail</TT> index, and then 
+"increments" <TT xmlns:asp="http://msdn2.microsoft.com/asp">tail</TT> using the 
+modulus operator to ensure that <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">tail</TT> does not exceed the 
+internal array's length. If, however, there is insufficient space, the array is 
+increased by a specified growth factor. This growth factor has a default value 
+of 2.0, thereby doubling the internal array's size, but you can optionally 
+specify this factor in the Queue class's constructor.</P>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp">Dequeue()</TT> method 
+returns the current element from the head index. It also sets the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">head</TT> index element to null and 
+"increments" <TT xmlns:asp="http://msdn2.microsoft.com/asp">head</TT>. For those 
+times where you may want to look at the head element, but not actually dequeue 
+it, the <B>Queue</B> class also provides a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Peek()</TT> method.</P>
+<P>What is important to realize is that the Queue, unlike the List, does not 
+allow random access. That is, you cannot look at the third item in the queue 
+without dequeing the first two items. However, the <B>Queue</B> class does have 
+a <TT xmlns:asp="http://msdn2.microsoft.com/asp">Contains()</TT> method, so you 
+can determine whether or not a specific item exists in the Queue. There's also a 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">ToArray()</TT> method that 
+returns an array containing the Queue's elements. If you know you will need 
+random access, though, the Queue is not the data structure to use—the List is. 
+The Queue is, however, ideal for situations where you are only interested in 
+processing items in the precise order with which they were received.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>You may hear Queues 
+  referred to as FIFO data structures. FIFO stands for First In, First Out, and 
+  is synonymous to the processing order of first come, first served.</BLOCKQUOTE>
+<H2 class=dtH1><A name=datastructures20_2_topic3></A>A Look at the Stack Data 
+Structure: First Come, Last Served</H2>
+<P>The Queue data structure provides first come, first served access by 
+internally using a circular array of type <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">object</TT>. The Queue provides such 
+access by exposing an <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Enqueue()</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Dequque()</TT> methods. First come, 
+first serve processing has a number of real-world applications, especially in 
+service programs like Web servers, print queues, and other programs that handle 
+multiple incoming requests.</P>
+<P>Another common processing scheme in computer programs is first come, 
+<I>last</I> served. The data structure that provides this form of access is 
+known as a Stack. The .NET Framework Base Class Library includes a <B>Stack</B> 
+class in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Sytem.Collections.Generic</TT> 
+namespace. Like the <B>Queue</B> class, the <B>Stack</B> class maintains its 
+elements internally using a circular array. The <B>Stack</B> class exposes its 
+data through two methods: <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Push(<I>item</I>)</TT>, which adds 
+the passed-in item to the stack, and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Pop()</TT>, which removes and returns 
+the item at the top of the stack.</P>
+<P>A Stack can be visualized graphically as a vertical collection of items. When 
+an item is pushed onto the stack, it is placed on top of all other items. 
+Popping an item removes the item from the top of the stack. The following two 
+figures graphically represent a stack first after items 1, 2, and 3 have been 
+pushed onto the stack in that order, and then after a pop.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC96535.gif" border=0></P>
+<P class=label><B>Figure 5. Graphical representation of a stack with three 
+items</B></P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC28561.gif" border=0></P>
+<P class=label><B>Figure 6. Graphical representation of a stack with three items 
+after a pop</B></P>
+<P>Like the List, when the Stack's internal array needs to be resized it is 
+automatically increased by twice the initial size. (Recall that with the Queue 
+this growth factor can be optionally specified through the constructor.)</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>Stacks are often 
+  referred to as LIFO data structures, or Last In, First Out.</BLOCKQUOTE>
+<H3 class=dtH1>Stacks: A Common Metaphor in Computer Science</H3>
+<P>When talking about queues it's easy to conjure up many real-world parallels 
+like lines at the bakery, printer job processing, and so on. But real-world 
+examples of stacks in action are harder to come up with. Despite this, stacks 
+are a prominent data structure in a variety of computer applications.</P>
+<P>For example, consider any imperative computer programming language, like C#. 
+When a C# program is executed, the CLR maintains a <I>call stack</I> which, 
+among other things, keeps track of the function invocations. Each time a 
+function is called, its information is added to the call stack. Upon the 
+function's completion, the associated information is popped from the stack. The 
+information at the top of the call stack represents the current function being 
+executed. (For a visual demonstration of the function call stack, create a 
+project in Visual Studio .NET, set a breakpoint and go to Debug/Start. When the 
+breakpoint hits, display the Call Stack window from Debug/Windows/Call 
+Stack.)</P>
+<P>Stacks are also commonly used in parsing grammars (from simple algebraic 
+statements to computer programming languages), as a means to simulate recursion, 
+and even as an instruction execution model.</P>
+<H2 class=dtH1><A name=datastructures20_2_topic4></A>The Limitations of Ordinal 
+Indexing</H2>
+<P>Recall from Part 1 of this article series that the hallmark of the array is 
+that it offers a homogeneous collection of items <I>indexed by an ordinal 
+value</I>. That is, the i<SUP>th</SUP> element of an array can be accessed in 
+constant time for reading or writing. (Recall that constant-time was denoted as 
+<I>O</I>(1).)</P>
+<P>Rarely do we know the ordinal position of the data we are interested in, 
+though. For example, consider an employee database. Employees might be uniquely 
+identified by their social security number, which has the form DDD-DD-DDDD, 
+where D is a digit (0-9). If we had an array of all employees that were randomly 
+ordered, finding employee 111-22-3333 would require, potentially, searching 
+through <I>all</I> of the elements in the employee array, a <I>O</I>(<I>n</I>) 
+operation. A somewhat better approach would be to sort the employees by their 
+social security numbers, which would reduce the asymptotic search time down to 
+<I>O</I>(log <I>n</I>). </P>
+<P>Ideally, we'd like to be able to do is access an employee's records in 
+<I>O</I>(1) time. One way to accomplish this would to build a <I>huge</I> array, 
+with an entry for each possible social security number value. That is, our array 
+would start at element 000-00-0000 and go to element 999-99-9999, as shown in 
+Figure 7.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC163871.gif" border=0></P>
+<P class=label><B>Figure 7. Array showing all possible elements for a 9-digit 
+number</B></P>
+<P>As this figure shows, each employee record contains information like Name, 
+Phone, Salary, and so on, and is indexed by the employee's social security 
+number. With such a scheme, any employee's information could be accessed in 
+constant time. The disadvantage of this approach is its extreme waste: there are 
+a total of 10<SUP>9</SUP>—that's one <I>billion </I>(1,000,000,000)—different 
+social security numbers. For a company with 1,000 employees, only 0.0001% of 
+this array would be utilized. (To put things in perspective, your company would 
+have to employ about one-sixth of the world's population in order to make this 
+array near fully utilized.)</P>
+<H3 class=dtH1>Compressing Ordinal Indexing with a Hash Function</H3>
+<P>Creating a one billion element array to store information about 1,000 
+employees is clearly unacceptable in terms of space. However, the performance of 
+being able to access an employee's information in constant time is highly 
+desirable. One option would be to reduce the social security number span by only 
+using the last four digits of an employee's social security number. That is, 
+rather than having an array spanning from 000-00-0000 to 999-99-9999, the array 
+would only span from 0000 to 9999. Figure 8 below shows a graphical 
+representation of this trimmed-down array.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC34722.gif" border=0></P>
+<P class=label><B>Figure 8. Trimmed down array</B></P>
+<P>This approach provides both the constant time lookup cost, as well as much 
+better space utilization. Choosing to use the last four digits of the social 
+security number was an arbitrary choice. We could have used the middle four 
+digits, or the first, third, eighth, and ninth.</P>
+<P>The mathematical transformation of the nine-digit social security number to a 
+four-digit number is called <I>hashing</I>. An array that uses hashing to 
+compress its indexers space is referred to as a <I>hash table</I>.</P>
+<P>A <I>hash function</I> is a function that performs this hashing. For the 
+social security number example, our hash function, <I>H</I>, can be described as 
+follows:</P><PRE class=code><I>H</I>(x) = last four digits of x
+</PRE>
+<P>The inputs to <I>H</I> can be any nine-digit social security number, whereas 
+the result of <I>H</I> is a four-digit number, which is merely the last four 
+digits of the nine-digit social security number. In mathematical terms, <I>H</I> 
+maps elements from the set of nine-digit social security numbers to elements 
+from the set of four-digit social security numbers, as shown graphically in the 
+Figure 9.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC91998.gif" border=0></P>
+<P class=label><B>Figure 9. Graphical representation of a hash function</B></P>
+<P>The above figure illustrates a behavior exhibited by hashing functions called 
+<I>collisions</I>. In general, with hashing functions you will be able to find 
+two elements in the larger set that map to the same value in the smaller set. 
+With our social security number hashing function, all social security numbers 
+ending in 0000 will map to 0000. That is, the hash value for 000-00-0000, 
+113-14-0000, 933-66-0000 and many others will all be 0000. (In fact, there will 
+be precisely 10<SUP>5</SUP>, or 100,000, social security numbers that end in 
+0000.)</P>
+<P>To put it back into the context of our earlier example, consider what would 
+happen if a new employee was added with social security number 123-00-0191. 
+Attempting to add this employee to the array would cause a problem because there 
+already exists an employee at array location 0191 (Jisun Lee). </P>
+<BLOCKQUOTE class=dtBlock><B>Mathematical Note&nbsp;&nbsp;&nbsp;</B>A hashing 
+  function can be described in more mathematically precise terms as a function 
+  <I>f</I> : <I>A</I> -&gt; <I>B</I>. Because |<I>A</I>| &gt; |<I>B</I>| it must 
+  be the case that <I>f</I> is not one-to-one; therefore, there will be 
+  collisions.</BLOCKQUOTE>
+<P>Clearly the occurrence of collisions can cause problems. In the next section, 
+we'll look at the correlation between the hash function and the occurrence of 
+collisions and then briefly examine some strategies for handling collisions. In 
+the section after that, we'll turn our attention to the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Collections.Hashtable</TT> 
+class, which provides an implementation of a hash table. We'll look at the 
+Hashtable class's hash function, collision resolution strategy, and some 
+examples of using the <B>Hashtable</B> class in practice. Following a look at 
+the <B>Hashtable</B> class, we'll study the <B>Dictionary</B> class, which was 
+added to the .NET Framework 2.0 Base Class Library. The <B>Dictionary</B> class 
+is identical to the Hashtable, save for two differences: </P>
+<UL type=disc>
+  <LI>It uses Generics and is therefore strongly-typed. 
+  <LI>It employs an alternate collision resolution strategy. </LI></UL>
+<H3 class=dtH1>Collision Avoidance and Resolution</H3>
+<P>When adding data to a hash table, a collision throws a monkey wrench into the 
+entire operation. Without a collision, we can add the inserted item into the 
+hashed location; with a collision, however, we must decide upon some corrective 
+course of action. Due to the increased cost associated with collisions, our goal 
+should be to have as few collisions as possible.</P>
+<P>The frequency of collisions is directly correlated to the hash function used 
+and the distribution of the data being passed into the hash function. In our 
+social security number example, using the last four digits of an employee's 
+social security number is an ideal hash function assuming that social security 
+numbers are randomly assigned. However, if social security numbers are assigned 
+such that those born in a particular year or location are more likely to have 
+the same last four digits, then using the last four digits might cause a large 
+number of collisions if your employees' birth dates and birth locations are not 
+uniformly distributed.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>A thorough analysis of 
+  a hash functions value requires a bit of experience with statistics, which is 
+  beyond the scope of this article. Essentially, we want to ensure that for a 
+  hash table with <I>k</I> slots, the probability that a random value from the 
+  hash function's domain will map to any particular element in the range is 
+  1/<I>k</I>. </BLOCKQUOTE>
+<P>Choosing an appropriate hash function is referred to as <I>collision 
+avoidance</I>. Much study has gone into this field, as the hash function used 
+can greatly impact the overall performance of the hash table. In the upcoming 
+sections, we'll look the hash function used by the <B>Hashtable</B> and 
+<B>Dictionary</B> classes in the .NET Framework.</P>
+<P>In the case of a collision, there are a number of strategies that can be 
+employed. The task at hand, <I>collision resolution</I>, is to find some other 
+place to put the object that is being inserted into the hash table because the 
+actual location was already taken. One of the simplest approaches is called 
+<I>linear probing</I> and works as follows: </P>
+<OL type=1>
+  <LI>When a new item is inserted into the hash table, use the hash function to 
+  determine where in the table it belongs. 
+  <LI>Check to see if an element already exists in that spot in the table. If 
+  the spot is empty, place the element there and return, otherwise go to step 3. 
+
+  <LI>If the location the hash function pointed to was location <I>i</I>, simply 
+  check location <I>i</I> + 1 to see if that is available. If it is also taken, 
+  check <I>i</I> + 2, and so on, until an open spot is found. </LI></OL>
+<P>Consider the case where the following four employees were inserted into the 
+hash table: Alice (333-33-1234), Bob (444-44-1234), Cal (555-55-1237), Danny 
+(000-00-1235), and Edward (111-00-1235). After these inserts the hash table will 
+look like:</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC125533.gif" border=0></P>
+<P class=label><B>Figure 10. Hash table of four employees with similar 
+numbers</B></P>
+<P>Alice's social security number is hashed to 1234, and she is inserted at spot 
+1234. Next, Bob's social security number is hashed to 1234, but Alice is already 
+at spot 1234, so Bob takes the next available spot, which is 1235. After Bob, 
+Cal is inserted, his value hashing to 1237. Because no one is currently 
+occupying 1237, Cal is inserted there. Danny is next, and his social security 
+number is hashed to 1235. 1235 is taken, 1236 is checked, and because 1236 is 
+open, Danny is placed there. Finally, Edward is inserted, his social security 
+number also hashing to 1235. 1235 is taken, so 1236 is checked. That's taken 
+too, so 1237 is checked. That's occupied by Cal, so 1238 is checked, which is 
+open, so Edward is placed there.</P>
+<P>In addition to gumming up the insertion process, collisions also present a 
+problem when searching a hash table. For example, given the hash table in Figure 
+10, imagine we wanted to access information about Edward. Therefore, we take 
+Edward's social security number, 111-00-1235, hash it to 1235, and start our 
+search there. However, at spot 1235 we find Bob, not Edward. So we have to check 
+1236, but Danny's there. Our linear search continues until we either find Edward 
+or hit an empty slot. If we reach an empty spot, we know that Edward is not in 
+our hashtable.</P>
+<P>Linear probing, while simple, is not a very good collision resolution 
+strategy because it leads to <I>clustering</I>. That is, imagine that the first 
+10 employees we insert all have the social security hash to the same value, say 
+3344. Then 10 consecutive spots will be taken, from 3344 through 3353. This 
+cluster requires linear probing any time any one of these 10 employees is 
+accessed. Furthermore, any employees with hash values from 3345 through 3353 
+will add to this cluster's size. For speedy lookups, we want the data in the 
+hash table uniformly distributed, not clustered around certain points.</P>
+<P>A more involved probing technique is <I>quadratic probing</I>, which starts 
+checking spots a quadratic distance away. That is, if slot <I>s</I> is taken, 
+rather than checking slot <I>s</I> + 1, then <I>s</I> + 2, and so on as in 
+linear probing, quadratic probing checks slot <I>s</I> + 1<SUP>2</SUP> first, 
+then <I>s</I> – 1<SUP>2</SUP>, then <I>s</I> + 2<SUP>2</SUP>, then <I>s</I> – 
+2<SUP>2</SUP>, then <I>s</I> + 3<SUP>2</SUP>, and so on. However, even quadratic 
+hashing can lead to clustering.</P>
+<P>In the next section, we'll look at a third collision resolution technique 
+called <I>rehasing</I>, which is the technique used by the .NET Framework's 
+<B>Hashtable</B> class. In the final section, we'll look at the 
+<B>Dictionary</B> class, which uses a collision resolution technique knows as 
+<I>chaining</I>.</P>
+<H2 class=dtH1><A name=datastructures20_2_topic5></A>The 
+System.Collections.Hashtable Class</H2>
+<P>The .NET Framework Base Class Library includes an implementation of a hash 
+table in the <B>Hashtable</B> class. When adding an item to the Hashtable, you 
+must provide not only the item, but the unique key by which the item is 
+accessed. Both the key and item can be of any type. In our employee example, the 
+key would be the employee's social security number. Items are added to the 
+Hashtable using the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> 
+method.</P>
+<P>To retrieve an item from the Hashtable, you can index the Hashtable by the 
+key, just like you would index an array by an ordinal value. The following short 
+C# program demonstrates this concept. It adds a number of items to a Hashtable, 
+associating a string key with each item. Then, the particular item can be 
+accessed using its string key.</P><PRE class=code>using System;
+using System.Collections;
+
+public class HashtableDemo
+{
+    private static Hashtable employees = new Hashtable();
+
+    public static void Main()
+    {
+        // Add some values to the Hashtable, indexed by a string key
+        employees.Add("111-22-3333", "Scott");
+        employees.Add("222-33-4444", "Sam");
+        employees.Add("333-44-55555", "Jisun");
+
+        // Access a particular key
+        if (employees.ContainsKey("111-22-3333"))
+        {
+            string empName = (string) employees["111-22-3333"];
+            Console.WriteLine("Employee 111-22-3333's name is: " + empName);
+        }
+        else
+            Console.WriteLine("Employee 111-22-3333 is not in the hash table...");
+    }
+}
+</PRE>
+<P>This code also demonstrates the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">ContainsKey()</TT> method, which 
+returns a Boolean indicating whether or not a specified key was found in the 
+Hashtable. The Hashtable class contains a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Keys</TT> property that returns a 
+collection of the keys used in the Hashtable. This property can be used to 
+enumerate the items in a Hashtable, as shown below:</P><PRE class=code>// Step through all items in the Hashtable
+foreach(string key in employees.Keys)
+    Console.WriteLine("Value at employees[\"" + key + "\"] = " + employees[key].ToString());
+</PRE>
+<P>Realize that the order with which the items are inserted and the order of the 
+keys in the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Keys</TT> collection 
+are not necessarily the same. The ordering of the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Keys</TT> collection is based on the 
+slot the key's item was stored. The slot an item is stored depends on the key's 
+hash value and collision resolution strategy. If you run the above code you can 
+see that the order the items are enumerated doesn't necessarily match with the 
+order with which the items were added to the Hashtable. Running the above code 
+outputs:</P><PRE class=code><TT xmlns:asp="http://msdn2.microsoft.com/asp"><B class=cfe>Value at employees["333-44-5555"] = Jisun
+Value at employees["111-22-3333"] = Scott
+Value at employees["222-33-4444"] = Sam
+</B></TT></PRE>
+<P>Even though the data was inserted into the Hashtable in the order "Scott," 
+"Sam," "Jisun."</P>
+<H3 class=dtH1>The Hashtable Class's Hash Function</H3>
+<P>The hash function of the Hashtable class is a bit more complex than the 
+social security number hash code we examined earlier. First, keep in mind that 
+the hash function must return an ordinal value. This was easy to do with the 
+social security number example since the social security number is already a 
+number itself. To get an appropriate hash value, we merely chopped off all but 
+the final four digits. But realize that the Hashtable class can accept a key of 
+<I>any</I> type. As we saw in a previous example, the key could be a string, 
+like "Scott" or "Sam." In such a case, it is only natural to wonder how a hash 
+function can turn a string into a number.</P>
+<P>This magical transformation can occur thanks to the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetHashCode()</TT>, which is defined 
+in the <TT xmlns:asp="http://msdn2.microsoft.com/asp">System.Object</TT> class. 
+The <TT xmlns:asp="http://msdn2.microsoft.com/asp">Object</TT> class's default 
+implementation of <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetHashCode()</TT> returns a unique 
+integer that is guaranteed not to change during the lifetime of the object. 
+Because every type is derived, either directly or indirectly, from <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Object</TT>, all objects have access 
+to this method. Therefore, a string, or any other type, can be represented as a 
+unique number. Of course, this method can be overridden to provide a hash 
+function more suitable to a specific class. (The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Point</TT> class in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Drawing</TT> namespace, for 
+example, overrides <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetHashCode()</TT>, returning the XOR 
+of its <TT xmlns:asp="http://msdn2.microsoft.com/asp">x</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">y</TT> member variables.)</P>
+<P>The Hashtable class's hash function is defined as follows:</P><PRE class=code><I>H</I>(<I>key</I>) = [GetHash(<I>key</I>) + 1 + (((GetHash(<I>key</I>) &gt;&gt; 5) + 1) % (hashsize – 1))] % hashsize
+</PRE>
+<P>Here, GetHash(<I>key</I>) is, by default, the result returned by <I>key</I>'s 
+call to <TT xmlns:asp="http://msdn2.microsoft.com/asp">GetHashCode()</TT> 
+(although when using the Hashtable you can specify a custom <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GetHash()</TT> function). 
+GetHash(<I>key</I>) &gt;&gt; 5 computes the hash for <I>key</I> and then shifts 
+the result 5 bits to the right – this has the effect of dividing the hash result 
+by 32. As discussed earlier in this article, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">%</TT> operator performs modular 
+arithmetic. <TT xmlns:asp="http://msdn2.microsoft.com/asp">hashsize</TT> is the 
+number of total slots in the hash table. (Recall that <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><I>x</I> % <I>y</I></TT> returns the 
+remainder of <I>x</I> / <I>y</I>, and that this result is always between 0 and 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp"><I>y</I></TT> – 1.) Due to these 
+mod operations, the end result is that <I>H</I>(<I>key</I>) will be a value 
+between 0 and <I>hashsize</I> – 1. Since <I>hashsize</I> is the total number of 
+slots in the hash table, the resulting hash will always point to within the 
+acceptable range of values.</P>
+<H3 class=dtH1>Collision Resolution in the Hashtable Class</H3>
+<P>Recall that when inserting an item into or retrieving an item from a hash 
+table, a collision can occur. When inserting an item, an open slot must be 
+found. When retrieving an item, the actual item must be found if it is not in 
+the expected location. Earlier we briefly examined two collusion resolution 
+strategies: </P>
+<UL type=disc>
+  <LI>Linear probing 
+  <LI>Quardratic probing </LI></UL>
+<P>The <B>Hashtable</B> class uses a different technique referred to as 
+<I>rehasing</I>. (Some sources refer to rehashing as <I>double hashing</I>.)</P>
+<P>Rehasing works as follows: there is a set of hash different functions, 
+<I>H</I><SUB>1</SUB> ... <I>H</I><SUB>n</SUB>, and when inserting or retrieving 
+an item from the hash table, initially the <I>H</I><SUB>1</SUB> hash function is 
+used. If this leads to a collision, <I>H</I><SUB>2</SUB> is tried instead, and 
+onwards up to <I>H</I><SUB>n</SUB> if needed. The previous section showed only 
+one hash function, which is the initial hash function (<I>H</I><SUB>1</SUB>). 
+The other hash functions are very similar to this function, only differentiating 
+by a multiplicative factor. In general, the hash function <I>H</I><SUB>k</SUB> 
+is defined as:</P><PRE class=code><I>H</I><SUB>k</SUB>(<I>key</I>) = [GetHash(<I>key</I>) + <I>k</I> * (1 + (((GetHash(<I>key</I>) &gt;&gt; 5) + 1) % (hashsize – 1)))] % hashsize
+</PRE>
+<BLOCKQUOTE class=dtBlock><B>Mathematical Note&nbsp;&nbsp;&nbsp;</B>With 
+  rehasing it is important that each slot in the hash table is visited exactly 
+  once when <TT xmlns:asp="http://msdn2.microsoft.com/asp">hashsize</TT> number 
+  of probes are made. That is, for a given key you don't want 
+  <I>H</I><SUB>i</SUB> and <I>H</I><SUB>j</SUB> to hash to the same slot in the 
+  hash table. With the rehashing formula used by the <B>Hashtable</B> class, 
+  this property is maintained if the result of (1 + (((GetHash(<I>key</I>) 
+  &gt;&gt; 5) + 1) % (hashsize – 1)) and <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">hashsize</TT> are relatively prime. 
+  (Two numbers are relatively prime if they share no common factors.) These two 
+  numbers are guaranteed to be relatively prime if <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">hashsize</TT> is a prime number. 
+</BLOCKQUOTE>
+<P>Rehasing provides better collision avoidance than either linear or quadratic 
+probing.</P>
+<H3 class=dtH1>Load Factors and Expanding the Hashtable</H3>
+<P>The <B>Hashtable</B> class contains a private member variable called <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">loadFactor</TT> that specifies the 
+maximum ratio of items in the Hashtable to the total number of slots. A <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">loadFactor</TT> of, say, 0.5, 
+indicates that at most the Hashtable can only have half of its slots filled with 
+items and the other half must remain empty.</P>
+<P>In an overloaded form of the Hashtable's constructor, you can specify a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">loadFactor</TT> value between 0.1 and 
+1.0. Realize, however, that whatever value you provide, it is scaled down 72%, 
+so even if you pass in a value of 1.0 the Hashtable class's actual <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">loadFactor</TT> will be 0.72. The 
+0.72 was found by Microsoft to be the optimal load factor, so consider using the 
+default 1.0 load factor value (which gets scaled automatically to 0.72). 
+Therefore, you would be encouraged to use the default of 1.0 (which is really 
+0.72).</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>I spent a few days 
+  asking various listservs and folks at Microsoft <I>why</I> this automatic 
+  scaling was applied. I wondered why, if they wanted to values to be between 
+  0.072 and 0.72, why not make that the legal range? I ended up talking to the 
+  Microsoft team that worked on the Hashtable class and they shared their reason 
+  for this decision. Specifically, the team found through empirical testing that 
+  values greater than 0.72 seriously degraded the performance. They decided that 
+  the developer using the Hashtable would be better off if they didn't have to 
+  remember a seeming arbitrary value in 0.72, but instead just had to remember 
+  that a value of 1.0 gave the best results. So this decision, essentially, 
+  sacrifices functionality a bit, but makes the data structure easier to use and 
+  will cause fewer headaches in the developer community.</BLOCKQUOTE>
+<P>Whenever a new item is added to the Hashtable class, a check occurs to make 
+sure adding the new item won't push the ratio of items to slots past the 
+specified maximum ratio. If it will, then the Hashtable is <I>expanded</I>. 
+Expansion occurs in two steps: </P>
+<OL type=1>
+  <LI>The number of slots in the Hashtable is approximately doubled. More 
+  precisely, the number of slots is increased from the current prime number 
+  value to the next largest prime number value in an internal table. Recall that 
+  for rehashing to work properly, the number of hash table slots needs to be a 
+  prime number. 
+  <LI>Because the hash value of each item in the hash table is dependent on the 
+  number of total slots in the hash table, all of the values in the hash table 
+  need to be rehashed (because the number of slots increased in step 1). 
+</LI></OL>
+<P>Fortunately the <B>Hashtable</B> class hides all this complexity in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method, so you don't need 
+to be concerned with the details.</P>
+<P>The load factor influences the overall size of the hash table and the 
+expected number of probes needed on a collision. A high load factor, which 
+allows for a relatively dense hash table, requires less space but more probes on 
+collisions than a sparsely dense hash table. Without getting into the rigors of 
+the analysis, the expected number of probes needed when a collision occurs is at 
+most 1 / (1 – <I>lf</I>), where <I>lf</I> is the load factor.</P>
+<P>As aforementioned, Microsoft has tuned the Hashtable to use a default load 
+factor of 0.72. Therefore, for you can expect on average 3.5 probes per 
+collision. Because this estimate does not vary based on the number of items in 
+the Hashtable, the asymptotic access time for a Hashtable is <I>O</I>(1), which 
+beats the pants off of the <I>O</I>(<I>n</I>) search time for an array.</P>
+<P>Finally, realize that expanding the Hashtable is not an inexpensive 
+operation. Therefore, if you have an estimate as to how many items you're 
+Hashtable will end up containing, you should set the Hashtable's initial 
+capacity accordingly in the constructor so as to avoid unnecessary 
+expansions.</P>
+<H2 class=dtH1><A name=datastructures20_2_topic6></A>The 
+System.Collections.Generic.Dictionary Class</H2>
+<P>The Hastable is a loosely-typed data structure, because a developer can add 
+keys and values to the Hashtable of any type. As we've seen with the <B>List</B> 
+class, as well as variants on the <B>Queue</B> and <B>Stack</B> classes, with 
+the introduction of Generics in the .NET Framework 2.0, many of the built-in 
+data structures have been updated to provide type-safe versions using Generics. 
+The <B>Dictionary</B> class is a type-safe Hashtable implementation, and 
+strongly types both the keys and values. When creating a Dictionary instance, 
+you must specify the data types for both the key and value, using the following 
+syntax:</P><PRE class=code>Dictionary&lt;keyType, valueType&gt; variableName = new Dictionary&lt;keyType, valueType&gt;();
+</PRE>
+<P>Returning to our earlier example of storing employee information using the 
+last four digits of the social security as a hash, we might create a Dictionary 
+instance whose key was of type integer (the nine digits of an employee's social 
+security number), and whose value was of type <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> (assuming there exists 
+some class <TT xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT>):</P><PRE class=code>Dictionary&lt;int, Employee&gt; employeeData = new Dictionary&lt;int, Employee&gt;();
+</PRE>
+<P>Once you have created an instance of the <B>Dictionary</B> object, you can 
+add and remove items from it just like with the <B>Hashtable</B> class.</P><PRE class=code>// Add some employees
+employeeData.Add(455110189) = new Employee("Scott Mitchell");
+employeeData.Add(455110191) = new Employee("Jisun Lee");
+...
+// See if employee with SSN 123-45-6789 works here
+if (employeeData.ContainsKey(123456789))
+    ...
+</PRE>
+<H3 class=dtH1>Collision Resolution in the Dictionary Class</H3>
+<P>The Dictionary class differs from the Hashtable class in more ways than one. 
+In addition to being strongly-typed, the <B>Dictionary</B> also employs a 
+different collision resolution strategy than the Hashtable class, using a 
+technique referred to as <I>chaining</I>. Recall that with probing, in the event 
+of a collision another slot in the list of buckets is tried. (With rehashing, 
+the hash is recomputed, and that new slot is tried.) With chaining, however, a 
+secondary data structure is utilized to hold any collisions. Specifically, each 
+slot in the <B>Dictionary</B> has an array of elements that map to that bucket. 
+In the event of a collision, the colliding element is prepended to the bucket's 
+list.</P>
+<P>To better understand how chaining works, it helps to visualize the 
+<B>Dictionary</B> as a hashtable whose buckets each contain a linked list of 
+items that hash to that particular bucket. Figure 11 illustrates how series of 
+items that hash to the same bucket will form a chain on that bucket.</P>
+<P class=fig><IMG alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/IC23801.gif" border=0></P>
+<P class=label><B>Figure 11. Chain created by a series of items hashed to the 
+same bucket</B></P>
+<P>The <B>Dictionary</B> in Figure 11 has eight buckets, drawn in yellow and 
+running from the top down. A number of <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> objects have been added 
+to the Dictionary. When an <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> object is added to the 
+Dictionary, it is added to the bucket that its key hashes to and, if there's 
+already an <TT xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> instance 
+there, it's prepended to the list of <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT>s. That is, employees Al 
+and John hash to the same bucket, as do Fred, Zak, and Amy, and Sam and Ted. 
+Rather than reprobing in the event of a collision, as is done with the Hashtable 
+class, the Dictionary simply chains any collisions onto the bucket's list.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>In our discussions on 
+  the <B>Hashtable</B> class, I mentioned that the average asymptotic running 
+  time for adding, removing, and searching the hashtable using probing is 
+  constant time, <I>O</I>(1). Adding an item to a hashtable that uses chaining 
+  takes constant time as well because it involves only computing the item's hash 
+  and prepending it to the appropriate bucket's list. Searching and removing 
+  items from a chained hashtable, however, take, on average, time proportional 
+  to the total number of items in the hashtable and the number of buckets. 
+  Specifically, the running time is <I>O</I>(<I>n</I>/<I>m</I>), where <I>n</I> 
+  is the total number of elements in the hashtable and <I>m</I> is the number of 
+  buckets. The Dictionary class is implemented such that <I>n</I> = <I>m</I> at 
+  all times. That is, the sum of all chained elements can never exceed the 
+  number of buckets. Because <I>n</I> never exceeds <I>m</I>, searching and 
+  removing run in constant time as well.</BLOCKQUOTE>
+<H2 class=dtH1><A name=datastructures20_2_topic7></A>Conclusion</H2>
+<P>In this article we examined four data structures with inherent class support 
+in the .NET Framework Base Class Library: </P>
+<UL type=disc>
+  <LI>The Queue 
+  <LI>The Stack 
+  <LI>The Hashtable 
+  <LI>The Dictionary </LI></UL>
+<P>The Queue and Stack provide List -like capabilities in that they can store an 
+arbitrary number of elements. The Queue and Stack differ from the List in the 
+sense that while the List allows direct, random access to its elements, both the 
+Queue and Stack limit how elements can be accessed.</P>
+<P>The Queue uses a FIFO strategy, or first in, first out. That is, the order 
+with which items can be removed from the Queue is precisely the order with which 
+they were added to the Queue. To provide these semantics, the Queue offers two 
+methods: <TT xmlns:asp="http://msdn2.microsoft.com/asp">Enqueue()</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Dequeue()</TT>. Queues are useful 
+data structures for job processing or other tasks where the order with which the 
+items are processed is based by the order in which they were received.</P>
+<P>The Stack, on the other hand, offers LIFO access, which stands for last in, 
+first out. Stacks provide this access scheme through its <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Push()</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Pop()</TT> methods. Stacks are used 
+in a number of areas in computer science, from code execution to parsing.</P>
+<P>The final two data structure examined were the Hashtable and Dictionary. The 
+Hashtable extends the ArrayList by allowing items to be indexed by an arbitrary 
+key, as opposed to indexed by an ordinal value. If you plan on searching the 
+array by a specific unique key, it is much more efficient to use a Hashtable 
+instead, as the lookups by key value occur in constant time as opposed to linear 
+time. The Dictionary class provides a type-safe Hashtable, with an alternate 
+collision resolution strategy.</P>
+<P>This completes the second installment of this article series. In the third 
+part we'll look at binary search trees, a data structure that provides 
+<I>O</I>(log <I>n</I>) search time. Like Hashtables, binary search trees are an 
+ideal choice over arrays if you know you will be searching the data frequently. 
+</P>
+<P>Until next time, Happy Programming!</P>
+<H3 class=dtH1>References</H3>
+<UL type=disc>
+  <LI>Cormen, Thomas H., Charles E. Leiserson, and Ronald L. Rivest. 
+  "Introduction to Algorithms." MIT Press. 1990. 
+  <LI>Headington, Mark R. and David D. Riley. "Data Abstraction and Structures 
+  Using C++." D.C. Heath and Company. 1994. 
+  <LI>Richter, Jeffrey. "Applied Microsoft .NET Framework Programming." 
+  Microsoft Press. 2002. 
+  <LI>Shared Source Common Language Infrastructure 1.0 Release. Microsoft - <A 
+  href="http://www.microsoft.com/downloads/details.aspx?FamilyId=3A1C93FA-7462-47D0-8E56-8DD34C6292F0&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyId=3A1C93FA-7462-47D0-8E56-8DD34C6292F0&amp;displaylang=en</A>. 
+  Made available: November, 2002. </LI></UL>
+<P><B>Scott Mitchell</B>, author of six books and founder of 4GuysFromRolla.com, 
+has been working with Microsoft Web technologies since January 1998. Scott works 
+as an independent consultant, trainer, and writer, and holds a Masters degree in 
+Computer Science from the University of California – San Diego. He can be 
+reached at <A 
+href="mailto:mitchell@4guysfromrolla.com">mitchell@4guysfromrolla.com</A>, or 
+via his blog at <A 
+href="http://scottonwriting.net/">http://scottonwriting.net/</A>.</P>
+<DIV class=footer><BR>
+<P></P>
+<P><A href="http://msdn.microsoft.com/en-US/library/ms369863(v=VS.80).aspx">© 
+Microsoft Corporation. All rights 
+reserved.</A></P></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class=footer>
+<DIV class="footerContainer cl_footer_slice" id=footer>
+<DIV class=footerLogoContainer>
+<DIV class=footerContent>
+<DIV class=copyright>© 2011 Microsoft. All rights reserved.</DIV>
+<DIV class="footerLogo cl_footer_logo"></DIV><A 
+href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</A><SPAN class=pipe> 
+| </SPAN><A 
+href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</A><SPAN 
+class=pipe> | </SPAN><A 
+href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</A> <SPAN 
+class=pipe>| </SPAN><A class=FeedbackLink title=Feedback 
+onclick=javascript:ShowFeedbackDialog(); 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx#footerLink">Feedback 
+<SPAN class="FeedbackButton clip20x21" id=FeedbackButton><IMG 
+class=cl_footer_feedback_icon alt=Feedback 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</SPAN></A>
+<DIV class=FeedbackContainer id=FeedbackContainer>
+<FORM action=/en-US/library/feedback/add/ms379571(v=VS.80).aspx method=post>
+<DIV class=FeedbackTitleContainer>
+<DIV class=FeedbackTitle>Feedback</DIV>
+<DIV class=FeedbackCancel><A 
+onclick="document.getElementById('FeedbackContainer').style.display = 'none';" 
+href="javascript:;">x</A> </DIV></DIV>
+<DIV class=FeedbackData>
+<DIV class=FeedbackInfoText>Tell us about your experience... </DIV>
+<DIV class=QuestionText>Did the page load quickly? </DIV>
+<DIV class=AnswerText><SPAN>Yes<SPAN> <INPUT id=searchBox type=radio value=1 
+name=searchBox></SPAN></SPAN> <SPAN>No<SPAN> <INPUT id=searchBox type=radio 
+value=0 name=searchBox></SPAN></SPAN> </DIV>
+<DIV class=QuestionText>Do you like the page design? </DIV>
+<DIV class=AnswerText><SPAN>Yes<SPAN> <INPUT id=tabbedCode type=radio value=1 
+name=tabbedCode></SPAN></SPAN> <SPAN>No<SPAN> <INPUT id=tabbedCode type=radio 
+value=0 name=tabbedCode></SPAN></SPAN> </DIV>
+<DIV class=QuestionText>How useful is this topic? </DIV>
+<DIV class="FeedbackGraphicHolder clip269x23"><IMG 
+class="cl_online_scale FeedbackSiderGraphic" alt="" 
+src="Part 2 The Queue, Stack, and Hashtable.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=RadioButtonHolder>
+<DIV class=RateRadioOne><INPUT id=topicUseful title="Really disliked it" 
+type=radio value=1 name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title="Disliked it" type=radio 
+value=2 name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title=OK type=radio value=3 
+name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title=Good type=radio value=4 
+name=topicUseful> </DIV>
+<DIV class=RateRadioLast><INPUT id=topicUseful title="Really Good" type=radio 
+value=5 name=topicUseful> </DIV></DIV>
+<DIV class=QuestionText>Tell us more </DIV>
+<DIV class=FeedbackTextAreaContainer><TEXTAREA class=FeedbackTextArea onkeydown="LimitText(this, 4000);" onblur="document.onkeydown = Presskey;" onkeyup="LimitText(this, 4000);" onfocus="document.onkeydown = '';" name=feedbackText rows=5 cols=25></TEXTAREA> 
+<TEXTAREA id=feedbackDescription onkeydown="LimitText(this, 4000);" onkeyup="LimitText(this, 4000);" style="DISPLAY: none" name=feedbackDescription rows=10 cols=25>Enter description here.</TEXTAREA> 
+<INPUT id=feedbackPriority type=hidden name=feedbackPriority> <INPUT 
+id=feedbackSourceUrl type=hidden name=feedbackSourceUrl> <INPUT id=ClientIP 
+type=hidden name=ClientIP> <INPUT id=ClientOS type=hidden name=ClientOS> <INPUT 
+id=ClientBrowser type=hidden name=ClientBrowser> <INPUT id=ClientTime 
+type=hidden name=ClientTime> <INPUT id=ClientTimeZone type=hidden 
+name=ClientTimeZone> </DIV>
+<DIV><INPUT class=FeedbackSubmit onclick="document.getElementById('feedbackDescription').value='';document.getElementById('feedBackVersion').value = '-1';" type=submit value=Send> 
+</DIV></DIV><INPUT id=returnUrl type=hidden 
+value=http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx 
+name=returnUrl> <INPUT id=feedBackVersion type=hidden value=1 
+name=feedBackVersion> </FORM></DIV></DIV></DIV></DIV></DIV>
+<DIV class=MetricsContainer>
+<DIV class=WebtrendsContainer>
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+  var literalNormalizedUrl = '/en-us/library/ms379571(d=lightweight,l=en-us,v=VS.80).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    document.write("<scr" + "ipt type='text/javascript' src='" + "http" + (window.location.protocol.indexOf('https:') == 0 ? 's' : '') + "://" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\\/scr" + "ipt>");
+  }
+  var detectedLocale = 'en-US';
+  var wtsp = 'msdnlib_devtools_lang';
+  var gTrackEvents = '0';
+/*]]>*/
+</SCRIPT>
+<NOSCRIPT>
+<DIV><IMG id=Img1 height=1 alt=DCSIMG 
+src="Part 2 The Queue, Stack, and Hashtable.files/njs.gif" 
+width=1></DIV></NOSCRIPT></DIV>
+<DIV class=OmnitureContainer>
+<SCRIPT type=text/javascript>
+  var omni_guid = '9ddad9bd-e23e-4f7a-bd65-8285c6ac9536'; 
+</SCRIPT>
+<NOSCRIPT><A title="Web Analytics" href="http://www.omniture.com/"><IMG height=1 
+alt="" src="Part 2 The Queue, Stack, and Hashtable.files/0.gif" width=1 
+border=0></A> </NOSCRIPT></DIV></DIV>
+<SCRIPT language=javascript 
+src="Part 2 The Queue, Stack, and Hashtable.files/broker.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Part 2 The Queue, Stack, and Hashtable.files/c2b4b2079ab4502f4c4e4b7eddfdc341.js" 
+type=text/javascript xmlns="http://www.w3.org/1999/xhtml"></SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="JinHong.View.Dialogs.ViewParkingLotRentalInfoGatheringDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pf="http://schemas.uniguy.com/presentation"
+        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="详情" SizeToContent="WidthAndHeight" ShowInTaskbar="False" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        x:Name="_this">
+    <Window.Resources>
+        <CollectionViewSource x:Key="cvsParkingLotRentalInfoDetailTbl" CollectionViewType="ListCollectionView"
+                              Source="{Binding ParkingLotRentalInfoDetailTbl,ElementName=_this}"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding ElementName=_this}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ListView ItemsSource="{Binding Source={StaticResource cvsParkingLotRentalInfoDetailTbl}}">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="序号" DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ListViewItem}}, Converter={StaticResource convIndex1}}"/>
+                    <pf:SortableGridViewColumn Header="座室号" DisplayMemberBinding="{Binding RoomId}" SortPropertyName="RoomId"/>
+                    <pf:SortableGridViewColumn Header="单位" DisplayMemberBinding="{Binding SocialUnitName}" SortPropertyName="SocialUnitName"/>
+                    <pf:SortableGridViewColumn Header="金额" DisplayMemberBinding="{Binding Amount}" SortPropertyName="Amount"/>
+                    <pf:SortableGridViewColumn Header="开始时间" DisplayMemberBinding="{Binding TimeFrom}" SortPropertyName="TimeFrom"/>
+                    <pf:SortableGridViewColumn Header="结束时间" DisplayMemberBinding="{Binding TimeTo}" SortPropertyName="TimeTo"/>
+                    <pf:SortableGridViewColumn Header="车牌号" DisplayMemberBinding="{Binding LicensePlateNo}" SortPropertyName="LicensePlateNo"/>
+                    <GridViewColumn Header="备注" DisplayMemberBinding="{Binding Notes}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonOK" IsDefault="True" Margin="8" VerticalAlignment="Bottom" Width="80"
+                    Click="buttonOK_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushOK}" Width="16"/>
+                    <TextBlock Text="确定"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="buttonCancel" IsCancel="True" Margin="8" VerticalAlignment="Bottom" Width="80"
+                    Click="buttonCancel_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushCancel}" Width="16"/>
+                    <TextBlock Text="取消"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

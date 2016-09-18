@@ -1,0 +1,359 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+
+    <!-- Effects -->
+    <!--  Control Effects -->
+    <BlurEffect x:Key="fx_blurEffect_ds_tile" Radius="8"/>
+    <BlurEffect x:Key="fx_blurEffect_highlight_scrollBar_btn" Radius="1"/>
+    <BlurEffect x:Key="fx_blurEffect_ds_os_btn" Radius="2"/>
+    <BlurEffect x:Key="fx_blurEffect_ds_comboBox_dropDown" Radius="3"/>
+    <BlurEffect x:Key="fx_blurEffect_ds_slider_btn" Radius="0.5"/>
+    <BlurEffect x:Key="fx_blurEffect_ds_cp_channelView" Radius="8"/>
+    <BlurEffect x:Key="fx_blurEffect_highlight_embedded_btn" Radius="2"/>
+    <BlurEffect x:Key="fx_blurEffect_highlight_radio_btn" Radius="2"/>
+    <BlurEffect x:Key="fx_blurEffect_highlight_transport_btn" Radius="4"/>
+    <BlurEffect x:Key="fx_blurEffect_ds_transportTray"/>
+
+    <Color x:Key="col_cp_button_background">#FF3C3C3C</Color>
+    <Color x:Key="col_cp_channelView_border">#FF434343</Color>
+    <Color x:Key="col_cp_channelView_primary_controls_tray">#FF575757</Color>
+    <Color x:Key="col_cp_channelView_header">#ff202020</Color>
+    <Color x:Key="col_cp_channelState_border">#60000000</Color>
+
+    <System:Double x:Key="radius_cp_gangtally_glowradius">6</System:Double>
+    <BlurEffect x:Key="effect_cp_channelState_glow" Radius="5"/>
+
+    <!-- Standard Colors -->
+    <Color x:Key="col_fgv_highlight">#FF427ac1</Color>
+    <Color x:Key="col_fgv_highlight_darker">#FF427ac1</Color>
+    <Color x:Key="col_fgv_logo_fill">#FF427AC1</Color>
+    <Color x:Key="col_fgv_icon_highlight">#FF69aaff</Color>
+
+    <Color x:Key="col_uiFramework_window_fill">#FF515151</Color>
+    <Color x:Key="col_uiFramework_window_alternate_fill">#FF4a4a4a</Color>
+    <Color x:Key="col_uiFramework_window_background_fill">#FF3b3b3b</Color>
+    <Color x:Key="col_uiFramework_active">White</Color>
+    <Color x:Key="col_uiFramework_inactive">#4CFFFFFF</Color>
+
+    <Color x:Key="col_uiFramework_borderShadow">#FF161616</Color>
+    <Color x:Key="col_uiFramework_borderHighlight">#FFB5B5B5</Color>
+
+    <Color x:Key="col_uiFramework_window_titleBar_borderOuter">#FF1E1E1E</Color>
+    <Color x:Key="col_uiFramework_window_titleBar_fill">#FF1B1B1B</Color>
+    <Color x:Key="col_uiFramework_window_titleBar_borderInner">#FF464646</Color>
+
+    <Color x:Key="blurEffect_fill_normal">#DD000000</Color>
+
+    <Color x:Key="col_fgv_icon_highlight_redglow">#FFA70000</Color>
+
+    
+
+    <!-- Item Colors -->
+    <!--<Color x:Key="col_item_tile_border_normal">#FF686868</Color>-->
+    <Color x:Key="col_item_tile_border_normal">#FF888888</Color>
+
+    <!--<Color x:Key="col_item_fill_hover">#FF929292</Color>-->
+    <Color x:Key="col_item_fill_hover">#FF5b5b5b</Color>
+    <Color x:Key="col_item_fill_inFocus">#FF929292</Color>
+    
+    <Color x:Key="col_item_tile_border_hover">#FF93a9ff</Color>
+
+    <Color x:Key="col_item_fill_selectedNotInFocus">#FF666666</Color>
+
+    <Color x:Key="col_item_tile_fill_normal">#FF606060</Color>
+
+
+
+    <!-- Grid View Colors -->
+    <LinearGradientBrush x:Key="grad_gridView_columnHeader_fill_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3E3E3E" Offset="0"/>
+        <GradientStop Color="#FF242424" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_gridView_columnHeader_fill_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3E3E3E" Offset="0"/>
+        <GradientStop Color="#FF242424" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_gridView_columnHeader_fill_pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3E3E3E" Offset="0"/>
+        <GradientStop Color="#FF242424" Offset="1"/>
+    </LinearGradientBrush>
+
+
+
+    <!-- Scroll Bar Colors -->
+
+    <!-- Scroll Bar Background Gradient -->
+    <LinearGradientBrush x:Key="grad_scrollBar_fill" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#FF4C4C4C" Offset="0"/>
+        <GradientStop Color="#FF434343" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_horzscrollBar_fill" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FF4C4C4C" Offset="0"/>
+        <GradientStop Color="#FF434343" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- Scroll Bar Button Background Gradients -->
+    <LinearGradientBrush x:Key="grad_scrollBar_btn_fill_normal" EndPoint="1,0.5" StartPoint="0,0.5">
+        <GradientStop Color="#FF838383" Offset="0"/>
+        <GradientStop Color="#FF505050" Offset="1"/>
+        <GradientStop Color="#FF6F6F6F" Offset="0.499"/>
+        <GradientStop Color="#FF646464" Offset="0.5"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_scrollBar_btn_fill_hover" EndPoint="1,0.5" StartPoint="0,0.5">
+        <GradientStop Color="#FF838383" Offset="0"/>
+        <GradientStop Color="#FF505050" Offset="1"/>
+        <GradientStop Color="#FF6F6F6F" Offset="0.499"/>
+        <GradientStop Color="#FF646464" Offset="0.5"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_scrollBar_btn_fill_dragging" EndPoint="1,0.5" StartPoint="0,0.5">
+        <GradientStop Color="#FF50A0CE" Offset="0"/>
+        <GradientStop Color="#FF427AC1" Offset="1"/>
+        <GradientStop Color="#FF3E74BA" Offset="0.5"/>
+        <GradientStop Color="#FF57A4CF" Offset="0.499"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_horzscrollBar_btn_fill_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF838383" Offset="0"/>
+        <GradientStop Color="#FF505050" Offset="1"/>
+        <GradientStop Color="#FF6F6F6F" Offset="0.499"/>
+        <GradientStop Color="#FF646464" Offset="0.5"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_horzscrollBar_btn_fill_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF838383" Offset="0"/>
+        <GradientStop Color="#FF505050" Offset="1"/>
+        <GradientStop Color="#FF6F6F6F" Offset="0.499"/>
+        <GradientStop Color="#FF646464" Offset="0.5"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_horzscrollBar_btn_fill_dragging" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF50A0CE" Offset="0"/>
+        <GradientStop Color="#FF427AC1" Offset="1"/>
+        <GradientStop Color="#FF3E74BA" Offset="0.5"/>
+        <GradientStop Color="#FF57A4CF" Offset="0.499"/>
+    </LinearGradientBrush>
+
+    <!-- Scroll Bar Button Colors -->
+    <Color x:Key="col_scrollBar_btn_border_normal">#FFDCDCDC</Color>
+    <Color x:Key="col_scrollBar_btn_thumbHighlight_normal">#FFCECECE</Color>
+    <Color x:Key="col_scrollBar_btn_thumbShadow_normal">#FF575757</Color>
+
+    <Color x:Key="col_scrollBar_btn_thumbHighlight_dragging">#FF2a4d79</Color>
+    <Color x:Key="col_scrollBar_btn_thumbShadow_dragging">#FF427ac1</Color>
+
+    <!-- Scroll Bar Button Opacity Changes -->
+    <System:Double x:Key="opac_scrollBar_btn_container_normal">0.7</System:Double>
+    <System:Double x:Key="opac_scrollBar_btn_container_hover">1</System:Double>
+    <System:Double x:Key="opac_scrollBar_btn_container_dragging">1</System:Double>
+
+
+
+    <!-- Button Colors -->
+
+    <!-- OS Button -->
+    <LinearGradientBrush x:Key="grad_btn_os_fill_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF585758" Offset="1"/>
+        <GradientStop Color="#FF7A7B7F"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_os_fill_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF00CCFA" Offset="0"/>
+        <GradientStop Color="#FF007EAC" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_os_fill_pressed" EndPoint="0.5,0" StartPoint="0.5,1">
+        <GradientStop Color="#FF00CCFA" Offset="0"/>
+        <GradientStop Color="#FF007EAC" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Color x:Key="col_btn_os_borderInner_normal">#FFA0A1A4</Color>
+    <Color x:Key="col_btn_os_borderOuter_normal">#FF181818</Color>
+    <Color x:Key="col_btn_os_borderInner_hover">#88ffffff</Color>
+    <Color x:Key="col_btn_os_borderOuter_hover">#FF181818</Color>
+
+    <!-- Capsule Buttons -->
+    <Color x:Key="col_btn_capsule_borderInner_normal">#FF7D7D7D</Color>
+    <Color x:Key="col_btn_capsule_borderInner_hover">#FF959595</Color>
+    <Color x:Key="col_btn_capsule_borderInner_pressed">#FF777777</Color>
+
+    <LinearGradientBrush x:Key="grad_btn_capsule_fill_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF575757" Offset="1"/>
+        <GradientStop Color="#FF525252" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_capsule_fill_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF646464" Offset="1"/>
+        <GradientStop Color="#FF5f5f5f" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_capsule_fill_pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF2B2B2B" Offset="1"/>
+        <GradientStop Color="#FF222222" Offset="0.4"/>
+    </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="grad_btn_capsule_spotlight" Center="0.501,1" GradientOrigin="0.501,1" RadiusY="0.881" RadiusX="0.447">
+        <GradientStop Color="#66FFFFFF"/>
+        <GradientStop Color="#00494949" Offset="1"/>
+    </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key="grad_btn_capsule_glassEffect_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#3EFFFFFF" Offset="0"/>
+        <GradientStop Offset="1"/>
+        <GradientStop Offset="0.399" Color="#47FFFFFF"/>
+        <GradientStop Color="Transparent" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_capsule_glassEffect_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#43FFFFFF" Offset="0"/>
+        <GradientStop Offset="1"/>
+        <GradientStop Color="#4AFFFFFF" Offset="0.399"/>
+        <GradientStop Color="Transparent" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_capsule_glassEffect_pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#5BFFFFFF" Offset="0"/>
+        <GradientStop Offset="1"/>
+        <GradientStop Color="#6BFFFFFF" Offset="0.399"/>
+        <GradientStop Color="Transparent" Offset="0.4"/>
+    </LinearGradientBrush>
+
+    <!-- Embedded Capsule -->
+    <LinearGradientBrush x:Key="grad_btn_embedded_glassEffect_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#23FFFFFF" Offset="0"/>
+        <GradientStop Offset="1" Color="#3F000000"/>
+        <GradientStop Offset="0.399" Color="#28FFFFFF"/>
+        <GradientStop Color="#3F000000" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_embedded_glassEffect_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#1CFFFFFF" Offset="0"/>
+        <GradientStop Offset="1" Color="#4C000000"/>
+        <GradientStop Color="#21FFFFFF" Offset="0.399"/>
+        <GradientStop Color="#4C000000" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_embedded_glassEffect_pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#5BFFFFFF" Offset="0"/>
+        <GradientStop Offset="1" Color="#99000000"/>
+        <GradientStop Color="#6BFFFFFF" Offset="0.399"/>
+        <GradientStop Color="#99000000" Offset="0.4"/>
+    </LinearGradientBrush>
+
+    <!-- Radio Button -->
+    <LinearGradientBrush x:Key="grad_btn_radio_fill_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3E3E3E" Offset="0"/>
+        <GradientStop Color="#FF242424" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_btn_radio_checkMark_fill" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF69aaff" Offset="0"/>
+        <GradientStop Color="#FF285894" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- OS Window Buttons (Maximise / Minimise / Close) -->
+    <Color x:Key="col_btn_window_borderInner_normal">#FF484848</Color>
+    <Color x:Key="col_btn_window_borderOuter_normal">#FF414141</Color>
+    <Color x:Key="col_btn_window_close_fill_hover">#FF8f0000</Color>
+
+
+
+    <!-- Text Box Colors -->
+    <LinearGradientBrush x:Key="grad_textBox_fill" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3b3b3b" Offset="0"/>
+        <GradientStop Color="#FF444444" Offset="1"/>
+    </LinearGradientBrush>
+
+
+
+    <!-- Combo Box Colors -->
+    <Color x:Key="col_comboBox_dropDown_border">#FF222222</Color>
+
+
+
+    <!-- Progress Bar Colors -->
+    <Color x:Key="col_progressBar_fill">#FF3E3E3E</Color>
+
+    <LinearGradientBrush x:Key="grad_progressBar_indicator_fill" EndPoint="0.993,0.499" StartPoint="0.007,0.5">
+        <GradientStop Color="#FF285894"/>
+        <GradientStop Color="#FF458BE3" Offset="0.331"/>
+        <GradientStop Color="#FF285894" Offset="0.996"/>
+        <GradientStop Color="#FF458BE3" Offset="0.699"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_progressBar_indicator_fill_warning" EndPoint="0.993,0.499" StartPoint="0.007,0.5">
+        <GradientStop Color="#FFFF7600"/>
+        <GradientStop Color="#FFFFA000" Offset="0.331"/>
+        <GradientStop Color="#FFFF7600" Offset="0.996"/>
+        <GradientStop Color="#FFFFA000" Offset="0.699"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_progressBar_indicator_fill_error" EndPoint="0.993,0.499" StartPoint="0.007,0.5">
+        <GradientStop Color="#FF942828"/>
+        <GradientStop Color="#FFEE4545" Offset="0.331"/>
+        <GradientStop Color="#FF942828" Offset="0.996"/>
+        <GradientStop Color="#FFEE4B45" Offset="0.699"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_progressBar_glassEffect" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CAFFFFFF" Offset="0"/>
+        <GradientStop Color="#65FFFFFF" Offset="1"/>
+        <GradientStop Color="#90FFFFFF" Offset="0.314"/>
+        <GradientStop Offset="0.36"/>
+    </LinearGradientBrush>
+
+
+
+    <!-- Tab Control Colors -->
+    <LinearGradientBrush x:Key="grad_tabControl_headerPanel_fill" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF474747" Offset="0"/>
+        <GradientStop Color="#FF3B3B3B" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Color x:Key="col_tabControl_content_borderShadow">#FF282828</Color>
+    <Color x:Key="col_tabControl_content_borderHighlight">#FF595959</Color>
+
+    <Color x:Key="col_tabControl_item_fill_notSelected">#FF303030</Color>
+
+
+
+    <!-- Context Menu Colors -->
+    <Color x:Key="col_contextMenu_separator">#FF383838</Color>
+
+
+    <!-- Slider Colors -->
+    <Color x:Key="col_slider_tickBar_fill">#FF484848</Color>
+
+    <LinearGradientBrush x:Key="grad_slider_btn_fill_normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3B3B3B" Offset="1"/>
+        <GradientStop Color="#FF373737" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_slider_btn_fill_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF4C4C4C" Offset="1"/>
+        <GradientStop Color="#FF494949" Offset="0.4"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_slider_btn_fill_dragging" EndPoint="0.5,0" StartPoint="0.5,1">
+        <GradientStop Color="#FF2B2B2B" Offset="1"/>
+        <GradientStop Color="#FF222222" Offset="0.4"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="grad_slider_btn_glassEffect_normal" EndPoint="0.5,1" StartPoint="0.50,0">
+        <GradientStop Color="#23FFFFFF" Offset="0"/>
+        <GradientStop Offset="1"/>
+        <GradientStop Color="#28FFFFFF" Offset="0.499"/>
+        <GradientStop Color="Transparent" Offset="0.5"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_slider_btn_glassEffect_hover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#1CFFFFFF" Offset="0"/>
+        <GradientStop Offset="1"/>
+        <GradientStop Color="#21FFFFFF" Offset="0.499"/>
+        <GradientStop Color="Transparent" Offset="0.5"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="grad_slider_btn_glassEffect_dragging" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#5BFFFFFF" Offset="0"/>
+        <GradientStop Offset="1"/>
+        <GradientStop Color="#6BFFFFFF" Offset="0.499"/>
+        <GradientStop Color="Transparent" Offset="0.5"/>
+    </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="grad_slider_btn_spotlight" Center="0.001,0.506" GradientOrigin="0.001,0.506" RadiusX="0.6" RadiusY="0.6">
+        <RadialGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterX="0.001" CenterY="0.506" ScaleX="1" ScaleY="1"/>
+                <SkewTransform AngleX="0" AngleY="0" CenterX="0.001" CenterY="0.506"/>
+                <RotateTransform Angle="90" CenterX="0.001" CenterY="0.506"/>
+                <TranslateTransform X="0"/>
+            </TransformGroup>
+        </RadialGradientBrush.RelativeTransform>
+        <GradientStop Color="#66FFFFFF"/>
+        <GradientStop Color="#00494949" Offset="1"/>
+    </RadialGradientBrush>
+</ResourceDictionary>
+    

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="JinHong.View.楼宇区域位置图示"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:we="clr-namespace:WPFExtensions.Controls;assembly=WPFExtensions"
+             x:Name="_this">
+    <Grid DataContext="{Binding ViewModel,ElementName=_this}">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBlock Text="楼宇区域位置图示: " VerticalAlignment="Center" FontWeight="Bold"/>
+                <Button x:Name="buttonChangeFigure" Content="更改" ToolTip="更改楼宇区域位置图示文件"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                        Click="buttonChangeFigure_Click"/>
+            </StackPanel>
+            <!-- TODO... 从本地缓存获得, 如果有更新则从服务端下载覆盖 -->
+            <Grid>
+                <we:ZoomControl>
+                    <Image Source="{Binding LocalImagePath, StringFormat='file:///{0}', Converter={StaticResource convPathToImageSource}}" Stretch="Uniform">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <!-- TODO 要支持鼠标拖动, 只有放大后才能拖动, 不能拖进空白-->
+                                <TranslateTransform x:Name="tt"/>
+                                <!-- TODO 鼠标滚轮放大缩小 -->
+                                <ScaleTransform x:Name="st"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </we:ZoomControl>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

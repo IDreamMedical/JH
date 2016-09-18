@@ -1,0 +1,178 @@
+﻿<local:ParentDialagWindow x:Class="JinHong.View.Dialogs.EditInstallAirConditionerDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ug_w="http://schemas.uniguy.com/presentation"
+           xmlns:pf="http://schemas.uniguy.com/presentation"
+                xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+    xmlns:local="clr-namespace:JinHong.View.Dialogs" 
+
+           xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="新增空调安装记录" SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        x:Name="_this">
+    <Window.Resources>
+        <RoutedCommand x:Key="rcAddContractDetail"/>
+        <RoutedCommand x:Key="rcDelContractDetail"/>
+        <RoutedCommand x:Key="rcAddContractFile"/>
+        <RoutedCommand x:Key="rcDelContractFile"/>
+        <CollectionViewSource x:Key="cvsContractInfoTbl" CollectionViewType="ListCollectionView"
+                              Source="{Binding ContractInfoTbl,ElementName=_this}"/>
+
+
+    </Window.Resources>
+    <Grid DataContext="{Binding ElementName=_this}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70" />
+            <ColumnDefinition MinWidth="150" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="名称"   />
+
+        </Border>
+        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <ComboBox  x:Name="comboBoxSocialUnit" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SocialUnitTbl.Rows}"
+                      DisplayMemberPath="[SocialUnitName]"
+                      SelectedValuePath="[SocialUnitId]"
+                      SelectedValue="{Binding CurrentInstallAirRecord.SocialUnitId}"
+                        SelectionChanged="comboBoxSocialUnit_SelectionChanged"
+                    />
+        </Border>
+
+        <Border Grid.Row="1"  Grid.Column="0" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="室号"   />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <ComboBox  x:Name="comboBoxRoom" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding AvailableRooms.Rows}"
+                      DisplayMemberPath="[Name]"
+                      SelectedValuePath="[Id]"
+                      SelectedValue="{Binding CurrentInstallAirRecord.RoomId}"
+                    />
+        </Border>
+        <!--<Border BorderThickness="1" BorderBrush="Black" Padding="4"  Grid.Row="2">
+            <GroupBox Header="空调安装明细" Grid.Row="2">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Button Command="{StaticResource rcAddContractDetail}" CommandParameter="{Binding SelectedValue, ElementName=treeViewContracts}"
+                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                            <Image Style="{StaticResource iconImageStyle}" Source="/JinHong;component/Resources/Images/add_over.png" />
+                        </Button>
+                        <Button Command="{StaticResource rcDelContractDetail}" CommandParameter="{Binding SelectedValue, ElementName=treeViewContracts}"
+                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                            <Image Style="{StaticResource iconImageStyle}" Source="/JinHong;component/Resources/Images/delete_over.png" />
+                        </Button>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dataGridPowerValues" ItemsSource="{Binding PowerValues}" SelectionUnit="CellOrRowHeader" SelectionMode="Single"
+                          AutoGenerateColumns="False"
+                          CanUserReorderColumns="False" CanUserAddRows="True"  >
+                        <DataGrid.Columns>
+                            <DataGridComboBoxColumn  Header="功率（匹）" 
+                                SelectedValueBinding="{Binding  CurrentBuildingInfo}"                                                                                       
+                                           SelectedValuePath="Id"
+                                           DisplayMemberPath="Name" 
+                            ItemsSource="{Binding Source={StaticResource categoriesDataProvider}}" >
+                                <DataGridComboBoxColumn.EditingElementStyle>
+                                    <Style TargetType="ComboBox">
+                                        <Setter Property="IsEditable" Value="True" />
+                                    </Style>
+                                </DataGridComboBoxColumn.EditingElementStyle>
+                            </DataGridComboBoxColumn>
+                            <DataGridTextColumn Header="数量" Width="80" Binding="{Binding Amout}"/>
+                            <DataGridTemplateColumn Header="安装日期" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <tk:DateTimePicker Name="dtpEffectiveDate"  MinWidth="160" Value="{Binding InstallDate}"  Format="Custom" FormatString="yyyy年MM月dd日" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </GroupBox>
+        </Border>-->
+        <Border Grid.Row="2" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="功率（匹）"   />
+
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+
+            <ComboBox Text="{Binding CurrentInstallAirRecord.}" x:Name="comboBoxAirConditioner" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding AirConditionerTbl.Rows}"
+                      DisplayMemberPath="[Name]"
+                      SelectedValuePath="[Id]"
+                      SelectedValue="{Binding CurrentInstallAirRecord.AirConditionerId}"
+                    />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+
+            <TextBlock  Text="数量："   />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+
+            <TextBox  Text="{Binding CurrentInstallAirRecord.Amout}"     />
+        </Border>
+        <Border Grid.Row="5" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+
+            <TextBlock  Text="安装日期："   />
+
+        </Border>
+        <Border Grid.Row="5" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <tk:DateTimePicker Name="dtpEffectiveDate"  MinWidth="160" Value="{Binding CurrentInstallAirRecord.InstallDate}"  Format="Custom" FormatString="yyyy年MM月dd日" />
+        </Border>
+
+        <Border Grid.Row="6" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+
+            <TextBlock  Text="签收状态："   />
+
+        </Border>
+        <Border Grid.Row="6" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <ComboBox SelectedValue="{Binding CurrentInstallAirRecord.IsSigned}" Height="21" VerticalAlignment="Bottom">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={pf:CaseWhenConverter Format='0|未签|1|已签|UNKNOWN'}}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <sys:Int32>0</sys:Int32>
+                <sys:Int32>1</sys:Int32>
+            </ComboBox>
+        </Border>
+
+        <Border Grid.Row="7" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4" >
+                <TextBlock  Text="备注" Width="37"  />
+        </Border>
+        <Border Grid.Row="7" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4" >
+
+            <TextBox  Text="{Binding CurrentInstallAirRecord.Notes}"     />
+        </Border>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="8" Grid.ColumnSpan="2">
+            <Button Margin="4" x:Name="buttonAccept" Click="buttonAccept_Click" IsDefault="True" Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushOK}" Width="16"/>
+                    <TextBlock Text="确定"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="8,4,4,4" x:Name="buttonCancel" Click="buttonCancel_Click" IsCancel="True"  Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushCancel}" Width="16"/>
+                    <TextBlock Text="取消"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</local:ParentDialagWindow>

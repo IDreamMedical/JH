@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="JinHong.View.StartPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Image Source="/JinHong;component/Resources/Images/Welcome.jpg" Stretch="Fill"/>
+    </Grid>
+</UserControl>

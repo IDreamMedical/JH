@@ -1,0 +1,984 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0062)http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Part 5: From Trees to Graphs</TITLE><LINK 
+href="http://msdn.microsoft.com/en-us/library/ms379574(v=vs.80).aspx" 
+rel=canonical><LINK 
+href="Part 5 From Trees to Graphs.files/024d86ac3c0dde3e6a230199128bdfe4.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="http://msdn.microsoft.com/en-US/library/ms379574(d=printer,v=VS.80).aspx" 
+rel=alternate>
+<META http-equiv=content-type content="text/html; charset=utf-8">
+<META content=/en-us/library/ms379574(d=lightweight,l=en-us,v=VS.80).aspx 
+name=DCS.dcsuri>
+<META 
+content=http://msdn.microsoft.com/en-us/library/ms379574(d=lightweight,l=en-us,v=VS.80).aspx 
+name=NormalizedUrl>
+<META 
+content=http://msdn.microsoft.com/en-us/library/ms379574(l=en-us,v=VS.80).aspx 
+name=VotingContextUrl>
+<META content="C0384794-11:23:25 AM" name=MN>
+<META content=ms379574 name=Search.ShortId>
+<META content=en-us name=Ms.Locale>
+<META content="MSHTML 6.00.2900.6049" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=header>
+<TABLE class="headerBar cl_lightweight_topnav_slice" cellSpacing=0 cellPadding=0 
+border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    class="leftSection cl_lightweight_header_leftSection_wave leftSectionImageClusterOverride">
+      <DIV class=tabContainer><A class=" headerTab" title=Home 
+      href="http://msdn.microsoft.com/en-US/">Home</A> <A 
+      class="headerTabSelected cl_lightweight_selected_tab_repeatX " 
+      title=Library href="http://msdn.microsoft.com/en-US/library">Library</A> 
+      <A class=" headerTab" title=Learn 
+      href="http://msdn.microsoft.com/en-US/bb188199.aspx">Learn</A> <A 
+      class=" headerTab" title=Downloads 
+      href="http://msdn.microsoft.com/en-US/aa570309.aspx">Downloads</A> <A 
+      class=" headerTab" title=Support 
+      href="http://msdn.microsoft.com/en-US/aa570318.aspx">Support</A> <A 
+      class=" headerTab" title=Community 
+      href="http://msdn.microsoft.com/en-US/aa497440.aspx">Community</A> 
+    </DIV></TD>
+    <TD 
+    class="rightSection cl_lightweight_header_rightSection_wave rightSectionImageClusterOverride">
+      <DIV class=tabContainer><A title="Sign in" 
+      href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1303496605&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http:%2F%2Fmsdn.microsoft.com%2Fen-US%2Flibrary%2Fms379574%2528v%3DVS.80%2529.aspx&amp;lc=1033&amp;cb=&amp;id=254354">Sign 
+      in </A><SPAN class=pipe>|</SPAN> <A title=中国（简体中文） 
+      href="http://msdn.microsoft.com/en-US/library/preferences/locale/?returnurl=%252fen-US%252flibrary%252fms379574(v%253dVS.80).aspx">中国（简体中文） 
+      </A><SPAN class=pipe>|</SPAN> <A title=Preferences 
+      href="http://msdn.microsoft.com/en-US/library/preferences/experience/?returnurl=%252fen-US%252flibrary%252fms379574(v%253dVS.80).aspx">Preferences</A> 
+      </DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV class=contentPlaceHolder>
+<DIV class=navigation id=Navigation style="PADDING-BOTTOM: 96px; WIDTH: 280px">
+<DIV class=searchcontainer>
+<FORM id=SearchForm 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+action=http://social.msdn.microsoft.com/Search/en-US method=get>
+<DIV class=searchBoxContainer>
+<TABLE class=searchBox cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=searchTextBoxTd><INPUT class=searchTextBox id=searchTextBox 
+      onblur="document.onkeydown = Presskey;WatermarkBlur(this, 'Search MSDN with Bing', 'searchTextBox')" 
+      onfocus="document.onkeydown = ''; WatermarkFocus(this, 'Search MSDN with Bing', 'searchTextBoxTrue') " 
+      maxLength=200 value="Search MSDN with Bing" name=query> </TD>
+    <TD class=searchButtonTd><A 
+      style="PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 19px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 19px" 
+      onclick="javascript:if(document.getElementById('searchTextBox').value == 'Search MSDN with Bing')document.getElementById('searchTextBox').value=''; document.getElementById('SearchForm').submit();" 
+      href="javascript:void(0)"><IMG class=cl_search_icon title=Search 
+      style="POSITION: relative" alt=Search 
+      src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"></A> 
+    </TD></TR></TBODY></TABLE></DIV></FORM></DIV>
+<DIV class=navcontainer>
+<DIV class=nav>
+<DIV class="toclevel0 ancestry">
+<DIV class="clip5x9 nav_root"><IMG class=cl_nav_bullet alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="MSDN Library" 
+href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN 
+Library</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Development Tools and Languages" 
+href="http://msdn.microsoft.com/en-us/library/aa187916.aspx">Development Tools 
+and Languages</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Visual Studio 2005" 
+href="http://msdn.microsoft.com/en-us/library/ms950416.aspx">Visual Studio 
+2005</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Technical Articles" 
+href="http://msdn.microsoft.com/en-us/library/aa468085.aspx">Technical 
+Articles</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title=C# 
+href="http://msdn.microsoft.com/en-us/library/ms391942(v=VS.80).aspx">C#</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A 
+title="An Extensive Examination of Data Structures Using C# 2.0" 
+href="http://msdn.microsoft.com/en-us/library/ms364091(v=VS.80).aspx">An 
+Extensive Examination of Data Structures Using C# 2.0</A></DIV></DIV>
+<DIV class="clip13x9 nav_dots_current"><IMG class=cl_nav_dots alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class="toclevel1 current"><A title="Part 5: From Trees to Graphs" 
+href="http://msdn.microsoft.com/en-us/library/ms379574(v=VS.80).aspx">Part 5: 
+From Trees to Graphs</A></DIV>
+<DIV class="toclevel2 children" 
+style="BORDER-BOTTOM: #bbbbbb 1px solid"></DIV><IMG 
+class="communityContentNavigationSeparator cl_lt_cc_line_top" alt=Separator 
+src="Part 5 From Trees to Graphs.files/030c41d9079671d09a62d8e2c1db6973.gif"> 
+</DIV></DIV></DIV><A class=tocResize id=TocResize style="LEFT: 280px" 
+onclick=onIncreaseToc() 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#"><IMG 
+class=cl_nav_resize_open onmousedown=onIncreaseToc() id=ResizeImageIncrease 
+title=Expand alt=Expand 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+<IMG class=cl_nav_resize_close onmousedown=onResetToc() id=ResizeImageReset 
+title=Minimize style="DISPLAY: none" alt=Minimize 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</A>
+<DIV class=content><IMG class="TOC_Fade_Top cl_lw_toc_fade_top" alt="" 
+src="Part 5 From Trees to Graphs.files/030c41d9079671d09a62d8e2c1db6973.gif"> 
+<DIV class="clip117x31 logo"><A 
+href="http://msdn.microsoft.com/en-US/default.aspx"><IMG class=msdn_body_logo 
+title=MSDN alt=MSDN 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</A></DIV>
+<DIV class=topicContainer>
+<DIV class=topic xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:mtps="http://msdn2.microsoft.com/mtps">
+<H1 class=title>An Extensive Examination of Data Structures Using C# 2.0</H1>
+<DIV class=lw_vs>
+<DIV id=curversion><STRONG>Visual Studio 2005</STRONG> </DIV></DIV>
+<DIV style="CLEAR: right"></DIV>
+<DIV id=nstext valign="bottom">&nbsp; 
+<P>Scott Mitchell<BR>4GuysFromRolla.com</P>
+<P>Update January 2005</P>
+<P><B>Summary: </B>A graph, like a tree, is a collection of nodes and edges, but 
+has no rules dictating the connection among the nodes. In this fifth part of the 
+article series, we'll learn all about graphs, one of the most versatile data 
+structures.(22 printed pages)</P>
+<FORM name=x>
+<P><A 
+href="http://download.microsoft.com/download/5/0/f/50f7b985-990b-4154-ac21-518bfe16f887/DataStructures20.msi">Download 
+the DataStructures20.msi sample file</A>.</P>
+<BLOCKQUOTE class=dtBlock><B>Editor's note&nbsp;&nbsp;&nbsp;</B>This six-part 
+  article series originally appeared on MSDN Online starting in November 2003. 
+  In January 2005 it was updated to take advantage of the new data structures 
+  and features available with the .NET Framework version 2.0, and C# 2.0. The 
+  original articles are still available at <A 
+  href="http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp">http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp</A>. 
+</BLOCKQUOTE>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>This article assumes 
+  the reader is familiar with C#.</BLOCKQUOTE>
+<H4 class=dtH1>Contents</H4>
+<P><A 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#datastructures20_5_topic1">Introduction</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#datastructures20_5_topic2">Examining 
+the Different Classes of Edges</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#datastructures20_5_topic3">Creating 
+a Graph Class</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#datastructures20_5_topic4">A 
+Look at Some Common Graph Algorithms</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#datastructures20_5_topic5">Conclusion</A></P>
+<H2 class=dtH1><A name=datastructures20_5_topic1></A>Introduction</H2>
+<P><A href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx">Part 
+1</A> and <A 
+href="http://msdn.microsoft.com/en-US/library/ms379571(v=VS.80).aspx">Part 2</A> 
+of this article series focused on linear data structures—the array, the List, 
+the Queue, the Stack, the Hashtable, and the Dictionary. In <A 
+href="http://msdn.microsoft.com/en-US/library/ms379572(v=VS.80).aspx">Part 3</A> 
+we began our investigation of trees. Recall that trees consist of a set of 
+<I>nodes</I>, where all of the nodes share some connection to other nodes. These 
+connections are referred to as <I>edges</I>. As we discussed, there are numerous 
+rules spelling out how these connections can occur. For example, all nodes in a 
+tree except for one—the root—must have precisely one <I>parent</I> node, while 
+all nodes can have an arbitrary number of children. These simple rules ensure 
+that, for any tree, the following three statements will hold: </P>
+<OL type=1>
+  <LI>Starting from any node, any other node in the tree can be reached. That 
+  is, there exists no node that can't be reached through some simple path. 
+  <LI>There are no <I>cycles</I>. A cycle exists when, starting from some node 
+  <I>v</I>, there is some path that travels through some set of nodes 
+  <I>v</I><SUB>1</SUB>, <I>v</I><SUB>2</SUB>, ..., <I>v</I><SUB>k</SUB> that 
+  then arrives back at <I>v</I>. 
+  <LI>The number of edges in a tree is precisely one less than the number of 
+  nodes. </LI></OL>
+<P>In Part 3 we focused on <I>binary trees</I>, which are a special form of 
+trees. Binary trees are trees whose nodes have at most two children.</P>
+<P>In this fifth installment of the article series, we're going to examine 
+<I>graphs</I>. Graphs are composed of a set of nodes and edges, just like trees, 
+but with graphs there are no rules for the connections between nodes. With 
+graphs there is no concept of a root node, nor is there a concept of parents and 
+children. Rather, a graph is just a collection of interconnected nodes. </P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>Realize that all trees 
+  are graphs. A tree is a special case of a graph, one whose nodes are all 
+  reachable from some starting node and one that has no cycles. </BLOCKQUOTE>
+<P>Figure 1 shows three examples of graphs. Notice that graphs, unlike trees, 
+can have sets of nodes that are disconnected from other sets of nodes. For 
+example, graph (a) has two distinct, unconnected set of nodes. Graphs can also 
+contain cycles. Graph (b) has several cycles. One such is the path from 
+v<SUB>1</SUB> to v<SUB>2</SUB> to v<SUB>4</SUB> and back to v<SUB>1</SUB>. 
+Another one is from v<SUB>1</SUB> to v<SUB>2</SUB> to v<SUB>3</SUB> to 
+v<SUB>5</SUB> to v<SUB>4</SUB> and back to v<SUB>1</SUB>. (There are also cycles 
+in graph (a).) Graph (c) does not have any cycles, as one less edge than it does 
+number of nodes, and all nodes are reachable. Therefore, it is a tree.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC90638.gif" 
+border=0></P>
+<P class=label><B>Figure 1. Three examples of graphs</B></P>
+<P>Many real-world problems can be modeled using graphs. For example, search 
+engines model the Internet as a graph, where Web pages are the nodes in the 
+graph and the links among Web pages are the edges. Programs like Microsoft 
+MapPoint that can generate driving directions from one city to another use 
+graphs, modeling cities as nodes in a graph and the roads connecting the cities 
+as edges.</P>
+<H2 class=dtH1><A name=datastructures20_5_topic2></A>Examining the Different 
+Classes of Edges</H2>
+<P>Graphs, in their simplest terms, are a collection of nodes and edges, but 
+there are different kinds of edges: </P>
+<OL type=1>
+  <LI>Directed versus undirected edges 
+  <LI>Weighted versus unweighted edges </LI></OL>
+<P>When talking about using graphs to model a problem, it is usually important 
+to indicate what class of graph you are working with. Is it a graph whose edges 
+are directed and weighted, or one whose edges are undirected and weighted? In 
+the next two sections we'll discuss the differences between directed and 
+undirected edges and weighted and unweighted edges. </P>
+<H3 class=dtH1>Directed and Undirected Edges</H3>
+<P>The edges of a graph provide the connections between one node and another. By 
+default, an edge is assumed to be bidirectional. That is, if there exists an 
+edge between nodes <I>v</I> and <I>u</I>, it is assumed that one can travel from 
+<I>v</I> to <I>u</I> and from <I>u</I> to <I>v</I>. Graphs with bidirectional 
+edges are said to be <I>undirected graphs</I>, because there is no implicit 
+direction in their edges.</P>
+<P>For some problems, though, an edge might infer a one-way connection from one 
+node to another. For example, when modeling the Internet as a graph, a hyperlink 
+from Web page <I>v</I> linking to Web page <I>u</I> would imply that the edge 
+between <I>v</I> to <I>u</I> would be unidirectional. That is, that one could 
+navigate from <I>v</I> to <I>u</I>, but not from <I>u</I> to <I>v</I>. Graphs 
+that use unidirectional edges are said to be <I>directed graphs</I>.</P>
+<P>When drawing a graph, bidirectional edges are drawn as a straight line, as 
+shown in Figure 1. Unidirectional edges are drawn as an arrow, showing the 
+direction of the edge. Figure 2 shows a directed graph where the nodes are Web 
+pages for a particular Web site and a directed edge from <I>u</I> to <I>v</I> 
+indicates that there is a hyperlink from Web page <I>u</I> to Web page <I>v</I>. 
+Notice that both <I>u</I> links to <I>v</I> and <I>v</I> links to <I>u</I>, two 
+arrows are used—one from <I>v</I> to <I>u</I> and another from <I>u</I> to 
+<I>v</I>.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC23949.gif" 
+border=0></P>
+<P class=label><B>Figure 2. Model of pages making up a website</B></P>
+<H3 class=dtH1>Weighted and Unweighted Edges</H3>
+<P>Typically graphs are used to model a collection of "things" and their 
+relationship among these "things." For example, the graph in Figure 2 modeled 
+the pages in a Web site and their hyperlinks. Sometimes, though, it is important 
+to associate some cost with the connection from one node to another. </P>
+<P>A map can be easily modeled as a graph, with the cities as nodes and the 
+roads connecting the cities as edges. If we wanted to determine the shortest 
+distance and route from one city to another, we first need to assign a cost from 
+traveling from one city to another. The logical solution would be to give each 
+edge a <I>weight</I>, such as how many miles it is from one city to another. 
+</P>
+<P>Figure 3 shows a graph that represents several cities in southern California. 
+The cost of any particular path from one city to another is the sum of the costs 
+of the edges along the path. The shortest path, then, would be the path with the 
+least cost. In Figure 3, for example, a trip from San Diego to Santa Barbara is 
+210 miles if driving through Riverside, then to Barstow, and then back to Santa 
+Barbara. The shortest trip, however, is to drive 100 miles to Los Angeles, and 
+then another 30 up to Santa Barabara.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC76956.gif" 
+border=0></P>
+<P class=label><B>Figure 3. Graph of California cities with edges valued as 
+miles</B></P>
+<P>Realize that directionality and weightedness of edges are orthogonal. That 
+is, a graph can have one of four arrangements of edges: </P>
+<UL type=disc>
+  <LI>Directed, weighted edges 
+  <LI>Directed, unweighted edges 
+  <LI>Undirected, weighted edges 
+  <LI>Undirected, unweighted edges </LI></UL>
+<P>The graph's in Figure 1 had undirected, unweighted edges. Figure 2 had 
+directed, unweighted edges, and Figure 3 used undirected, weighted edges.</P>
+<H3 class=dtH1>Sparse Graphs and Dense Graphs</H3>
+<P>While a graph could have zero or a handful of edges, typically a graph will 
+have more edges than it has nodes. What's the maximum number of edges a graph 
+could have, given <I>n</I> nodes? It depends on whether the graph is directed or 
+undirected. If the graph is directed, then each node could have at an edge to 
+every other node. That is, all <I>n</I> nodes could have <I>n</I> – 1 edges, 
+giving a total of <I>n</I> * (<I>n</I> – 1) edges, which is nearly 
+<I>n</I><SUP>2</SUP>.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>For this article, I am 
+  assuming nodes are not allowed to have edges to themselves. In general, 
+  though, graphs allow for an edge to exist from a node <I>v</I> back to node 
+  <I>v</I>. If self-edges are allowed, the total number of edges for a directed 
+  graph would be <I>n</I><SUP>2</SUP>.</BLOCKQUOTE>
+<P>If the graph is undirected, then one node, call it <I>v</I><SUB>1</SUB>, 
+could have an edge to each and every other node, or <I>n</I> – 1 edges. The next 
+node, call it <I>v</I><SUB>2</SUB>, could have at most <I>n</I> – 2 edges, 
+because there already exists an edge from <I>v</I><SUB>2</SUB> to 
+<I>v</I><SUB>1</SUB>. The third node, <I>v</I><SUB>3</SUB>, could have at most 
+<I>n</I> – 3 edges, and so forth. Therefore, for <I>n</I> nodes, there would be 
+at most (<I>n</I> – 1) + (<I>n</I> – 2) + ... + 1 edges. Summed up this comes to 
+[<I>n</I> *<I> </I>(<I>n</I>-1)] / 2, or, as you might have already guessed, 
+exactly half as many edges as a directed graph.</P>
+<P>If a graph has significantly less than <I>n</I><SUP>2</SUP> edges, the graph 
+is said to be <I>sparse</I>. For example, a graph with <I>n</I> nodes and 
+<I>n</I> edges, or even 2<I>n</I> edges would be said to be sparse. A graph with 
+close to the maximum number of edges is said to be <I>dense</I>. </P>
+<P>When using graphs in an algorithm it is important to know the ratio between 
+nodes and edges. As we'll see later on in this article, the asymptotic running 
+time operations performed on a graph is typically expressed in terms of the 
+number of nodes and edges in the graph.</P>
+<H2 class=dtH1><A name=datastructures20_5_topic3></A>Creating a Graph Class</H2>
+<P>While graphs are a very common data structure used in a wide array of 
+different problems, there is no built-in graph data structure in the .NET 
+Framework. Part of the reason is because an efficient implementation of a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class depends on a number 
+of factors specific to the problem at hand. For example, graphs are typically 
+modeled in either one of two ways: </P>
+<UL type=disc>
+  <LI>As an adjacency list 
+  <LI>As an adjacency matrix </LI></UL>
+<P>These two techniques differ in how the nodes and edges of the graph are 
+maintained internally by the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class. Let's examine both 
+of these approaches and weigh the pros and cons of each approach.</P>
+<H3 class=dtH1>Representing a Graph Using an Adjacency List</H3>
+<P>In Part 3 we created a base class to represent nodes, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> class. This base class was 
+extended to provide specialized node classes for the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BinaryTree</TT>, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BST</TT>, and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">SkipList</TT> classes. Because a each 
+node in a graph has an arbitrary number of neighbors, it might seem plausible 
+that we can simply use the base <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> class to represent a node 
+in the graph, because the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> class consists of a value 
+and an arbitrary number of neighboring <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> instances. However, while 
+this base class is a step in the right direction, it still lacks needed 
+features, such as a way to associate a cost between neighbors. One option, then, 
+is to create a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT> class that 
+derives from the base <TT xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> 
+class and extends it to include the required additional capabilities. Each <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GraphNode</TT> class, then, will keep 
+track of its neighboring <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GraphNode</TT>s in the base class's 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">Neighbors</TT> property. </P>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class contains 
+a <TT xmlns:asp="http://msdn2.microsoft.com/asp">NodeList</TT> holding the set 
+of <TT xmlns:asp="http://msdn2.microsoft.com/asp">GraphNode</TT>s that 
+constitute the nodes in the graph. That is, a graph is represented by a set of 
+nodes, and each node maintains a list of its neighbors. Such a representation is 
+called an <I>adjacency list</I>, and is depicted graphically in Figure 4.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC110033.gif" 
+border=0></P>
+<P class=label><B>Figure 4. Adjacency list representation in graphical 
+form</B></P>
+<P>Notice that with an undirected graph, an adjacency list representation 
+duplicated the edge information. For example, in adjacency list representation 
+(b) in Figure 4, the node <I>a</I> has <I>b</I> in its adjacency list, and node 
+<I>b</I> also has node <I>a</I> in its adjacency list.</P>
+<P>Each node has precisely as many <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT>s in its 
+adjacency list as it has neighbors. Therefore, an adjacency list is a very 
+space-efficient representation of a graph—you never store more data than needed. 
+Specifically, for a graph with <I>V</I> nodes and <I>E</I> edges, a graph using 
+an adjacency list representation will require <I>V</I> + <I>E</I> <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT> instances for 
+a directed graph and <I>V</I> + 2<I>E</I> <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> instances for an undirected 
+graph. </P>
+<P>While Figure 4 does not show it, adjacency lists can also be used to 
+represent weighted graphs. The only addition is that for each <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT> <I>n</I>'s 
+adjacency list, each <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT> instance in 
+the adjacency list needs to store the cost of the edge from <I>n</I>.</P>
+<P>The one downside of an adjacency list is that determining if there is an edge 
+from some node <I>u</I> to <I>v</I> requires that <I>u</I>'s adjacency list be 
+searched. For dense graphs, <I>u</I> will likely have many <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT>s in its 
+adjacency list. Determining if there is an edge between two nodes, then, takes 
+linear time for dense adjacency list graphs. Fortunately, when using graphs 
+we'll likely not need to determine if there exists an edge between two 
+particular nodes. More often than not, we'll want to simply enumerate <I>all</I> 
+the edges of a particular node.</P>
+<H3 class=dtH1>Representing a Graph Using an Adjacency Matrix</H3>
+<P>An alternative method for representing a graph is to use an <I>adjacency 
+matrix</I>. For a graph with <I>n</I> nodes, an adjacency matrix is an <I>n</I> 
+x <I>n</I> two-dimensional array. For weighted graphs the array element 
+(<I>u</I>, <I>v</I>) would give the cost of the edge between <I>u</I> and 
+<I>v</I> (or, perhaps -1 if no such edge existed between <I>u</I> and <I>v</I>. 
+For an unweighted graph, the array could be an array of Booleans, where a True 
+at array element (<I>u</I>, <I>v</I>) denotes an edge from <I>u</I> to <I>v</I> 
+and a False denotes a lack of an edge.</P>
+<P>Figure 5 depicts how an adjacency matrix representation in graphical 
+form.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC25926.gif" 
+border=0></P>
+<P class=label><B>Figure 5. Adjacency matrix representation in graphical 
+form</B></P>
+<P>Note that undirected graphs display symmetry along the adjacency matrix's 
+diagonal. That is, if there is an edge from <I>u</I> to <I>v</I> in an 
+undirected graph then there will be two corresponding array entries in the 
+adjacency matrix, (<I>u</I>, <I>v</I>) and (<I>v</I>, <I>u</I>).</P>
+<P>Because determining if an edge exists between two nodes is simply an array 
+lookup, this can be determined in constant time. The downside of adjacency 
+matrices is that they are space inefficient. An adjacency matrix requires an 
+<I>n</I><SUP>2</SUP> element array, so for sparse graphs much of the adjacency 
+matrix will be empty. Also, for undirected graphs half of the graph is just 
+repeated information.</P>
+<P>While either an adjacency matrix or adjacency list would suffice as an 
+underlying representation of a graph for our <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class, let's move forward 
+using the adjacency list model. I chose this approach primarily because it is a 
+logical extension from the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>BinaryTree</TT>Node</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BinaryTree</TT> classes that we've 
+already created together, and can be implemented by extending the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> class used as a base class 
+for the data structures we've examined previously.</P>
+<H3 class=dtH1>Creating the GraphNode Class</H3>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT> 
+class represents a single node in the graph, and is derived from the base <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT> class we examined in Part 3 
+of this article series. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT> class extends 
+its base class by providing public access to the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Neighbors</TT> property, as well as 
+providing a <TT xmlns:asp="http://msdn2.microsoft.com/asp">Cost</TT> property. 
+The <TT xmlns:asp="http://msdn2.microsoft.com/asp">Cost</TT> property is of type 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">List&lt;int&gt;</TT>; for 
+weighted graphs <TT xmlns:asp="http://msdn2.microsoft.com/asp">Cost[i]</TT> it 
+can be used to specify the cost associated with traveling from the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GraphNode</TT> to <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Neighbors[i]</TT>. </P><PRE class=code>public class GraphNode&lt;T&gt; : Node&lt;T&gt;
+{
+    private List&lt;int&gt; costs;
+
+    public GraphNode() : base() { }
+    public GraphNode(T value) : base(value) { }
+    public GraphNode(T value, NodeList&lt;T&gt; neighbors) : base(value, neighbors) { }
+
+    new public NodeList&lt;T&gt; Neighbors
+    {
+        get
+        {
+            if (base.Neighbors == null)
+                base.Neighbors = new NodeList&lt;T&gt;();
+
+            return base.Neighbors;
+        }            
+    }
+
+    public List&lt;int&gt; Costs
+    {
+        get
+        {
+            if (costs == null)
+                costs = new List&lt;int&gt;();
+
+            return costs;
+        }
+    }
+}
+</PRE>
+<P>As the code for the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">GraphNode</TT> class shows, the class 
+exposes two properties: </P>
+<UL type=disc>
+  <LI><B>Neighbors:</B> this just provides a public property to the protected 
+  base class's <TT xmlns:asp="http://msdn2.microsoft.com/asp">Neighbors</TT> 
+  property. Recall that Neighbors is of type <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">NodeList&lt;T&gt;</TT>. 
+  <LI><B>Costs:</B> a <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">List&lt;int&gt;</TT> mapping a 
+  weight from the GraphNode to a specific neighbor. </LI></UL>
+<H3 class=dtH1>Building the Graph Class</H3>
+<P>Recall that with the adjacency list technique, the graph maintains a list of 
+its nodes. Each node, then, maintains a list of adjacent nodes. So, in creating 
+the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class we need to 
+have a list of <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT>s. This set of 
+nodes is maintained using a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">NodeList</TT> instance. (We examined 
+the <TT xmlns:asp="http://msdn2.microsoft.com/asp">NodeList</TT> class in Part 
+3; this class was used by the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BinaryTree</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BST</TT> classes, and was extended 
+for the <TT xmlns:asp="http://msdn2.microsoft.com/asp">SkipList</TT> class.) The 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class exposes its set 
+of nodes through the public property <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Nodes</TT>. </P>
+<P>Additionally, the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> 
+class has a number of methods for adding nodes and directed or undirected and 
+weighted or unweighted edges between nodes. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddNode()</TT> method adds a node to 
+the graph, <TT xmlns:asp="http://msdn2.microsoft.com/asp">while 
+AddDirectedEdge()</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddUndirectedEdge()</TT> allow a 
+weighted or unweighted edge to be associated between two nodes. </P>
+<P>In addition to its methods for adding edges, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class has a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Contains()</TT> method that returns a 
+Boolean indicating if a particular value exists in the graph or not. There is 
+also a <TT xmlns:asp="http://msdn2.microsoft.com/asp">Remove()</TT> method that 
+deletes a <TT xmlns:asp="http://msdn2.microsoft.com/asp">GraphNode</TT> and all 
+edges to and from it. The germane code for the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class is shown below (some 
+of the overloaded methods for adding edges and nodes have been removed for 
+brevity):</P><PRE class=code>public class Graph&lt;T&gt; : IEnumerable&lt;T&gt;
+{
+    private NodeList&lt;T&gt; nodeSet;
+
+    public Graph() : this(null) {}
+    public Graph(NodeList&lt;T&gt; nodeSet)
+    {
+        if (nodeSet == null)
+            this.nodeSet = new NodeList&lt;T&gt;();
+        else
+            this.nodeSet = nodeSet;
+    }
+
+    public void AddNode(GraphNode&lt;T&gt; node)
+    {
+        // adds a node to the graph
+        nodeSet.Add(node);
+    }
+
+    public void AddNode(T value)
+    {
+        // adds a node to the graph
+        nodeSet.Add(new GraphNode&lt;T&gt;(value));
+    }
+
+    public void AddDirectedEdge(GraphNode&lt;T&gt; from, GraphNode&lt;T&gt; to, int cost)
+    {
+        from.Neighbors.Add(to);
+        from.Costs.Add(cost);
+    }
+
+    public void AddUndirectedEdge(GraphNode&lt;T&gt; from, GraphNode&lt;T&gt; to, int cost)
+    {
+        from.Neighbors.Add(to);
+        from.Costs.Add(cost);
+
+        to.Neighbors.Add(from);
+        to.Costs.Add(cost);
+    }
+
+    public bool Contains(T value)
+    {
+        return nodeSet.FindByValue(value) != null;
+    }
+
+    public bool Remove(T value)
+    {
+        // first remove the node from the nodeset
+        GraphNode&lt;T&gt; nodeToRemove = (GraphNode&lt;T&gt;) nodeSet.FindByValue(value);
+        if (nodeToRemove == null)
+            // node wasn't found
+            return false;
+
+        // otherwise, the node was found
+        nodeSet.Remove(nodeToRemove);
+
+        // enumerate through each node in the nodeSet, removing edges to this node
+        foreach (GraphNode&lt;T&gt; gnode in nodeSet)
+        {
+            int index = gnode.Neighbors.IndexOf(nodeToRemove);
+            if (index != -1)
+            {
+                // remove the reference to the node and associated cost
+                gnode.Neighbors.RemoveAt(index);
+                gnode.Costs.RemoveAt(index);
+            }
+        }
+
+        return true;
+    }
+
+    public NodeList&lt;T&gt; Nodes
+    {
+        get
+        {
+            return nodeSet;
+        }
+    }
+
+    public int Count
+    {
+        get { return nodeSet.Count; }
+    }
+}
+</PRE>
+<H3 class=dtH1>Using the Graph Class</H3>
+<P>At this point, we have created all of the classes needed for our graph data 
+structure. We'll soon turn our attention to some of the more common graph 
+algorithms, such as constructing a minimum spanning tree and finding the 
+shortest path from a single node to all other nodes, but before we do let's 
+examine how to use the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> 
+class in a C# application.</P>
+<P>Once we create an instance of the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class, the next task is to 
+add the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Node</TT>s to the graph. 
+This involves calling the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class's <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">AddNode()</TT> method for each node 
+to add to the graph. Let's recreate the graph from Figure 2. We'll need to start 
+by adding six nodes. For each of these nodes let's have the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Key</TT> be the Web page's filename; 
+we'll leave the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Data</TT> as <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">null</TT>, although this might 
+conceivably contain the contents of the file, or a collection of keywords 
+describing the Web page content.</P><PRE class=code>Graph&lt;string&gt; web = new Graph&lt;string&gt;();
+web.AddNode("Privacy.htm");
+web.AddNode("People.aspx");
+web.AddNode("About.htm");
+web.AddNode("Index.htm");
+web.AddNode("Products.aspx");
+web.AddNode("Contact.aspx");
+</PRE>
+<P>Next we need to add the edges. Because this is a directed, unweighted graph, 
+we'll use the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class's 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">AddDirectedEdge(u, v)</TT> method 
+to add an edge from <I>u</I> to <I>v</I>.</P><PRE class=code>web.AddDirectedEdge("People.aspx", "Privacy.htm");  // People -&gt; Privacy
+
+web.AddDirectedEdge("Privacy.htm", "Index.htm");    // Privacy -&gt; Index
+web.AddDirectedEdge("Privacy.htm", "About.htm");    // Privacy -&gt; About
+
+web.AddDirectedEdge("About.htm", "Privacy.htm");    // About -&gt; Privacy
+web.AddDirectedEdge("About.htm", "People.aspx");    // About -&gt; People
+web.AddDirectedEdge("About.htm", "Contact.aspx");   // About -&gt; Contact
+
+web.AddDirectedEdge("Index.htm", "About.htm");      // Index -&gt; About
+web.AddDirectedEdge("Index.htm", "Contact.aspx");   // Index -&gt; Contacts
+web.AddDirectedEdge("Index.htm", "Products.aspx");  // Index -&gt; Products
+
+web.AddDirectedEdge("Products.aspx", "Index.htm");  // Products -&gt; Index
+web.AddDirectedEdge("Products.aspx", "People.aspx");// Products -&gt; People
+</PRE>
+<P>After these commands, <TT xmlns:asp="http://msdn2.microsoft.com/asp">web</TT> 
+represents the graph shown in Figure 2. Once we have a constructed a graph we'll 
+typically want to answer some questions. For example, for the graph we just 
+created we might want to answer, "What's the least number of links a user must 
+click to reach any Web page when starting from the homepage (<TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Index.htm</TT>)?" To answer such 
+questions we can usually fall back on using existing graph algorithms. In the 
+next section we'll examine two common algorithms for weighted graphs: 
+constructing a minimum spanning tree and finding the shortest path from one node 
+to all others.</P>
+<H2 class=dtH1><A name=datastructures20_5_topic4></A>A Look at Some Common Graph 
+Algorithms</H2>
+<P>Because graphs are a data structure that can be used to model a bevy of 
+real-world problems, there are innumerous algorithms designed to find solutions 
+for common problems. To further our understanding of graphs, let's take a look 
+at two of the most studied applications of graphs: finding a minimum spanning 
+tree and computing the shortest path from a source node to all other nodes.</P>
+<H3 class=dtH1>The Minimum Spanning Tree Problem</H3>
+<P>Imagine that you work for the phone company and your task is to provide phone 
+lines to a village with 10 houses, each labeled H1 through H10. Specifically 
+this involves running a single cable that connects each home. That is, the cable 
+must run through houses H1, H2, and so forth, up through H10. Due to geographic 
+obstacles—hills, trees, rivers, and so on—it is not feasible to necessarily run 
+the cable from one house to another. </P>
+<P>Figure 6 shows this problem depicted as a graph. Each node is a house, and 
+the edges are the means by which one house can be wired up to another. The 
+weights of the edges dictate the distance between the homes. Your task is to 
+wire up all ten houses using the least amount of telephone wiring possible.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC22492.gif" 
+border=0></P>
+<P class=label><B>Figure 6. Graphical representation of hooking up a 10-home 
+village with phone lines</B></P>
+<P>For a connected, undirected graph, there exists some subset of the edges that 
+connect all the nodes and does not introduce a cycle. Such a subset of edges 
+would form a tree (because it would comprise one less edge than vertices and is 
+acyclic), and is called a <I>spanning tree</I>. There are typically many 
+spanning trees for a given graph. Figure 7 shows two valid spanning trees from 
+the Figure 6 graph. (The edges forming the spanning tree are bolded.)</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC67215.gif" 
+border=0></P>
+<P class=label><B>Figure 7.Spanning tree subsets based on Figure 6</B></P>
+<P>For graphs with weighted edges, different spanning trees have different 
+associated costs, where the cost is the sum of the weights of the edges that 
+comprise the spanning tree. A <I>minimum spanning tree</I>, then, is the 
+spanning tree with a minimum cost.</P>
+<P>There are two basic approaches to solving the minimum spanning tree problem. 
+One approach is build up a spanning tree by choosing the edges with the minimum 
+weight, so long as adding that edge does not create a cycle among the edges 
+chosen thus far. This approach is shown in Figure 8.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC145286.gif" 
+border=0></P>
+<P class=label><B>Figure 8. Minimum spanning tree that uses the edges with the 
+minimum weight</B></P>
+<P>The other approach builds up the spanning tree by dividing the nodes of the 
+graph into two disjoint sets: the nodes currently in the spanning tree and those 
+nodes not yet added. At each iteration, the least weighted edge that connects 
+the spanning tree nodes to a node not in the spanning tree is added to the 
+spanning tree. To start off the algorithm, some random start node must be 
+selected. Figure 9 illustrates this approach in action, using H1 as the starting 
+node. (In Figure 9 those nodes that are in the set of nodes in the spanning tree 
+are shaded light yellow.)</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC31115.gif" 
+border=0></P>
+<P class=label><B>Figure 9. Prim method of finding the minimum spanning 
+tree</B></P>
+<P>Notice that the techniques illustrated in both Figures 8 and 9 arrived at the 
+same minimum spanning tree. If there is only one minimum spanning tree for the 
+graph, then both of these approaches will reach the same conclusion. If, 
+however, there are multiple minimum spanning trees, these two approaches might 
+arrive with different results (both results will be correct, naturally).</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>The first approach we 
+  examined was discovered by Joseph Kruskal in 1956 at Bell Labs. The second 
+  technique was discovered in 1957 by Robert Prim, also a researcher at Bell 
+  Labs. There is a plethora of information on these two algorithms on the Web, 
+  including Java applets showing the algorithms in progress graphically (<A 
+  href="http://www-b2.is.tokushima-u.ac.jp/~ikeda/suuri/kruskal/Kruskal.shtml">Kruskal's 
+  Algorithm</A> | <A 
+  href="http://www-b2.is.tokushima-u.ac.jp/~ikeda/suuri/dijkstra/Prim.shtml">Prim's 
+  Algorithm</A>), as well as source code in a variety of languages. </BLOCKQUOTE>
+<H3 class=dtH1>Computing the Shortest Path from a Single Source</H3>
+<P>When flying from one city to another, part of the headache is finding a route 
+that requires the fewest number of connections—who likes their flight from New 
+York to L.A. to first go from New York to Chicago, then Chicago to Denver, and 
+finally Denver to L.A? Rather, most people would rather have a direct flight 
+straight from New York to L.A.</P>
+<P>Imagine, however, that you are not one of those people. Instead, you are 
+someone who values his money much more than his time, and are most interested in 
+finding the <I>cheapest</I> route, regardless of the number of connections. This 
+might mean flying from New York to Miami, then Miami to Dallas, then Dallas to 
+Phoenix, Phoenix to San Diego, and finally San Diego to L.A.</P>
+<P>We can solve this problem by modeling the available flights and their costs 
+as a directed, weighted graph. Figure 10 shows such a graph.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC8697.gif" 
+border=0></P>
+<P class=label><B>Figure 10. Modeling of available flights based on cost</B></P>
+<P>What we are interested in knowing is what is the least expensive path from 
+New York to L.A. By inspecting the graph, we can quickly determine that it's 
+from New York to Chicago to San Francisco and finally down to L.A., but in order 
+to have a computer accomplish this task we need to formulate an algorithm to 
+solve the problem at hand.</P>
+<P>The late Edsger Dijkstra, one of the most noted computer scientists of all 
+time, invented the most commonly used algorithm for finding the shortest path 
+from a source node to all other nodes in a weighted, directed graph. This 
+algorithm, dubbed Dijkstra's Algorithm, works by maintaining two tables, each of 
+which have a record for each node. These two tables are: </P>
+<UL type=disc>
+  <LI>A distance table, which keeps an up-to-date "best distance" from the 
+  source node to every other node. 
+  <LI>A route table, which, for each node <I>n</I>, indicates what node was used 
+  to reach <I>n</I> to get the best distance. </LI></UL>
+<P>Initially, the distance table has each record set to some high value (like 
+positive infinity) except for the start node, which has a distance to itself of 
+0. The route table's rows are all set to <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">null</TT>. Also, a collection of 
+nodes, <I>Q</I>, that need to be examined is maintained; initially, this 
+collection contains all of the nodes in the graph. </P>
+<P>The algorithm proceeds by selecting (and removing) the node from <I>Q</I> 
+that has the lowest value in the distance table. Let this selected node be 
+called <I>n</I> and the value in the distance table for <I>n</I> be <I>d</I>. 
+For each of the <I>n</I>'s edges, a check is made to see if <I>d</I> plus the 
+cost to get from <I>n</I> to that particular neighbor is less than the value for 
+that neighbor in the distance table. If it is, then we've found a better way to 
+reach that neighbor, and the distance and route tables are updated 
+accordingly.</P>
+<P>To help clarify this algorithm, let's begin applying it to the graph from 
+Figure 10. Because we want to know the cheapest route from New York to L.A. we 
+use New York as our source node. Our initial distance table, then, contains a 
+value of infinity for each of the other cities, and a value of 0 for New York. 
+The route table contains <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">null</TT>s for all entries, and 
+<I>Q</I> contains all nodes (see Figure 11).</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC108541.gif" 
+border=0></P>
+<P class=label><B>Figure 11. Distance table and route table for determining 
+cheapest fare</B></P>
+<P>We start by extracting the city from <I>Q</I> that has the lowest value in 
+the distance table—New York. We then examine each of New York's neighbors and 
+check to see if the cost to fly from New York to that neighbor is less than the 
+best cost we know of, namely the cost in the distance table. After this first 
+check, we'd have removed New York from <I>Q</I> and updated the distance and 
+route tables for Chicago, Denver, Miami, and Dallas.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC107693.gif" 
+border=0></P>
+<P class=label><B>Figure 12. Step 2 in the process of determining the cheapest 
+fare</B></P>
+<P>The next iteration gets the cheapest city out of <I>Q</I>, Chicago, and then 
+checks its neighbors to see if there is a better cost. Specifically, we'll check 
+to see if there's a better route for getting to San Francisco or Denver. Clearly 
+the cost to get to San Francisco from Chicago—$75 + $25—is less than Infinity, 
+so San Francisco's records are updated. Also, note that it is cheaper to fly 
+from Chicago to Denver than from New York to Denver ($75 + $20 &lt; $100), so 
+Denver is updated as well. Figure 13 shows the values of the tables and <I>Q</I> 
+after Chicago has been processed.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC41828.gif" 
+border=0></P>
+<P class=label><B>Figure 13. Table status after the third leg of the process is 
+finished</B></P>
+<P>This process continues until there are no more nodes in <I>Q</I>. Figure 14 
+shows the final values of the tables when <I>Q</I> has been exhausted.</P>
+<P class=fig><IMG alt="" src="Part 5 From Trees to Graphs.files/IC117149.gif" 
+border=0></P>
+<P class=label><B>Figure 14. Final results of determining the cheapest 
+fare</B></P>
+<P>At the point of exhausting <I>Q</I>, the distance table will contain the 
+lowest cost from New York to each city. To determine the flight path to arrive 
+at L.A., start by examining the L.A. entry in the route table and work back up 
+to New York. That is, the route table entry for L.A. is San Francisco, meaning 
+the last leg of the flight to L.A. leaves from San Francisco. The route table 
+entry for San Francisco is Chicago, meaning you'll get to San Francisco via 
+Chicago. Finally, Chicago's route table entry is New York. Putting this together 
+we see that the cheapest flight path is from New York to Chicago to San 
+Francisco to L.A, and costs $145.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>To see a working 
+  implementation of Dijkstra's Algorithm check out the download for this 
+  article, which includes a testing application for the <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class that determines 
+  the shortest distance from one city to another using Dijkstra's 
+Algorithm.</BLOCKQUOTE>
+<H2 class=dtH1><A name=datastructures20_5_topic5></A>Conclusion</H2>
+<P>Graphs are a commonly used data structure because they can be used to model 
+many real-world problems. A graph consists of a set of nodes with an arbitrary 
+number of connections, or edges, between the nodes. These edges can be either 
+directed or undirected and weighted or unweighted.</P>
+<P>In this article we examined the basics of graphs and created a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class. This class was 
+similar to the <TT xmlns:asp="http://msdn2.microsoft.com/asp">BinaryTree</TT> 
+class created in Part 3, the difference being that instead of only have a 
+reference for at most two edges, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class's <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"><TT>Graph</TT>Node</TT>s could have 
+an arbitrary number of references. This similarity is not surprising because 
+trees are a special case of graphs.</P>
+<P>In addition to creating a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class, we also looked at 
+two common graph algorithms, the minimum spanning tree problem and computing the 
+shortest path from some source node to all other nodes in a weighted, directed 
+graph. While we did not examine source code to implement these algorithms, there 
+are plenty source code examples available on the Internet. Too, the download 
+included with this article contains a testing application for the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Graph</TT> class that uses Dijkstra's 
+Algorithm to compute the shortest route between two cities.</P>
+<P>In the next installment, Part 6, we'll look at efficiently maintaining 
+disjoint sets. Disjoint sets are a collection of two or more sets that do not 
+share any elements in common. For example, with Prim's Algorithm for finding the 
+minimum spanning tree, the nodes of the graph can be divided into two disjoint 
+sets: the set of nodes that currently constitute the spanning tree and the set 
+of nodes that are not yet in the spanning tree.</P>
+<H3 class=dtH1>References</H3>
+<UL type=disc>
+  <LI>Cormen, Thomas H., Charles E. Leiserson, and Ronald L. Rivest. 
+  "Introduction to Algorithms." MIT Press. 1990. </LI></UL>
+<P><B>Scott Mitchell</B>, author of six books and founder of 4GuysFromRolla.com, 
+has been working with Microsoft Web technologies because January 1998. Scott 
+works as an independent consultant, trainer, and writer, and holds a Masters 
+degree in Computer Science from the University of California – San Diego. He can 
+be reached at <A 
+href="mailto:mitchell@4guysfromrolla.com">mitchell@4guysfromrolla.com</A>, or 
+via his blog at <A 
+href="http://scottonwriting.net/">http://scottonwriting.net/</A>.</P>
+<DIV class=footer><BR>
+<P></P>
+<P><A href="http://msdn.microsoft.com/en-US/library/ms369863(v=VS.80).aspx">© 
+Microsoft Corporation. All rights 
+reserved.</A></P></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class=footer>
+<DIV class="footerContainer cl_footer_slice" id=footer>
+<DIV class=footerLogoContainer>
+<DIV class=footerContent>
+<DIV class=copyright>© 2011 Microsoft. All rights reserved.</DIV>
+<DIV class="footerLogo cl_footer_logo"></DIV><A 
+href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</A><SPAN class=pipe> 
+| </SPAN><A 
+href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</A><SPAN 
+class=pipe> | </SPAN><A 
+href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</A> <SPAN 
+class=pipe>| </SPAN><A class=FeedbackLink title=Feedback 
+onclick=javascript:ShowFeedbackDialog(); 
+href="http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx#footerLink">Feedback 
+<SPAN class="FeedbackButton clip20x21" id=FeedbackButton><IMG 
+class=cl_footer_feedback_icon alt=Feedback 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</SPAN></A>
+<DIV class=FeedbackContainer id=FeedbackContainer><FORM 
+action="/en-US/library/feedback/add/ms379574(v=VS.80).aspx" method="post">
+<DIV class=FeedbackTitleContainer>
+<DIV class=FeedbackTitle>Feedback</DIV>
+<DIV class=FeedbackCancel><A 
+onclick="document.getElementById('FeedbackContainer').style.display = 'none';" 
+href="javascript:;">x</A> </DIV></DIV>
+<DIV class=FeedbackData>
+<DIV class=FeedbackInfoText>Tell us about your experience... </DIV>
+<DIV class=QuestionText>Did the page load quickly? </DIV>
+<DIV class=AnswerText><SPAN>Yes<SPAN> <INPUT id=searchBox type=radio value=1 
+name=searchBox></SPAN></SPAN> <SPAN>No<SPAN> <INPUT id=searchBox type=radio 
+value=0 name=searchBox></SPAN></SPAN> </DIV>
+<DIV class=QuestionText>Do you like the page design? </DIV>
+<DIV class=AnswerText><SPAN>Yes<SPAN> <INPUT id=tabbedCode type=radio value=1 
+name=tabbedCode></SPAN></SPAN> <SPAN>No<SPAN> <INPUT id=tabbedCode type=radio 
+value=0 name=tabbedCode></SPAN></SPAN> </DIV>
+<DIV class=QuestionText>How useful is this topic? </DIV>
+<DIV class="FeedbackGraphicHolder clip269x23"><IMG 
+class="cl_online_scale FeedbackSiderGraphic" alt="" 
+src="Part 5 From Trees to Graphs.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=RadioButtonHolder>
+<DIV class=RateRadioOne><INPUT id=topicUseful title="Really disliked it" 
+type=radio value=1 name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title="Disliked it" type=radio 
+value=2 name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title=OK type=radio value=3 
+name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title=Good type=radio value=4 
+name=topicUseful> </DIV>
+<DIV class=RateRadioLast><INPUT id=topicUseful title="Really Good" type=radio 
+value=5 name=topicUseful> </DIV></DIV>
+<DIV class=QuestionText>Tell us more </DIV>
+<DIV class=FeedbackTextAreaContainer><TEXTAREA class=FeedbackTextArea onkeydown="LimitText(this, 4000);" onblur="document.onkeydown = Presskey;" onkeyup="LimitText(this, 4000);" onfocus="document.onkeydown = '';" name=feedbackText rows=5 cols=25></TEXTAREA> 
+<TEXTAREA id=feedbackDescription onkeydown="LimitText(this, 4000);" onkeyup="LimitText(this, 4000);" style="DISPLAY: none" name=feedbackDescription rows=10 cols=25>Enter description here.</TEXTAREA> 
+<INPUT id=feedbackPriority type=hidden name=feedbackPriority> <INPUT 
+id=feedbackSourceUrl type=hidden name=feedbackSourceUrl> <INPUT id=ClientIP 
+type=hidden name=ClientIP> <INPUT id=ClientOS type=hidden name=ClientOS> <INPUT 
+id=ClientBrowser type=hidden name=ClientBrowser> <INPUT id=ClientTime 
+type=hidden name=ClientTime> <INPUT id=ClientTimeZone type=hidden 
+name=ClientTimeZone> </DIV>
+<DIV><INPUT class=FeedbackSubmit onclick="document.getElementById('feedbackDescription').value='';document.getElementById('feedBackVersion').value = '-1';" type=submit value=Send> 
+</DIV></DIV><INPUT id=returnUrl type=hidden 
+value=http://msdn.microsoft.com/en-US/library/ms379574(v=VS.80).aspx 
+name=returnUrl> <INPUT id=feedBackVersion type=hidden value=1 
+name=feedBackVersion> </FORM></DIV></DIV></DIV></DIV></DIV>
+<DIV class=MetricsContainer>
+<DIV class=WebtrendsContainer>
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+  var literalNormalizedUrl = '/en-us/library/ms379574(d=lightweight,l=en-us,v=VS.80).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    document.write("<scr" + "ipt type='text/javascript' src='" + "http" + (window.location.protocol.indexOf('https:') == 0 ? 's' : '') + "://" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\\/scr" + "ipt>");
+  }
+  var detectedLocale = 'en-US';
+  var wtsp = 'msdnlib_devtools_lang';
+  var gTrackEvents = '0';
+/*]]>*/
+</SCRIPT>
+<NOSCRIPT>
+<DIV><IMG id=Img1 height=1 alt=DCSIMG 
+src="Part 5 From Trees to Graphs.files/njs.gif" width=1></DIV></NOSCRIPT></DIV>
+<DIV class=OmnitureContainer>
+<SCRIPT type=text/javascript>
+  var omni_guid = '334c8cf5-a653-4093-b4ba-bbb821e5379e'; 
+</SCRIPT>
+<NOSCRIPT><A title="Web Analytics" href="http://www.omniture.com/"><IMG height=1 
+alt="" src="Part 5 From Trees to Graphs.files/0.gif" width=1 border=0></A> 
+</NOSCRIPT></DIV></DIV>
+<SCRIPT language=javascript src="Part 5 From Trees to Graphs.files/broker.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Part 5 From Trees to Graphs.files/c2b4b2079ab4502f4c4e4b7eddfdc341.js" 
+type=text/javascript xmlns="http://www.w3.org/1999/xhtml"></SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,1410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89BAD48A-5054-4B38-A688-D59C0F5A9574}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JinHong</RootNamespace>
+    <AssemblyName>JinHong</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>01b0e6d5</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Binary\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.2.0.37223, Culture=neutral, PublicKeyToken=0e453835af4ee6ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.2.0.37224, Culture=neutral, PublicKeyToken=f46ff315b1088208, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.7.2.26, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net40\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.97.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.97.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFToolkit.Extended, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="ApplicationStatusInfo.cs" />
+    <Compile Include="BaseUserControl\ModuleBaseUserControl.xaml.cs">
+      <DependentUpon>ModuleBaseUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUserControl\WpfBaseDialog.xaml.cs">
+      <DependentUpon>WpfBaseDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BuildingInfoHelper.cs" />
+    <Compile Include="Common\GenerateCodeHelper.cs" />
+    <Compile Include="Controller\AppBaseController.cs" />
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\IController.cs.cs" />
+    <Compile Include="Controller\IModuleController.cs" />
+    <Compile Include="Controller\IRoleController.cs" />
+    <Compile Include="Controller\IAppController.cs" />
+    <Compile Include="Controller\RoleController.cs" />
+    <Compile Include="Extensions\WareHouseLeasingInfoExtensions.cs" />
+    <Compile Include="Extensions\General\DataRowExtensions.cs" />
+    <Compile Include="Extensions\General\DataTableExtensions.cs" />
+    <Compile Include="Extensions\LeasingInfoExtensions.cs" />
+    <Compile Include="GlobalVariables.cs" />
+    <Compile Include="ApplicationPrivileges.cs" />
+    <Compile Include="Helper\BuildingsHelper.cs" />
+    <Compile Include="Helper\ExportFileHelper.cs" />
+    <Compile Include="Helper\JinHongConstantHelper.cs" />
+    <Compile Include="Helper\MsgHelper.cs" />
+    <Compile Include="Helper\PasswordBoxBindingHelper.cs" />
+    <Compile Include="Helper\RoomsHelper.cs" />
+    <Compile Include="Helper\SocialUnitsHelper.cs" />
+    <Compile Include="Helper\ZipHelper.cs" />
+    <Compile Include="Helper\ZipHelper2.cs" />
+    <Compile Include="Helper\ZipHelper3.cs" />
+    <Compile Include="MainWindow.Initialization.cs" />
+    <Compile Include="Models\BulidingModel.cs" />
+    <Compile Include="Models\ParkingLotModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Model\Extended\ContractNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\SystemConstant.cs" />
+    <Compile Include="Service References\ServiceMainReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceMainClient.cs" />
+    <Compile Include="Services\BaseData\AirConditionerService.cs" />
+    <Compile Include="Services\Common\ApplicationService.cs" />
+    <Compile Include="Services\BaseData\AreaService.cs" />
+    <Compile Include="Services\Common\BasicInfoService.cs" />
+    <Compile Include="Services\Estate\BroadBandService.cs" />
+    <Compile Include="Services\BaseData\BulidingService.cs" />
+    <Compile Include="Services\CompanyIndexService.cs" />
+    <Compile Include="Services\Commercial\ContractDetailService.cs" />
+    <Compile Include="Services\Commercial\ContractService.cs" />
+    <Compile Include="Services\BaseData\FeeItemService.cs" />
+    <Compile Include="Services\BaseData\ModuleService.cs" />
+    <Compile Include="Services\Estate\CheckInService.cs" />
+    <Compile Include="Services\Estate\EmployeeService.cs" />
+    <Compile Include="Services\Estate\GrantKeyService.cs" />
+    <Compile Include="Services\Estate\InstallAirService.cs" />
+    <Compile Include="Services\Estate\MonitorProbeService.cs" />
+    <Compile Include="Services\Estate\RepairService.cs" />
+    <Compile Include="Services\Estate\ParkingLotRentalService.cs" />
+    <Compile Include="Services\BaseData\ParkingLotService.cs" />
+    <Compile Include="Services\BaseData\RoleOfUserManagementService.cs" />
+    <Compile Include="Services\BaseData\RoleService.cs" />
+    <Compile Include="Services\BaseData\RoomService.cs" />
+    <Compile Include="Services\BaseData\SocialUnitService.cs" />
+    <Compile Include="Services\Financial\DepositFeeService.cs" />
+    <Compile Include="Services\Financial\ParkingFeeService.cs" />
+    <Compile Include="Services\TelFeeService.cs" />
+    <Compile Include="Services\BaseData\UserService.cs" />
+    <Compile Include="Services\BaseData\WareHouseService.cs" />
+    <Compile Include="ViewModel\AbstractPageViewModel.cs" />
+    <Compile Include="ViewModel\AccountViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\AirConditioner\AirConditionerViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\FeeItem\NewOrEditFeeItemViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\ParkingLot\NewOrEditParkingViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\SocialUnit\RentalBizNavViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\SocialUnit\SocialUnitIndexDetailViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\SocialUnit\SocialUnitIndexViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\FeeItem\FeeItemVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\Module\ModuleViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\Module\NewOrEditModuleViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\RoleOfUserManagement\AddRoleOfUserManagementDialogVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\RoleOfUserManagement\RoleOfUserManagementVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\Role\NewOrEditRoleViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\Building\NewOrEditBuildingViewModel.cs" />
+    <Compile Include="ViewModel\Estate\BroadBandFee\NewOrEditBroadBandFeeViewModel.cs" />
+    <Compile Include="ViewModel\Estate\CheckInOrCheckOut\CheckInViewModel.cs" />
+    <Compile Include="ViewModel\Estate\CheckInOrCheckOut\NewOrEditCheckOutOfCommercialViewModel.cs" />
+    <Compile Include="ViewModel\Estate\CheckInOrCheckOut\NewOrEditCheckOutOfEstateViewModel.cs" />
+    <Compile Include="ViewModel\Estate\CheckInOrCheckOut\NewOrEditCheckInViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Employee\NewOrEditEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Probe\NewOrEditProbeViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RepairService\GrantKeyViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RepairService\NewOrEditRepairViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RepairService\NewOrEditGrantKeyViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RepairService\NewOrEditInstallAirViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RepairService\RepairViewModel.cs" />
+    <Compile Include="ViewModel\Financial\DepositFee\NewOrEditDepositFeeViewModel.cs" />
+    <Compile Include="ViewModel\Financial\ParkingFee\NewOrEditParkingFeeViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\AirConditioner\NewOrEditAirConditionerViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\Room\NewOrEditRoomViewModel.cs" />
+    <Compile Include="ViewModel\BaseInfo\WareHouse\WareHouseInfoVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\ParkingLot\ParkingLotInfoVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\User\UserInfoVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\SocialUnit\NewOrEditSocialUnitVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\PrivilegeVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\Room\RoomInfoVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\Role\RoleInfoVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\Building\BuildingInfoVM.cs" />
+    <Compile Include="ViewModel\BaseInfo\WareHouse\NewOrEditWareHouseViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\Contract\AddContractDetailVM.cs" />
+    <Compile Include="ViewModel\Commercial\Contract\NewContractViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\OutRentaledViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\NewOrEditRentalVM.cs" />
+    <Compile Include="ViewModel\Commercial\UnContractListVM.cs" />
+    <Compile Include="ViewModel\Commercial\WareHouseRentalViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\Contract\ContractVM.cs" />
+    <Compile Include="ViewModel\Commercial\RentalWareHouseVM.cs" />
+    <Compile Include="ViewModel\Commercial\InRentaledVM.cs" />
+    <Compile Include="ViewModel\Commercial\ReverseRentalVM.cs" />
+    <Compile Include="ViewModel\Commercial\RentalLogViewModel.cs" />
+    <Compile Include="ViewModel\Commercial\租金_物业费缴纳情况记录管理业务VM.cs" />
+    <Compile Include="ViewModel\Commercial\ParkGraphViewModel.cs" />
+    <Compile Include="ViewModel\Estate\ParkingRental\NewOrEditRentalParkingViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Power\PowerFeeDetailViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Power\抄电表数VM.cs" />
+    <Compile Include="ViewModel\Estate\ParkingRental\RentalParkingViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Probe\ProbeViewModel.cs" />
+    <Compile Include="ViewModel\Estate\SecurityAgreement\SecurityAgreementViewModel.cs" />
+    <Compile Include="ViewModel\Estate\ParkingRental\ParkingFeeDetailViewModel.cs" />
+    <Compile Include="ViewModel\Estate\ParkingRental\ParkingLotGraphViewModel.cs" />
+    <Compile Include="ViewModel\Estate\ParkingFee\ParkingFeeDetailOfCheckInViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RentalDetailViewModel.cs" />
+    <Compile Include="ViewModel\Estate\BroadBandFee\BroadBandViewModel.cs" />
+    <Compile Include="ViewModel\Estate\RepairService\InstallAirViewModel.cs" />
+    <Compile Include="ViewModel\Estate\ParkingRental\ParkingFeeSummaryViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Power\PowerFeeResultViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Power\租赁单位水电费一览表VM.cs" />
+    <Compile Include="ViewModel\Estate\FireViewModel.cs" />
+    <Compile Include="ViewModel\Estate\Employee\EmployeeViewModel.cs" />
+    <Compile Include="ViewModel\Financial\ManagementFee\ManagementFeeViewModel.cs" />
+    <Compile Include="ViewModel\Financial\RentalFee\RentalFeeViewModel.cs" />
+    <Compile Include="ViewModel\Financial\ParkingFee\ParkingFeeViewModel.cs" />
+    <Compile Include="ViewModel\Financial\Summary\IOSummaryOfMonthViewModel.cs" />
+    <Compile Include="ViewModel\Financial\Summary\IODetailOfYearViewModel.cs" />
+    <Compile Include="ViewModel\Financial\Summary\IODetailOf6MonthViewModel.cs" />
+    <Compile Include="ViewModel\Financial\Summary\IODetailOfMonthViewModel.cs" />
+    <Compile Include="ViewModel\Financial\DepositFee\DepositFeeViewModel.cs" />
+    <Compile Include="ViewModel\MainMenuViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\MenuItemViewModel.cs" />
+    <Compile Include="ViewModel\Financial\Summary\IODetailOfDayViewModel.cs" />
+    <Compile Include="ViewModel\NewOrEditViewModelBase.cs" />
+    <Compile Include="ViewModel\BaseInfo\SocialUnit\SocialUnitInfoVM.cs" />
+    <Compile Include="ViewModel\StartPageViewModel.cs" />
+    <Compile Include="ViewModel\StatusBarViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ControlBar.xaml.cs">
+      <DependentUpon>ControlBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\ModuleSelector.xaml.cs">
+      <DependentUpon>ModuleSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\AboutDialog.xaml.cs">
+      <DependentUpon>AboutDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\AddOrModifyDirectoryDialog.xaml.cs">
+      <DependentUpon>AddOrModifyDirectoryDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\AddOrModifyContractDialog.xaml.cs">
+      <DependentUpon>AddOrModifyContractDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddModuleDialog.xaml.cs">
+      <DependentUpon>AddModuleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddRoleOfUserManagementDialog.xaml.cs">
+      <DependentUpon>AddRoleOfUserManagementDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddFeeItemDialog.xaml.cs">
+      <DependentUpon>AddFeeItemDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\CompanyIndexDetail.xaml.cs">
+      <DependentUpon>CompanyIndexDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\NewContractDetail.xaml.cs">
+      <DependentUpon>NewContractDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\Rental.xaml.cs">
+      <DependentUpon>Rental.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Common\ParentDialagWindow.cs" />
+    <Compile Include="View\Dialogs\Estate\EditTelFeeDialog.xaml.cs">
+      <DependentUpon>EditTelFeeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddWaterFeeDialog.xaml.cs">
+      <DependentUpon>AddWaterFeeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AdSMContractInfoDialog.xaml.cs">
+      <DependentUpon>AdSMContractInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\EditInstallAirConditionerDialog.xaml.cs">
+      <DependentUpon>EditInstallAirConditionerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\WpfRepairDialog.xaml.cs">
+      <DependentUpon>WpfRepairDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddRepairRecordDialog.xaml.cs">
+      <DependentUpon>AddRepairRecordDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddBroadBandFeeDialog.xaml.cs">
+      <DependentUpon>AddBroadBandFeeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddMonitorProbeDialog.xaml.cs">
+      <DependentUpon>AddMonitorProbeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddAirConditionerDialog.xaml.cs">
+      <DependentUpon>AddAirConditionerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddOrEditWareHouseInfoDialog.xaml.cs">
+      <DependentUpon>AddOrEditWareHouseInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddBuildingInfoDialog.xaml.cs">
+      <DependentUpon>AddBuildingInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddSocialUnitInfoDialog.xaml.cs">
+      <DependentUpon>AddSocialUnitInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddPrivilegeDialog.xaml.cs">
+      <DependentUpon>AddPrivilegeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddUserDialog.xaml.cs">
+      <DependentUpon>AddUserDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddRoleDialog.xaml.cs">
+      <DependentUpon>AddRoleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddRoomDialog.xaml.cs">
+      <DependentUpon>AddRoomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\ChangePasswordDialog.xaml.cs">
+      <DependentUpon>ChangePasswordDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\NewOrEditContract.xaml.cs">
+      <DependentUpon>NewOrEditContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\LeasingStatusEditDialog.xaml.cs">
+      <DependentUpon>LeasingStatusEditDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\ViewContractDetailDialog.xaml.cs">
+      <DependentUpon>ViewContractDetailDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\WareHouseLeaseCancelDialog.xaml.cs">
+      <DependentUpon>WareHouseLeaseCancelDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\WareHouseLeaseAddDialog.xaml.cs">
+      <DependentUpon>WareHouseLeaseAddDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\WareHouseLeasingStatusDialog.xaml.cs">
+      <DependentUpon>WareHouseLeasingStatusDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\AddCheckInDialog.xaml.cs">
+      <DependentUpon>AddCheckInDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\LeaseCancelDialog.xaml.cs">
+      <DependentUpon>LeaseCancelDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Commercial\LeasingStatusViewDialog.xaml.cs">
+      <DependentUpon>LeasingStatusViewDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddInstallAirConditionerDialog.xaml.cs">
+      <DependentUpon>AddInstallAirConditionerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddFireFightingEquipmentInfoDialog.xaml.cs">
+      <DependentUpon>AddFireFightingEquipmentInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\WpfGrantKeyDialog.xaml.cs">
+      <DependentUpon>WpfGrantKeyDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\ViewParkingLotRentalInfoGatheringDialog.xaml.cs">
+      <DependentUpon>ViewParkingLotRentalInfoGatheringDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\EditTelecomFeesDialog.xaml.cs">
+      <DependentUpon>EditTelecomFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\EditParkingLotRentalInfoDialog.xaml.cs">
+      <DependentUpon>EditParkingLotRentalInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\EditWaterAndElectricityFeesDialog.xaml.cs">
+      <DependentUpon>EditWaterAndElectricityFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\EmployeeLeaveDialog.xaml.cs">
+      <DependentUpon>EmployeeLeaveDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\WpfEmployeeDialog.xaml.cs">
+      <DependentUpon>WpfEmployeeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\FireFightingEquipmentInfoEditDialog.xaml.cs">
+      <DependentUpon>FireFightingEquipmentInfoEditDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\LeasingRegistrationDialog.xaml.cs">
+      <DependentUpon>LeasingRegistrationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\AddPropertyManagementFeeDialog.xaml.cs">
+      <DependentUpon>AddPropertyManagementFeeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\AddRentalFeesDialog.xaml.cs">
+      <DependentUpon>AddRentalFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\AddDepositFeesDialog.xaml.cs">
+      <DependentUpon>AddDepositFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\AddOrEditParkingFeeDialog.xaml.cs">
+      <DependentUpon>AddOrEditParkingFeeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\AddFeesDialog.xaml.cs">
+      <DependentUpon>AddFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\BaseInfo\AddParkingLotInfoDialog.xaml.cs">
+      <DependentUpon>AddParkingLotInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Estate\AddParkingRentalDialog.xaml.cs">
+      <DependentUpon>AddParkingRentalDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\EditRentalFeesDialog.xaml.cs">
+      <DependentUpon>EditRentalFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\EditDepositFeesDialog.xaml.cs">
+      <DependentUpon>EditDepositFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\EditRentalAndDepositFeesDialog.xaml.cs">
+      <DependentUpon>EditRentalAndDepositFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\EditPropertyManagementFeesDialog.xaml.cs">
+      <DependentUpon>EditPropertyManagementFeesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\Financial\ViewRentalFeeDetailDialog.xaml.cs">
+      <DependentUpon>ViewRentalFeeDetailDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\LoginDialog.xaml.cs">
+      <DependentUpon>LoginDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\RenameDialog.xaml.cs">
+      <DependentUpon>RenameDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuBar.xaml.cs">
+      <DependentUpon>MenuBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\WpfAirConditioner.xaml.cs">
+      <DependentUpon>WpfAirConditioner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\FeeItemManagement.xaml.cs">
+      <DependentUpon>FeeItemManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\SetRoleOfUserManagement.xaml.cs">
+      <DependentUpon>SetRoleOfUserManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\WareHouseInfoManagement.xaml.cs">
+      <DependentUpon>WareHouseInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\ParkingLotInfoManagement.xaml.cs">
+      <DependentUpon>ParkingLotInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\UserInfoManagement.xaml.cs">
+      <DependentUpon>UserInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\SocialUnitInfoManagement.xaml.cs">
+      <DependentUpon>SocialUnitInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\EnterpriseInfoManagement.xaml.cs">
+      <DependentUpon>EnterpriseInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\PrivilegeManagement.xaml.cs">
+      <DependentUpon>PrivilegeManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\WpfModule.xaml.cs">
+      <DependentUpon>WpfModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\WpfBuilding.xaml.cs">
+      <DependentUpon>WpfBuilding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\RoomInfoManagement.xaml.cs">
+      <DependentUpon>RoomInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\BaseInfo\RoleInfoManagement.xaml.cs">
+      <DependentUpon>RoleInfoManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\PreContractList.xaml.cs">
+      <DependentUpon>PreContractList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfGrantKey.xaml.cs">
+      <DependentUpon>WpfGrantKey.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfPropertyManagementFee.xaml.cs">
+      <DependentUpon>WpfPropertyManagementFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfDepositFee.xaml.cs">
+      <DependentUpon>WpfDepositFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfRentalFee.xaml.cs">
+      <DependentUpon>WpfRentalFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfParkingFee.xaml.cs">
+      <DependentUpon>WpfParkingFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\Wpf6MonthIODetail.xaml.cs">
+      <DependentUpon>Wpf6MonthIODetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfYearIODetail.xaml.cs">
+      <DependentUpon>WpfYearIODetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfDayIODetail.xaml.cs">
+      <DependentUpon>WpfDayIODetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfMonthIODetail.xaml.cs">
+      <DependentUpon>WpfMonthIODetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Financial\WpfMonthIOSummary.xaml.cs">
+      <DependentUpon>WpfMonthIOSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfParkingFeeSummary.xaml.cs">
+      <DependentUpon>WpfParkingFeeSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\各楼层租赁单位情况表.xaml.cs">
+      <DependentUpon>各楼层租赁单位情况表.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\平面图.xaml.cs">
+      <DependentUpon>平面图.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfPower.xaml.cs">
+      <DependentUpon>WpfPower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfParkingFeeDetail.xaml.cs">
+      <DependentUpon>WpfParkingFeeDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfPowerFeeInvoice.xaml.cs">
+      <DependentUpon>WpfPowerFeeInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfPowerFee.xaml.cs">
+      <DependentUpon>WpfPowerFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfFire.xaml.cs">
+      <DependentUpon>WpfFire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\BroadBand.xaml.cs">
+      <DependentUpon>BroadBand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfProbe.xaml.cs">
+      <DependentUpon>WpfProbe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfSecurityAgreement.xaml.cs">
+      <DependentUpon>WpfSecurityAgreement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\租赁单位水电费一览表.xaml.cs">
+      <DependentUpon>租赁单位水电费一览表.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfCheckIn.xaml.cs">
+      <DependentUpon>WpfCheckIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfOutRental.xaml.cs">
+      <DependentUpon>WpfOutRental.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\RentalWareHouse.xaml.cs">
+      <DependentUpon>RentalWareHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\WpfContract.xaml.cs">
+      <DependentUpon>WpfContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\楼宇区域位置图示.xaml.cs">
+      <DependentUpon>楼宇区域位置图示.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\WpfCompanyIndex.xaml.cs">
+      <DependentUpon>WpfCompanyIndex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\租赁期限变更_续租_退租一览业务.xaml.cs">
+      <DependentUpon>租赁期限变更_续租_退租一览业务.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Commercial\租金_物业费缴纳情况记录管理业务.xaml.cs">
+      <DependentUpon>租金_物业费缴纳情况记录管理业务.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfRepair.xaml.cs">
+      <DependentUpon>WpfRepair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfRentalParking.xaml.cs">
+      <DependentUpon>WpfRentalParking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfEmployee.xaml.cs">
+      <DependentUpon>WpfEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Estate\WpfInstallAir.xaml.cs">
+      <DependentUpon>WpfInstallAir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Data\Converters\DirtyConverters.cs" />
+    <Page Include="BaseUserControl\ModuleBaseUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseUserControl\WpfBaseDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Themes\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ControlBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\ModuleSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\AboutDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\AddOrModifyDirectoryDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\AddOrModifyContractDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddModuleDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddRoleOfUserManagementDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddFeeItemDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\CompanyIndexDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\NewContractDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\Rental.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Estate\EditTelFeeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddWaterFeeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AdSMContractInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\EditInstallAirConditionerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\WpfRepairDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddRepairRecordDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddBroadBandFeeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddMonitorProbeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddAirConditionerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddOrEditWareHouseInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddBuildingInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddSocialUnitInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddPrivilegeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddUserDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddRoleDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddRoomDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\ChangePasswordDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\NewOrEditContract.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\LeasingStatusEditDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\ViewContractDetailDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\WareHouseLeaseCancelDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\WareHouseLeaseAddDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\WareHouseLeasingStatusDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\AddCheckInDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\LeaseCancelDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Commercial\LeasingStatusViewDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddInstallAirConditionerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddFireFightingEquipmentInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\WpfGrantKeyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Estate\ViewParkingLotRentalInfoGatheringDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\EditTelecomFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\EditParkingLotRentalInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\EditWaterAndElectricityFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\EmployeeLeaveDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\WpfEmployeeDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Estate\FireFightingEquipmentInfoEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Estate\LeasingRegistrationDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\Financial\AddPropertyManagementFeeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\AddRentalFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\AddDepositFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\AddOrEditParkingFeeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\AddFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\BaseInfo\AddParkingLotInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Estate\AddParkingRentalDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\EditRentalFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\EditDepositFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\EditRentalAndDepositFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\EditPropertyManagementFeesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\Financial\ViewRentalFeeDetailDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\LoginDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\RenameDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MenuBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\WpfAirConditioner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\FeeItemManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\SetRoleOfUserManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\WareHouseInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\ParkingLotInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\UserInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\SocialUnitInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\EnterpriseInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\PrivilegeManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\WpfModule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\WpfBuilding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\RoomInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\BaseInfo\RoleInfoManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\Commercial\PreContractList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfGrantKey.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfPropertyManagementFee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfDepositFee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfRentalFee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfParkingFee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Financial\Wpf6MonthIODetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfYearIODetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfDayIODetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfMonthIODetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Financial\WpfMonthIOSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfParkingFeeSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\各楼层租赁单位情况表.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\平面图.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfPower.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfParkingFeeDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfPowerFeeInvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfPowerFee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfFire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\BroadBand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfProbe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfSecurityAgreement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\租赁单位水电费一览表.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfCheckIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfOutRental.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Commercial\RentalWareHouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Commercial\WpfContract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Commercial\楼宇区域位置图示.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Commercial\WpfCompanyIndex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Commercial\租赁期限变更_续租_退租一览业务.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Commercial\租金_物业费缴纳情况记录管理业务.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfRepair.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfRentalParking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Estate\WpfInstallAir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\ServiceMainReference\ServiceMain.wsdl" />
+    <None Include="Xml\景宏0414.docx" />
+    <None Include="Xml\锦宏0412.docx" />
+    <None Include="Xml\锦宏0417.docx" />
+    <None Include="Xml\锦宏24.docx" />
+    <None Include="Xml\锦宏产业园管理软件需求确认解答.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\u10.png" />
+    <Resource Include="Resources\Images\u12.png" />
+    <Resource Include="Resources\Images\u123.png" />
+    <Resource Include="Resources\Images\u128.png" />
+    <Resource Include="Resources\Images\u130.png" />
+    <Resource Include="Resources\Images\u135.png" />
+    <Resource Include="Resources\Images\u140.png" />
+    <Resource Include="Resources\Images\u6.png" />
+    <Resource Include="Resources\Images\招商\仓库租赁.png" />
+    <Resource Include="Resources\Images\招商\入退租表.png" />
+    <Resource Include="Resources\Images\招商\合同管理.png" />
+    <Resource Include="Resources\Images\招商\楼宇图示.png" />
+    <Resource Include="Resources\Images\招商\租户情况.png" />
+    <Resource Include="Resources\Images\招商\租更续退.png" />
+    <Resource Include="Resources\Images\招商\缴费情况.png" />
+    <Resource Include="Resources\Images\搜索镜_u143.png" />
+    <Resource Include="Resources\Images\未选中关闭_u183.png" />
+    <Resource Include="Resources\Images\未选中最大化_u187.png" />
+    <Resource Include="Resources\Images\未选中最小化_u185.png" />
+    <Resource Include="Resources\Images\物业\人事管理.png" />
+    <Resource Include="Resources\Images\物业\消防管理.png" />
+    <Resource Include="Resources\Images\物业\物业管理.png" />
+    <Resource Include="Resources\Images\财务\半年收支.png" />
+    <Resource Include="Resources\Images\财务\已交房租.png" />
+    <Resource Include="Resources\Images\财务\已转费用.png" />
+    <Resource Include="Resources\Images\财务\年度收支.png" />
+    <Resource Include="Resources\Images\财务\收入报表.png" />
+    <Resource Include="Resources\Images\财务\月度收支.png" />
+    <Resource Include="Resources\Images\财务\月收汇总.png" />
+    <Resource Include="Resources\Images\财务\未交房租.png" />
+    <Resource Include="Resources\Images\财务\未转费用.png" />
+    <Resource Include="Resources\Images\选中关闭_u177.png" />
+    <Resource Include="Resources\Images\选中最大化_u181.png" />
+    <Resource Include="Resources\Images\选中最小化_u179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Resources\Images\u0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\3rdParty\WPFExtensions\WPFExtensions.csproj">
+      <Project>{a7915102-8326-4862-96f0-4eb80ed087b4}</Project>
+      <Name>WPFExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.Core\UniGuy.Core.csproj">
+      <Project>{1ada76da-ad8f-4a70-8f68-bac6db3ffcfd}</Project>
+      <Name>UniGuy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.EntityFramework\UniGuy.EntityFramework.csproj">
+      <Project>{2d90e484-973e-42c8-b3d7-b139c5e82ebc}</Project>
+      <Name>UniGuy.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.PresentationCore\UniGuy.PresentationCore.csproj">
+      <Project>{3b2488b2-bf23-428c-ae3e-3ee395f908ed}</Project>
+      <Name>UniGuy.PresentationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.PresentationFramework\UniGuy.PresentationFramework.csproj">
+      <Project>{8960cc15-fa8e-4194-a247-bf660f8e170f}</Project>
+      <Name>UniGuy.PresentationFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Source\UniGuy.Printing\UniGuy.Printing.csproj">
+      <Project>{8578a0e6-e678-4dae-8054-8e3d6f28b016}</Project>
+      <Name>UniGuy.Printing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\UniGuy.Report\UniGuy.Report.csproj">
+      <Project>{a9b4242f-a752-4496-b9cf-5288692bdf7e}</Project>
+      <Name>UniGuy.Report</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JinHong.Core\JinHong.Core.csproj">
+      <Project>{d513d8ae-1f46-4d37-b847-1ce9b3f8c096}</Project>
+      <Name>JinHong.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JinHong.Interfaces\JinHong.ServiceContract.csproj">
+      <Project>{4633671d-2cdd-441d-a146-4d935b528ccc}</Project>
+      <Name>JinHong.ServiceContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Welcome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\Ionic.Zip.dll" />
+    <Resource Include="Xml\RoomStatusDetail.xml" />
+    <Resource Include="Lib\Ionic.Zip.XML" />
+    <Content Include="Lib\WPFToolkit.dll" />
+    <Content Include="Lib\WPFToolkit.Extended.dll" />
+    <Content Include="Lib\Xceed.Wpf.AvalonDock.dll" />
+    <Content Include="Lib\Xceed.Wpf.AvalonDock.Themes.Aero.dll" />
+    <Content Include="Lib\Xceed.Wpf.AvalonDock.Themes.Metro.dll" />
+    <Content Include="Lib\Xceed.Wpf.AvalonDock.Themes.VS2010.dll" />
+    <Content Include="Lib\Xceed.Wpf.DataGrid.dll" />
+    <Content Include="Lib\Xceed.Wpf.Toolkit.dll" />
+    <Resource Include="Resources\Images\Xaml\appbar.magnify.png" />
+    <Resource Include="Resources\Images\RenameFolderHS.png" />
+    <Resource Include="Resources\Images\add_over.png" />
+    <Resource Include="Resources\Images\delete_over.png" />
+    <Resource Include="Resources\Images\book_addressHS.png" />
+    <Resource Include="Resources\Images\New\112_DownArrowLong_Blue_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_DownArrowLong_Green_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_DownArrowLong_Orange_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_DownArrowShort_Blue_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_UpArrowLong_Blue_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_UpArrowLong_Green_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_UpArrowLong_Orange_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_UpArrowShort_Blue_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_UpArrowShort_Green_16x16_72.png" />
+    <Resource Include="Resources\Images\New\112_UpArrowShort_Orange_16x16_72.png" />
+    <Resource Include="Resources\Images\New\add_over.png" />
+    <Resource Include="Resources\Images\New\base_plus_sign_32.png" />
+    <Resource Include="Resources\Images\New\base_star_32.png" />
+    <Resource Include="Resources\Images\New\BreakpointHS.png" />
+    <Resource Include="Resources\Images\New\caution_small.png" />
+    <Resource Include="Resources\Images\New\Computer-Based-Systems.png" />
+    <Resource Include="Resources\Images\New\Delete.png" />
+    <Resource Include="Resources\Images\New\delete_over.png" />
+    <Resource Include="Resources\Images\New\dl_cancel.png" />
+    <Resource Include="Resources\Images\New\dl_fail.png" />
+    <Resource Include="Resources\Images\New\dl_succ.png" />
+    <Resource Include="Resources\Images\New\DropDownIcon.png" />
+    <Resource Include="Resources\Images\New\ErrorTooltip.png" />
+    <Resource Include="Resources\Images\New\Expander.png" />
+    <Resource Include="Resources\Images\New\failed.png" />
+    <Resource Include="Resources\Images\New\failed_s.png" />
+    <Resource Include="Resources\Images\New\Find16.png" />
+    <Resource Include="Resources\Images\New\FindResults.png" />
+    <Resource Include="Resources\Images\New\Folder_Collapsed.png" />
+    <Resource Include="Resources\Images\New\Folder_Expanded.png" />
+    <Resource Include="Resources\Images\New\FormatPainter16.png" />
+    <Resource Include="Resources\Images\New\Generic_Application.png" />
+    <Resource Include="Resources\Images\New\Important.PNG" />
+    <Resource Include="Resources\Images\New\Information.png" />
+    <Resource Include="Resources\Images\New\InformationIcon.png" />
+    <Resource Include="Resources\Images\New\InformationTooltip.png" />
+    <Resource Include="Resources\Images\New\low.PNG" />
+    <Resource Include="Resources\Images\New\mark_s.png" />
+    <Resource Include="Resources\Images\New\msg_icon_info.png" />
+    <Resource Include="Resources\Images\New\Options.png" />
+    <Resource Include="Resources\Images\New\pdf_button.png" />
+    <Resource Include="Resources\Images\New\Personal-Computers.png" />
+    <Resource Include="Resources\Images\New\pop_time.png" />
+    <Resource Include="Resources\Images\New\power-options.png" />
+    <Resource Include="Resources\Images\New\Properties.png" />
+    <Resource Include="Resources\Images\New\Refresh.png" />
+    <Resource Include="Resources\Images\New\SaveAllHS.png" />
+    <Resource Include="Resources\Images\New\Sequenc_ToolBar.png" />
+    <Resource Include="Resources\Images\New\Smile16.png" />
+    <Resource Include="Resources\Images\New\success.png" />
+    <Resource Include="Resources\Images\New\up.png" />
+    <Resource Include="Resources\Images\New\warn_s.png" />
+    <Resource Include="Resources\Images\Folder_Collapsed.png" />
+    <Resource Include="Resources\Images\Folder_Expanded.png" />
+    <None Include="Service References\ServiceMainReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceMainReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceMainReference\configuration91.svcinfo" />
+    <None Include="Service References\ServiceMainReference\ServiceMain.disco" />
+    <Resource Include="Resources\Images\u190.jpg" />
+    <Resource Include="Resources\Images\listview_active.png" />
+    <Resource Include="Resources\Images\listview_inactive.png" />
+    <Resource Include="Resources\Images\search.png" />
+    <Resource Include="Resources\Images\tileview_active.png" />
+    <Resource Include="Resources\Images\tileview_inactive.png" />
+    <Resource Include="Resources\Images\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceMainReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataTemplate\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.97.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.97.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.97.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.97.0\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+﻿<StatusBar x:Class="JinHong.View.StatusBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:local="clr-namespace:JinHong"
+           xmlns:pf="http://schemas.uniguy.com/presentation"
+           xmlns:local_prop="clr-namespace:JinHong.Properties"
+           x:Name="_this"
+           DataContext="{Binding ViewModel,ElementName=_this}">
+    <StatusBarItem DockPanel.Dock="Right">
+        <TextBlock Text="{Binding LoginTime, Source={x:Static local:GlobalVariables.AppStatusInfo},StringFormat='登录时间:{0}',FallbackValue=#Error}"/>
+    </StatusBarItem>
+    <StatusBarItem DockPanel.Dock="Right" Margin="8,0,0,0">
+        <TextBlock Text="{Binding User.Username, Source={x:Static local:GlobalVariables.AppStatusInfo},StringFormat='用户:{0}',FallbackValue='未登录'}"/>
+    </StatusBarItem>
+    <StatusBarItem DockPanel.Dock="Right" Margin="8,0,0,0">
+        //  TODO:其它状态信息
+    </StatusBarItem>
+    <StatusBarItem DockPanel.Dock="Right">
+        <ProgressBar Width="128" Height="16"
+                             IsIndeterminate="True">
+            <ProgressBar.Style>
+                <Style TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource {x:Type ProgressBar}}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsReady, Source={x:Static local:GlobalVariables.AppStatusInfo}}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ProgressBar.Style>
+        </ProgressBar>
+    </StatusBarItem>
+    <StatusBarItem>
+        <TextBlock Text="{Binding CurrentTaskContent, Source={x:Static local:GlobalVariables.AppStatusInfo}}"/>
+    </StatusBarItem>
+</StatusBar>

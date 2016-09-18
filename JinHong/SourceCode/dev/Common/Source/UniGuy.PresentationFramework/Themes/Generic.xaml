@@ -1,0 +1,14 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="UniGuy.PresentationFramework;component/Themes/NumberEditBox.xaml"/>
+        <ResourceDictionary Source="UniGuy.PresentationFramework;component/Themes/CircuitControl.xaml"/>-->
+        <!--<ResourceDictionary Source="UniGuy.PresentationFramework;component/Themes/FunctionViewer.xaml"/>
+        <ResourceDictionary Source="UniGuy.PresentationFramework;component/Themes/PolarFunctionViewer.xaml"/>-->
+        
+    </ResourceDictionary.MergedDictionaries>
+
+   
+</ResourceDictionary>

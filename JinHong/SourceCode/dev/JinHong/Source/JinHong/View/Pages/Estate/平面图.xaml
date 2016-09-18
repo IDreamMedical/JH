@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="JinHong.View.平面图"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="_this">
+    <Grid DataContext="{Binding ViewModel,ElementName=_this}">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBlock Text="锦宏平面图: " VerticalAlignment="Center" FontWeight="Bold"/>
+                <Button x:Name="buttonChangeFigure" Content="更改" ToolTip="更改楼宇区位置图示文件"
+                          Click="buttonChangeFigure_Click"/>
+            </StackPanel>
+            <!-- TODO... 从本地缓存获得, 如果有更新则从服务端下载覆盖 -->
+            <Image Source="/JinHong;component/Resources/Images/u190.jpg" Stretch="Uniform"/>
+        </DockPanel>
+    </Grid>
+</UserControl>

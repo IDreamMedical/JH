@@ -1,0 +1,197 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+
+
+
+    <!-- General Resources -->
+    <SolidColorBrush x:Key="br_uiFramework_foreground_active" Color="{DynamicResource col_uiFramework_active}"/>
+    <SolidColorBrush x:Key="br_uiFramework_foreground_inactive" Color="{DynamicResource col_uiFramework_inactive}"/>
+    <SolidColorBrush x:Key="br_uiFramework_foreground_hover_darker" Color="{DynamicResource col_fgv_highlight_darker}"/>
+    <SolidColorBrush x:Key="br_uiFramework_foreground_hover" Color="{DynamicResource col_fgv_icon_highlight}"/>
+
+    <SolidColorBrush x:Key="br_uiFramework_window_fill" Color="{DynamicResource col_uiFramework_window_fill}"/>
+    <SolidColorBrush x:Key="br_uiFramework_window_alternate_fill" Color="{DynamicResource col_uiFramework_window_alternate_fill}"/>
+
+    <SolidColorBrush x:Key="br_uiFramework_window_titleBar_borderOuter" Color="{DynamicResource col_uiFramework_window_titleBar_borderOuter}"/>
+    <SolidColorBrush x:Key="br_uiFramework_window_titleBar_fill" Color="{DynamicResource col_uiFramework_window_titleBar_fill}"/>
+    <SolidColorBrush x:Key="br_uiFramework_window_titleBar_borderInner" Color="{DynamicResource col_uiFramework_window_titleBar_borderInner}"/>
+
+    <SolidColorBrush x:Key="br_uiFramework_icon_redglow" Color="{DynamicResource col_fgv_icon_highlight_redglow}"/>
+
+    <SolidColorBrush x:Key="br_inactive_item_foreground" Color="{DynamicResource col_inactive_item_foreground}"/>
+    
+
+    <!-- Items Brushes (ListView / ComboBox / TreeView / ListBox) -->
+
+    <SolidColorBrush x:Key="br_item_fill_normal" Color="Transparent"/>
+    <!--<SolidColorBrush x:Key="br_item_tile_fill_normal" Color="{DynamicResource col_uiFramework_window_fill}"/>-->
+    <SolidColorBrush x:Key="br_item_tile_fill_normal" Color="{DynamicResource col_item_tile_fill_normal}"/>
+    <SolidColorBrush x:Key="br_item_tile_border_normal" Color="{DynamicResource col_item_tile_border_normal}"/>
+    <SolidColorBrush x:Key="br_item_tile_blurEffect_fill_normal" Color="{DynamicResource blurEffect_fill_normal}"/>
+
+    <SolidColorBrush x:Key="br_item_fill_hover" Color="{DynamicResource col_item_fill_hover}"/>
+    <!--<SolidColorBrush x:Key="br_item_tile_fill_hover" Color="{DynamicResource col_uiFramework_window_fill}"/>-->
+    <SolidColorBrush x:Key="br_item_tile_fill_hover" Color="{DynamicResource col_item_fill_hover}"/>
+    <SolidColorBrush x:Key="br_item_tile_border_hover" Color="{DynamicResource col_item_tile_border_hover}"/>
+    <SolidColorBrush x:Key="br_item_tile_blurEffect_fill_hover" Color="{DynamicResource col_fgv_highlight}"/>
+
+    <SolidColorBrush x:Key="br_item_fill_inFocus" Color="{DynamicResource col_fgv_highlight}"/>
+    <!--<SolidColorBrush x:Key="br_item_tile_fill_inFocus" Color="{DynamicResource col_item_fill_hover}"/>-->
+    <SolidColorBrush x:Key="br_item_tile_fill_inFocus" Color="{DynamicResource col_item_fill_inFocus}"/>
+    <SolidColorBrush x:Key="br_item_tile_border_inFocus" Color="{DynamicResource col_item_tile_border_hover}"/>
+    <SolidColorBrush x:Key="br_item_tile_blurEffect_fill_inFocus" Color="{DynamicResource col_fgv_highlight}"/>
+
+    <SolidColorBrush x:Key="br_item_fill_selectedNotInFocus" Color="{DynamicResource col_item_fill_selectedNotInFocus}"/>
+    <SolidColorBrush x:Key="br_item_tile_fill_selectedNotInFocus" Color="{DynamicResource col_item_fill_selectedNotInFocus}"/>
+    <SolidColorBrush x:Key="br_item_tile_border_selectedNotInfocus" Color="{DynamicResource col_item_tile_border_hover}"/>
+    <SolidColorBrush x:Key="br_item_tile_blurEffect_fill_selectedNotInFocus" Color="{DynamicResource col_fgv_highlight}"/>
+
+
+    <!-- Grid View Brushes -->
+
+    <SolidColorBrush x:Key="br_gridView_columnHeader_borderShadow_normal" Color="{DynamicResource col_uiFramework_borderShadow}"/>
+    <SolidColorBrush x:Key="br_gridView_columnHeader_borderHighlight_normal" Color="{DynamicResource col_uiFramework_borderHighlight}"/>
+    <SolidColorBrush x:Key="br_gridView_columnHeader_highlight_normal" Color="{DynamicResource col_fgv_highlight_darker}"/>
+
+    <SolidColorBrush x:Key="br_gridView_columnHeader_borderShadow_hover" Color="{DynamicResource col_uiFramework_borderShadow}"/>
+    <SolidColorBrush x:Key="br_gridView_columnHeader_borderHighlight_hover" Color="{DynamicResource col_uiFramework_borderHighlight}"/>
+    <SolidColorBrush x:Key="br_gridView_columnHeader_highlight_hover" Color="{DynamicResource col_fgv_highlight_darker}"/>
+
+    <SolidColorBrush x:Key="br_gridView_columnHeader_borderShadow_pressed" Color="{DynamicResource col_uiFramework_borderHighlight}"/>
+    <SolidColorBrush x:Key="br_gridView_columnHeader_borderHighlight_pressed" Color="{DynamicResource col_uiFramework_borderShadow}"/>
+    <SolidColorBrush x:Key="br_gridView_columnHeader_highlight_pressed" Color="{DynamicResource col_fgv_highlight_darker}"/>
+
+    <SolidColorBrush x:Key="br_gridView_columnHeader_sortOn_arrow_fill" Color="{DynamicResource col_fgv_highlight_darker}"/>
+
+    <SolidColorBrush x:Key="br_gridView_row0_fill" Color="{DynamicResource col_uiFramework_window_fill}"/>
+    <SolidColorBrush x:Key="br_gridView_row1_fill" Color="{DynamicResource col_uiFramework_window_alternate_fill}"/>
+
+
+    <!-- Scroll Bar Brushes -->
+
+    <SolidColorBrush x:Key="br_scrollBar_btn_border_normal" Color="{DynamicResource col_scrollBar_btn_border_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_thumbHighlight_normal" Color="{DynamicResource col_scrollBar_btn_thumbHighlight_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_thumbShadow_normal" Color="{DynamicResource col_scrollBar_btn_thumbShadow_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_arrow_normal" Color="{DynamicResource col_uiFramework_active}"/>
+
+    <SolidColorBrush x:Key="br_scrollBar_btn_border_hover" Color="{DynamicResource col_scrollBar_btn_border_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_thumbHighlight_hover" Color="{DynamicResource col_scrollBar_btn_thumbHighlight_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_thumbShadow_hover" Color="{DynamicResource col_scrollBar_btn_thumbShadow_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_arrow_hover" Color="{DynamicResource col_uiFramework_active}"/>
+
+    <SolidColorBrush x:Key="br_scrollBar_btn_border_dragging" Color="{DynamicResource col_scrollBar_btn_border_normal}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_thumbHighlight_dragging" Color="{DynamicResource col_scrollBar_btn_thumbHighlight_dragging}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_thumbShadow_dragging" Color="{DynamicResource col_scrollBar_btn_thumbShadow_dragging}"/>
+    <SolidColorBrush x:Key="br_scrollBar_btn_arrow_dragging" Color="{DynamicResource col_scrollBar_btn_thumbHighlight_dragging}"/>
+
+    <SolidColorBrush x:Key="br_scrollBar_page_btn" Color="Transparent"/>
+
+
+    <!-- Button Brushes -->
+    <!-- OS Button -->
+
+    <SolidColorBrush x:Key="br_btn_os_blurEffect_fill_normal" Color="{DynamicResource blurEffect_fill_normal}"/>
+    <SolidColorBrush x:Key="br_btn_os_borderInner_normal" Color="{DynamicResource col_btn_os_borderInner_normal}"/>
+    <SolidColorBrush x:Key="br_btn_os_borderOuter_normal" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <SolidColorBrush x:Key="br_btn_os_blurEffect_fill_hover" Color="{DynamicResource blurEffect_fill_normal}"/>
+    <SolidColorBrush x:Key="br_btn_os_borderInner_hover" Color="{DynamicResource col_btn_os_borderInner_hover}"/>
+    <SolidColorBrush x:Key="br_btn_os_borderOuter_hover" Color="{DynamicResource col_btn_os_borderOuter_hover}"/>
+
+    <SolidColorBrush x:Key="br_btn_os_blurEffect_fill_pressed" Color="{DynamicResource blurEffect_fill_normal}"/>
+    <SolidColorBrush x:Key="br_btn_os_borderInner_pressed" Color="{DynamicResource col_btn_os_borderInner_hover}"/>
+    <SolidColorBrush x:Key="br_btn_os_borderOuter_pressed" Color="{DynamicResource col_btn_os_borderOuter_hover}"/>
+
+    <!-- Capsule Buttons -->
+
+    <SolidColorBrush x:Key="br_btn_capsule_borderInner_normal" Color="{DynamicResource col_btn_capsule_borderInner_normal}"/>
+    <SolidColorBrush x:Key="br_btn_capsule_borderOuter_normal" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <SolidColorBrush x:Key="br_btn_capsule_borderInner_hover" Color="{DynamicResource col_btn_capsule_borderInner_hover}"/>
+    <SolidColorBrush x:Key="br_btn_capsule_borderOuter_hover" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <SolidColorBrush x:Key="br_btn_capsule_borderInner_pressed" Color="{DynamicResource col_btn_capsule_borderInner_pressed}"/>
+    <SolidColorBrush x:Key="br_btn_capsule_borderOuter_pressed" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <!-- Toggle Button (Same as Capsule Button but with an extra trigger) -->
+
+    <SolidColorBrush x:Key="br_btn_toggle_fill_checked" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <!-- Radio Button -->
+
+    <SolidColorBrush x:Key="br_btn_radio_checkMark_border" Color="{DynamicResource col_fgv_highlight}"/>
+
+    <!-- OS Window Button -->
+
+    <SolidColorBrush x:Key="br_btn_window_borderInner_normal" Color="{DynamicResource col_btn_window_borderInner_normal}"/>
+    <SolidColorBrush x:Key="br_btn_window_borderOuter_normal" Color="{DynamicResource col_btn_window_borderOuter_normal}"/>
+    <SolidColorBrush x:Key="br_btn_window_close_fill_hover" Color="{DynamicResource col_btn_window_close_fill_hover}"/>
+
+
+
+    <!-- Text Box Brushes -->
+
+    <SolidColorBrush x:Key="br_textBox_borderShadow" Color="{DynamicResource col_uiFramework_borderShadow}"/>
+    <SolidColorBrush x:Key="br_textBox_borderHighlight" Color="{DynamicResource col_uiFramework_borderHighlight}"/>
+
+
+    <!-- Combo Box Brushes -->
+
+    <SolidColorBrush x:Key="br_comboBox_dropDown_border" Color="{DynamicResource col_comboBox_dropDown_border}"/>
+    <SolidColorBrush x:Key="br_comboBox_dropDown_fill" Color="{DynamicResource col_uiFramework_window_fill}"/>
+
+
+    <!-- Progress Bar Brushes -->
+
+    <SolidColorBrush x:Key="br_progressBar_fill" Color="{DynamicResource col_progressBar_fill}"/>
+    <SolidColorBrush x:Key="br_progressBar_border" Color="{DynamicResource col_comboBox_dropDown_border}"/>
+
+
+    <!-- Tree View Brushes -->
+
+    <SolidColorBrush x:Key="br_treeView_fill" Color="Transparent"/>
+
+
+    <!-- Tab Control Brushes -->
+
+    <SolidColorBrush x:Key="br_tabControl_fill" Color="{DynamicResource col_uiFramework_window_fill}"/>
+
+    <SolidColorBrush x:Key="br_tabControl_borderShadow" Color="{DynamicResource col_tabControl_content_borderShadow}"/>
+    <SolidColorBrush x:Key="br_tabControl_borderHighlight" Color="{DynamicResource col_tabControl_content_borderHighlight}"/>
+
+    <SolidColorBrush x:Key="br_tabControl_item_fill_selected" Color="{DynamicResource col_uiFramework_window_fill}"/>
+    <SolidColorBrush x:Key="br_tabControl_item_fill_notSelected" Color="{DynamicResource col_tabControl_item_fill_notSelected}"/>
+
+
+    <!-- Context Menu Brushes -->
+
+    <SolidColorBrush x:Key="br_contextMenu_borderOuter" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+    <SolidColorBrush x:Key="br_contextMenu_borderInner" Color="{DynamicResource col_btn_os_borderInner_normal}"/>
+    <SolidColorBrush x:Key="br_contextMenu_fill" Color="{DynamicResource col_uiFramework_window_fill}"/>
+    <SolidColorBrush x:Key="br_contextMenu_column0_fill" Color="{DynamicResource col_uiFramework_window_alternate_fill}"/>
+    <SolidColorBrush x:Key="br_contextMenu_separator_border" Color="{DynamicResource col_contextMenu_separator}"/>
+
+
+    <!-- Separator Brush -->
+    <SolidColorBrush x:Key="br_separator_border" Color="{DynamicResource col_item_fill_selectedNotInFocus}"/>
+
+
+    <!-- Slider Brushes -->
+    <SolidColorBrush x:Key="br_slider_btn_borderInner_normal" Color="{DynamicResource col_btn_capsule_borderInner_normal}"/>
+    <SolidColorBrush x:Key="br_slider_btn_borderOuter_normal" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <SolidColorBrush x:Key="br_slider_btn_borderInner_hover" Color="{DynamicResource col_btn_capsule_borderInner_hover}"/>
+    <SolidColorBrush x:Key="br_slider_btn_borderOuter_hover" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <SolidColorBrush x:Key="br_slider_btn_borderInner_dragging" Color="{DynamicResource col_btn_capsule_borderInner_pressed}"/>
+    <SolidColorBrush x:Key="br_slider_btn_borderOuter_dragging" Color="{DynamicResource col_btn_os_borderOuter_normal}"/>
+
+    <SolidColorBrush x:Key="br_slider_page_btn" Color="Transparent"/>
+    <SolidColorBrush x:Key="br_slider_tickBar_fill" Color="{DynamicResource col_slider_tickBar_fill}"/>
+
+</ResourceDictionary>
+
+
+	

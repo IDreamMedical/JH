@@ -1,0 +1,239 @@
+﻿<Window x:Class="JinHong.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local_view="clr-namespace:JinHong.View"
+        xmlns:local_view_ctrl="clr-namespace:JinHong.View.Controls"
+        xmlns:local_viewmodel="clr-namespace:JinHong.ViewModel"
+        Title="锦宏产业园管理系统V1.0" Height="600" Width="800" 
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        FontSize="16"
+        x:Name="_this">
+    <Window.Resources>
+        <RoutedCommand x:Key="cmdGotoPrevious"/>
+        <RoutedCommand x:Key="cmdGotoNext"/>
+
+        <RoutedCommand x:Key="cmdHelpAbout"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource cmdGotoPrevious}" CanExecute="GotoPrevious_CanExecute" Executed="GotoPrevious_Executed"/>
+        <CommandBinding Command="{StaticResource cmdGotoNext}" CanExecute="GotoNext_CanExecute" Executed="GotoNext_Executed"/>
+
+        <CommandBinding Command="{StaticResource cmdHelpAbout}" CanExecute="HelpAbout_CanExecute" Executed="HelpAbout_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="{StaticResource cmdGotoPrevious}" Gesture="Ctrl+Alt+P"/>
+        <KeyBinding Command="{StaticResource cmdGotoNext}" Gesture="Ctrl+Alt+N"/>
+        <KeyBinding Command="{StaticResource cmdGotoPrevious}" Gesture="F2"/>
+        <KeyBinding Command="{StaticResource cmdGotoNext}" Gesture="F3"/>
+
+        <KeyBinding Command="{StaticResource cmdHelpAbout}" Gesture="F1"/>
+    </Window.InputBindings>
+    <DockPanel DataContext="{Binding ViewModel,ElementName=_this}">
+
+        <!-- 上边的工具条 -->
+        <Grid x:Name="gridTop" DockPanel.Dock="Top" MinHeight="80" Background="#EEEEEE" 
+              PreviewMouseMove="gridTop_PreviewMouseMove">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- 用于窗口拖动支持 -->
+            <Rectangle x:Name="rectTopBar" Grid.ColumnSpan="2"/>
+            <StackPanel Margin="8,8">
+                <!-- 窗口控制 -->
+                <local_view:ControlBar/>
+                <!-- 主分类类单 -->
+                <local_view_ctrl:ModuleSelector x:Name="moduleSelector" ViewModel="{Binding MainMenuViewModel}"
+                                                Margin="4,8"/>
+            </StackPanel>
+            <!-- 菜单 -->
+            <local_view:MenuBar Grid.Column="1" ViewModel="{Binding MainMenuViewModel.SelectedItem}"
+                                Margin="8"/>
+        </Grid>
+
+        <!-- 下边的状态条 -->
+        <local_view:StatusBar x:Name="statusBar" DockPanel.Dock="Bottom" Style="{StaticResource {x:Type StatusBar}}"/>
+
+        <!-- 中间部分模块容器 -->
+        <ContentControl Margin="4" Content="{Binding CurrentPageViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type local_viewmodel:StartPageViewModel}">
+                    <local_view:StartPage ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!-- 财务 -->
+                <DataTemplate DataType="{x:Type local_viewmodel:IODetailOfDayViewModel}">
+                    <local_view:WpfDayIODetail ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:RentalFeeViewModel}">
+                    <local_view:WpfRentalFee ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type local_viewmodel:RentalFeeViewModel}">
+                    <local_view:WpfRentalFee ViewModel="{Binding}"/>
+                </DataTemplate>-->
+                <DataTemplate DataType="{x:Type local_viewmodel:ManagementFeeViewModel}">
+                    <local_view:WpfPropertyManagementFee ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type local_viewmodel:PropertyManagementFeeViewModel}">
+                    <local_view:WpfPropertyManagementFee ViewModel="{Binding}"/>
+                </DataTemplate>-->
+                <DataTemplate DataType="{x:Type local_viewmodel:IODetailOfMonthViewModel}">
+                    <local_view:WpfMonthIODetail ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:IODetailOf6MonthViewModel}">
+                    <local_view:Wpf6MonthIODetail ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:IODetailOfYearViewModel}">
+                    <local_view:WpfYearIODetail ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:IOSummaryOfMonthViewModel}">
+                    <local_view:WpfMonthIOSummary ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!-- 物业 -->
+                <!--员工-->
+                <DataTemplate DataType="{x:Type local_viewmodel:EmployeeViewModel}">
+                    <local_view:WpfEmployee />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:FireViewModel}">
+                    <local_view:WpfFire ViewModel="{Binding}"/>
+                </DataTemplate>
+             
+                <DataTemplate DataType="{x:Type local_viewmodel:PowerFeeResultViewModel}">
+                    <local_view:WpfPowerFeeInvoice ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkingFeeSummaryViewModel}">
+                    <local_view:WpfParkingFeeSummary />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:InstallAirViewModel}">
+                    <local_view:WpfInstallAir />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:BroadBandViewModel}">
+                    <local_view:BroadBand />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:RepairViewModel}">
+                    <local_view:WpfRepair />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:RentanlDetailViewModel}">
+                    <local_view:各楼层租赁单位情况表 ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkingFeeDetailOfCheckInViewModel}">
+                    <local_view:WpfParkingFeeDetail ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkingLotGraphViewModel}">
+                    <local_view:平面图 ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkingFeeDetailViewModel}">
+                    <local_view:WpfParkingFeeDetail />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:SecurityAgreementViewModel}">
+                    <local_view:WpfSecurityAgreement ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:CheckInViewModel}">
+                    <local_view:WpfCheckIn />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:OutRentaledViewModel}">
+                    <local_view:WpfOutRental ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ProbeViewModel}">
+                    <local_view:WpfProbe />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:RentalParkingViewModel}">
+                    <local_view:WpfRentalParking />
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type local_viewmodel:PowerFeeDetailViewModel}">
+                    <local_view:WpfPower ViewModel="{Binding}"/>
+                </DataTemplate>-->
+                <DataTemplate DataType="{x:Type local_viewmodel:PowerFeeDetailViewModel}">
+                    <local_view:WpfPowerFee ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!-- 招商 -->
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkGraphViewModel}">
+                    <local_view:楼宇区域位置图示 ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:SocialUnitIndexViewModel}">
+                    <local_view:WpfCompanyIndex />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:租金_物业费缴纳情况记录管理业务VM}">
+                    <local_view:租金_物业费缴纳情况记录管理业务 ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:DepositFeeViewModel}">
+                    <local_view:WpfDepositFee />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkingFeeViewModel}">
+                    <local_view:WpfParkingFee ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type local_viewmodel:PropertyManagementFeeViewModel}">
+                    <local_view:WpfPropertyManagementFee ViewModel="{Binding}"/>
+                </DataTemplate>-->
+                <!--<DataTemplate DataType="{x:Type local_viewmodel:RentalFeeViewModel}">
+                    <local_view:WpfRentalFee ViewModel="{Binding}"/>
+                </DataTemplate>-->
+                <DataTemplate DataType="{x:Type local_viewmodel:RentalLogViewModel}">
+                    <local_view:租赁期限变更_续租_退租一览业务 ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:InRentaledVM}">
+                    <!--<local_view:InLease ViewModel="{Binding}"/>-->
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ReverseRentalVM}">
+                    <!--<local_view:退租流程展示表格 ViewModel="{Binding}"/>-->
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:RentalWareHouseVM}">
+                    <local_view:RentalWareHouse ViewModel="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:ContractVM}">
+                    <local_view:WpfContract />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local_viewmodel:UnContractListVM}">
+                    <local_view:PreContractList ViewModel="{Binding}"/>
+                </DataTemplate>
+
+                <!--基础信息管理-->
+                <!-- 楼宇管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:BuildingInfoVM}">
+                    <local_view:WpfBuilding />
+                </DataTemplate>
+                <!-- 角色管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:RoleInfoVM}">
+                    <local_view:RoleInfoManagement />
+                </DataTemplate>
+                <!-- 单元管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:RoomInfoVM}">
+                    <local_view:RoomInfoManagement />
+                </DataTemplate>
+                <!-- 权限管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:PrivilegeVM}">
+                    <local_view:PrivilegeManagement ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!-- 商户管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:SocialUnitInfoVM}">
+                    <local_view:SocialUnitInfoManagement  />
+                </DataTemplate>
+                <!-- 车位管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:ParkingLotInfoVM}">
+                    <local_view:ParkingLotInfoManagement />
+                </DataTemplate>
+                <!-- 用户管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:UserInfoVM}">
+                    <local_view:UserInfoManagement ViewModel="{Binding}"/>
+                </DataTemplate>
+                <!-- 仓库管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:WareHouseInfoVM}">
+                    <local_view:WareHouseInfoManagement />
+                </DataTemplate>
+                <!-- 空调管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:AirConditionerViewModel}">
+                    <local_view:WpfAirConditioner />
+                </DataTemplate>
+                <!-- 空调管理-->
+                <DataTemplate DataType="{x:Type local_viewmodel:FeeItemVM}">
+                    <local_view:FeeItemManagement />
+                </DataTemplate>
+                <!---角色用户对照-->
+                <DataTemplate DataType="{x:Type local_viewmodel:RoleOfUserManagementVM}">
+                    <local_view:SetRoleOfUserManagement />
+                </DataTemplate>
+
+            </ContentControl.Resources>
+        </ContentControl>
+    </DockPanel>
+</Window>

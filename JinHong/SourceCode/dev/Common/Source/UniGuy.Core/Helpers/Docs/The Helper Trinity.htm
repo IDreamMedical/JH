@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://thehelpertrinity.codeplex.com/documentation -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="Chrome "><head id="ctl00_ctl00_HeadTag"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta id="ctl00_ctl00_CompatabilityMode" http-equiv="X-UA-Compatible" content="IE=edge"><link id="ctl00_ctl00_MasterCss" type="text/css" rel="stylesheet" href="./The Helper Trinity_files/StyleSheet.ashx"><link rel="SHORTCUT ICON" href="http://thehelpertrinity.codeplex.com/favicon.ico">
+    <style type="text/css">.SideBar, .SideBarPadding{display:none;}.MainContent{width:auto;}.SiteContentTable{width:100%;}</style>
+    <style id="ctl00_ctl00_Header_ProjectStyles" type="text/css">.SiteHeader,.SiteHeaderLeft{height:45px !important;overflow:hidden;}.SiteContent{padding:0 0 1em 0;margin-top:0;min-height:225px;border-right:1px solid lightgrey;border-left:1px solid lightgrey;border-bottom:1px solid lightgrey;}.IE6 .ProjectTitleControl{position:relative;}.IE table.MinWidthContent{table-layout:auto !important;}</style>
+    
+    
+    
+    
+    
+    <style type="text/css">.ProjectContent{padding:0;}</style>
+    <style type="text/css">
+        .WikiHolder
+        {
+            margin: 0 1em 0 0;
+        }
+        #WikiContent
+        {
+            margin-top: 15px;
+        }
+        #WikiBreadCrumbs
+        {
+            margin: 0.25em 0 1em 0;
+        }
+        .SecondarySearchButton 
+        {
+            margin:0 0 0 -0.6em;
+        }
+        .FF .SecondarySearchButton 
+        {
+            margin:-0.1em 0 0 -0.5em;
+            height: 22px;
+        }
+        .IE .SecondarySearchButton
+        {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    
+    
+    <meta id="ctl00_ctl00_Header_WTProjectName" name="WT.pi" content="thehelpertrinity">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://thehelpertrinity.codeplex.com/rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" title="WLWManifest" href="http://thehelpertrinity.codeplex.com/wlwmanifest.xml">
+<meta id="ctl00_ctl00_PageDescription" name="Description"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity" href="http://thehelpertrinity.codeplex.com/project/feeds/rss"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity-Discussions" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fforum%2fthehelpertrinity"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity-Issue Tracker" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fworkitem%2fthehelpertrinity"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity-Releases" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2frelease%2fthehelpertrinity"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity-Source Code" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fsourcecontrol%2fthehelpertrinity"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity-Wiki" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fthehelpertrinity"><link rel="alternate" type="application/rss+xml" title="The Helper Trinity-Reviews" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2freview%2fthehelpertrinity"><title>
+	The Helper Trinity
+</title></head>
+
+<body onload="masterLoad();">
+    <form name="aspnetForm" method="POST" action="./The Helper Trinity_files/The Helper Trinity.htm" id="aspnetForm" autocomplete="off" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTExNDE1NDgzNTgPZBYCZg9kFgJmD2QWBGYPZBYIZg8WAh4HY29udGVudAUHSUU9ZWRnZWQCAg8WAh4EaHJlZgU6aHR0cDovL2kxLmNvZGVwbGV4LmNvbS9jc3MvdjE4OTk5L2kyMDM2NzQzL1N0eWxlU2hlZXQuYXNoeGQCBA9kFgRmDxYCHglpbm5lcmh0bWwFygIuU2l0ZUhlYWRlciwuU2l0ZUhlYWRlckxlZnR7aGVpZ2h0OjQ1cHggIWltcG9ydGFudDtvdmVyZmxvdzpoaWRkZW47fS5TaXRlQ29udGVudHtwYWRkaW5nOjAgMCAxZW0gMDttYXJnaW4tdG9wOjA7bWluLWhlaWdodDoyMjVweDtib3JkZXItcmlnaHQ6MXB4IHNvbGlkIGxpZ2h0Z3JleTtib3JkZXItbGVmdDoxcHggc29saWQgbGlnaHRncmV5O2JvcmRlci1ib3R0b206MXB4IHNvbGlkIGxpZ2h0Z3JleTt9LklFNiAuUHJvamVjdFRpdGxlQ29udHJvbHtwb3NpdGlvbjpyZWxhdGl2ZTt9LklFIHRhYmxlLk1pbldpZHRoQ29udGVudHt0YWJsZS1sYXlvdXQ6YXV0byAhaW1wb3J0YW50O31kAgMPFgQfAAUQdGhlaGVscGVydHJpbml0eR4HVmlzaWJsZWdkAgUPFgQfAGQfA2dkAgEPZBYGZg8WAh4EVGV4dAVlPHNjcmlwdCBzcmM9Imh0dHBzOi8vc2l0ZXJlY3J1aXQuY29tc2NvcmUuY29tL3NyL2NvZGVwbGV4L2Jyb2tlci5qcyIgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij48L3NjcmlwdD5kAgEPDxYCHghJbWFnZVVybAUuaHR0cDovL2kzLmNvZGVwbGV4LmNvbS9JbWFnZXMvdjE4OTk5L2JsYW5rLnBuZxYCHgZvbmxvYWQFGXNlbGYubG9nb0ltYWdlTG9hZGVkPXRydWVkAgUPZBYIAgEPZBYGAgMPZBYMZg9kFgICAQ8PFgIeC05hdmlnYXRlVXJsBSVodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vZBYCZg8PFgIeDUFsdGVybmF0ZVRleHQFElRoZSBIZWxwZXIgVHJpbml0eWRkAgIPFgIfA2cWAgIBDw8WAh8HBSVodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vZBYCAgEPDxYCHwQFElRoZSBIZWxwZXIgVHJpbml0eWRkAgQPZBYEAgEPDxYCHwcFJWh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9kFgJmDw8WAh8IBRJUaGUgSGVscGVyIFRyaW5pdHlkZAIDDw8WAh8HBSVodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vZBYCAgEPDxYCHwQFElRoZSBIZWxwZXIgVHJpbml0eWRkAgYPZBYEAgEPDxYCHwcFJWh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9kFgJmDw8WAh8IBRJUaGUgSGVscGVyIFRyaW5pdHlkZAIDDw8WAh8HBSVodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vZBYCAgEPDxYCHwQFElRoZSBIZWxwZXIgVHJpbml0eWRkAggPDxYCHwcFJWh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9kFgJmDw8WAh8IBRJUaGUgSGVscGVyIFRyaW5pdHlkZAIMD2QWAgIBDw8WAh8HBSVodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vZBYCAgEPDxYCHwQFElRoZSBIZWxwZXIgVHJpbml0eWRkAgUPZBYCZg8WAh8DaBYCAgEPDxYCHwcFMWh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9wcm9qZWN0L2VkaXRkZAIHD2QWAgIBD2QWAgIDD2QWAgIBD2QWAgIBD2QWAgIBD2QWDgIBD2QWAgIBDw8WAh8HBTZodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vcHJvamVjdC9mZWVkcy9yc3NkZAIDD2QWAgIBDw8WAh8HBW9odHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vcHJvamVjdC9mZWVkcy9yc3M/UHJvamVjdFJTU0ZlZWQ9Y29kZXBsZXglM2ElMmYlMmZmb3J1bSUyZnRoZWhlbHBlcnRyaW5pdHlkZAIFD2QWAgIBDw8WAh8HBXJodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vcHJvamVjdC9mZWVkcy9yc3M/UHJvamVjdFJTU0ZlZWQ9Y29kZXBsZXglM2ElMmYlMmZ3b3JraXRlbSUyZnRoZWhlbHBlcnRyaW5pdHlkZAIHD2QWAgIBDw8WAh8HBXFodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vcHJvamVjdC9mZWVkcy9yc3M/UHJvamVjdFJTU0ZlZWQ9Y29kZXBsZXglM2ElMmYlMmZyZWxlYXNlJTJmdGhlaGVscGVydHJpbml0eWRkAgkPZBYCAgEPDxYCHwcFcGh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9wcm9qZWN0L2ZlZWRzL3Jzcz9Qcm9qZWN0UlNTRmVlZD1jb2RlcGxleCUzYSUyZiUyZnJldmlldyUyZnRoZWhlbHBlcnRyaW5pdHlkZAILD2QWAgIBDw8WAh8HBXdodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vcHJvamVjdC9mZWVkcy9yc3M/UHJvamVjdFJTU0ZlZWQ9Y29kZXBsZXglM2ElMmYlMmZzb3VyY2Vjb250cm9sJTJmdGhlaGVscGVydHJpbml0eWRkAg0PZBYCAgEPDxYCHwcFbmh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9wcm9qZWN0L2ZlZWRzL3Jzcz9Qcm9qZWN0UlNTRmVlZD1jb2RlcGxleCUzYSUyZiUyZndpa2klMmZ0aGVoZWxwZXJ0cmluaXR5ZGQCAw9kFgICAQ9kFgRmDw8WAh8DaGQWAgIDD2QWAmYPZBYCAgEPZBYEAgUPDxYCHwNoZGQCBw8PFgIfA2hkZAIBD2QWAgIDD2QWAgIBD2QWAgIBD2QWAgIBD2QWAgIBDxYCHwEFSmh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9wcm9qZWN0L2VkaXQ/Rm9jdXNFbGVtZW50PURlc2NyaXB0aW9uZAIFD2QWEAIBD2QWAmYPDxYCHwcFJWh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS8WAh4FY2xhc3MFCGJveF9ob21lZAIDD2QWAmYPDxYCHwcFOGh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9yZWxlYXNlcy92aWV3LzY4Njg4FgIfCQUNYm94X2Rvd25sb2Fkc2QCBQ9kFgJmDw8WAh8HBTJodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vZG9jdW1lbnRhdGlvbhYCHwkFFGRvY3VtZW50YXRpb25fYWN0aXZlZAIHD2QWAmYPDxYCHwcFMGh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9kaXNjdXNzaW9ucxYCHwkFD2JveF9kaXNjdXNzaW9uc2QCCQ9kFgJmDw8WAh8HBThodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vd29ya2l0ZW0vbGlzdC9iYXNpYxYCHwkFCWJveF9pc3N1ZWQCCw9kFgJmDw8WAh8HBUJodHRwOi8vdGhlaGVscGVydHJpbml0eS5jb2RlcGxleC5jb20vU291cmNlQ29udHJvbC9saXN0L2NoYW5nZXNldHMWAh8JBQpib3hfc291cmNlZAIND2QWAmYPDxYCHwcFLmh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS90ZWFtL3ZpZXcWAh8JBQpib3hfcGVvcGxlZAIPD2QWAmYPDxYCHwcFLGh0dHA6Ly90aGVoZWxwZXJ0cmluaXR5LmNvZGVwbGV4LmNvbS9saWNlbnNlFgIfCQULYm94X2xpY2Vuc2VkAgkPDxYCHwNoZGRk0zzZeO0YkFsj0ipFiCoUY/1rces=">
+</div>
+
+    <!--
+    Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code,
+    not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+    -->
+    <script src="./The Helper Trinity_files/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="./The Helper Trinity_files/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="./The Helper Trinity_files/ScriptLoader.ashx" type="text/javascript"></script><script type="text/javascript" src="./The Helper Trinity_files/analyticsid.aspx"></script>
+        
+
+<div style="display: none;">
+    <div id="Analytics" style="width: 70%">
+        <script src="./The Helper Trinity_files/broker.js" type="text/javascript"></script>
+        <img id="ctl00_ctl00_BlankImage" onload="self.logoImageLoaded=true" src="./The Helper Trinity_files/blank.png" style="height:0px;width:0px;border-width:0px;">
+        <script language="javascript" type="text/javascript">
+            var date = new Date();
+            var timezoneOffset = date.getTimezoneOffset() / 60 * -1;
+            var timezoneOffsetCookie = getCookie("TimezoneOffset");
+            var firstTimeSetTimezoneCookie = false;
+
+            if (timezoneOffsetCookie == null || timezoneOffsetCookie != timezoneOffset) {
+                firstTimeSetTimezoneCookie = true;
+                document.cookie = "TimezoneOffset=" + timezoneOffset + '; domain=.codeplex.com';
+            }
+        </script>
+        
+            <noscript>&lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+                &lt;img src="http://msstonojstemp.112.2O7.net/b/ss/msstonojstemp/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /&gt;
+            &lt;/a&gt;</noscript>
+               
+    </div>
+</div>
+
+<div id="header">
+    <div id="header_wrap" class="row">
+	    <p id="logo"><a href="http://www.codeplex.com/">Code<span class="semi">Plex</span></a><span id="tagline">Project Hosting for Open Source Software</span></p>
+        
+        
+        <ul id="nav">
+            
+    	    <li><a href="http://thehelpertrinity.codeplex.com/site/register/new" id="registerLink" class="ZoomFix">Register</a></li>
+            <li><a href="https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fthehelpertrinity.codeplex.com%2fdocumentation%3fProjectName%3dthehelpertrinity" id="signInLink" class="ZoomFix">Sign In</a></li>
+            <li class="last"><a class="rss_site_icon" href="http://www.codeplex.com/site/feeds/rss" type="application/rss+xml" rel="Alternate" title="CodePlex Site Activity"></a></li>
+        </ul>
+    
+        
+
+<input id="searchsite" name="searchsite" maxlength="500" type="text" value="" autocomplete="off" title="Search all projects" style="color: rgb(170, 170, 170); font-style: italic; "><span id="search_mag"><a id="submitSearch" name="submitSearch" class="magnify" title="Search all projects" href="http://thehelpertrinity.codeplex.com/documentation#"></a></span>
+<script>
+	$(document).ready(function() {
+    $loadScript('http://i4.services.social.microsoft.com/search/Widgets/SearchBox.jss?appid=1000&scopeid=1&boxId=searchsite&btnId=submitSearch&watermark=Search%20all%20projects&overrideWatermark=true&searchLocation=%2fsite%2fsearch&allowEmptySearch=true&focusOnInit=False&minimumTermLength=3');
+    if (typeof epx_loaded === 'undefined' || !epx_loaded) {
+        $('#submitSearch').bind('click', doProjectSearch);
+        $('#searchsite').bind('keypress', function(e) { if ($keyCode(e) === 13) { doProjectSearch(); return false; } });
+    }
+})
+function doProjectSearch() {
+    
+    var url = '/site/search';
+
+    //If search term is not same as watermark
+    if($('#searchsite').val() != 'Search all projects')    
+    {        
+        url = url + '?query=' + encodeURIComponent($('#searchsite').val());
+    }
+
+    
+    var callback = '';
+    if (callback.length > 0 && eval('typeof ' + callback) != 'undefined')
+        url += eval(callback + '()');
+    window.location.href = url;
+    return false;
+}
+</script>
+
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-color: buttonshadow; border-right-color: buttonshadow; border-bottom-color: buttonshadow; border-left-color: buttonshadow; position: absolute; z-index: 1000; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-family: arial; "><div id="SuggestionContainer"><ul style="list-style-type: none; list-style-position: initial; list-style-image: initial; padding-top: 4px; padding-right: 2px; padding-bottom: 0px; padding-left: 1px; cursor: pointer; font-size: 8pt; margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 1px; "></ul></div><div id="FooterContainer" style="width: 100%; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-align: right; font-size: 8pt; "><a href="http://thehelpertrinity.codeplex.com/documentation#">Close</a></div></div></div>
+</div>
+
+<div id="wrap">
+
+    
+	<div id="sub_heading" class="row">
+        <div id="ctl00_ctl00_MasterContent_ProjectHeader">
+            <div id="project_title_row" class="row">
+                <div id="project_logo">
+                    
+                    
+
+
+
+    <h1 class="text_only"><a id="ctl00_ctl00_MasterContent_ProjectTitleControl1_ProjectTextLink1" href="http://thehelpertrinity.codeplex.com/"><div><span id="ctl00_ctl00_MasterContent_ProjectTitleControl1_ProjectTitle1">The Helper Trinity</span></div></a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div id="project_title_links">
+                    
+
+                    <div id="RssContainer">
+                        
+   
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#rssHoverTitle a').click(function() {
+            allowUnsavedDataAlert();
+            $('#rssHoverDiv').hide();
+            return false;
+        });
+
+        $('#rssHoverLink a').click(function () {
+            var pos = $('#rssHoverLink .rss_link').position();
+            $("#rssHoverDiv").css({
+                top: (pos.top - 11) + "px",
+                left: (pos.left - 55) + "px"
+            }).show();
+            $('#rssHoverDiv').show();
+            return false;
+        });
+    })
+</script>
+    
+<div id="rssHoverDiv" class="HoverPanel LeftHoverWidth AlignLeft">
+        <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel" class="ContentPanelBox SideBarControl HoverContentPanel" style="">
+	<div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_headerPanel" class="HeaderPanel Header">
+		
+    
+                <div id="rssHoverTitle">
+                    <a class="rss_icon" href="http://thehelpertrinity.codeplex.com/documentation#">RSS</a>
+                    <a class="rss_link" href="http://thehelpertrinity.codeplex.com/documentation#">Subscribe to Project</a>
+                </div>
+                <div class="clear"></div>
+           
+
+	</div><div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_contentPanel" class="StandardPadding">
+		
+    
+            <ul id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_FeedsPanel" class="RssFeedsPanel">
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_ProjectPanel">
+			
+                    <li>
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_ProjectRssLink" title="All Project Updates" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss">All Project Updates</a>
+                    </li>
+                
+		</div>
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_DiscussionsPanel">
+			
+                    <li>
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_DiscussionsRssLink" title="New threads and posts" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fforum%2fthehelpertrinity">Discussions</a>
+                    </li>
+                
+		</div>
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_IssueTrackerPanel">
+			
+                    <li>    
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_IssueTrackerRssLink" title="New and updated work items" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fworkitem%2fthehelpertrinity">Issue Tracker</a>
+                    </li>
+                
+		</div>
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_ReleasesPanel">
+			
+                    <li>
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_ReleasesRssLink" title="New and updated releases" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2frelease%2fthehelpertrinity">Releases</a>
+                    </li>
+                
+		</div>  
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_ReviewsPanel">
+			
+                    <li>
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_ReviewsRssLink" title="New and updated reviews" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2freview%2fthehelpertrinity">Reviews</a>
+                    </li>
+                
+		</div>          
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_SourceControlPanel">
+			
+                    <li>
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_SourceControlRssLink" title="New check-ins" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fsourcecontrol%2fthehelpertrinity">Source Code</a>
+                    </li>
+                
+		</div>
+                <div id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_WikiPanel">
+			
+                    <li>
+                        <a id="ctl00_ctl00_MasterContent_rssFeeds_RssHoverContentPanel_WikiRssLink" title="New and updated wiki pages" class="ArrowSmall NoUnderline" href="http://thehelpertrinity.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fthehelpertrinity">Wiki &amp; Documentation</a>
+                    </li>
+                
+		</div>
+            </ul>
+           
+
+	</div>
+</div>  
+</div>
+
+<div id="rssHoverLink">
+    <a class="rss_icon" href="http://thehelpertrinity.codeplex.com/documentation#">RSS</a>
+    <a class="rss_link" href="http://thehelpertrinity.codeplex.com/documentation#">Subscribe to Project</a>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ctl00_ctl00_MasterContent_ProjectDetailsDiv">
+            
+
+<script type="text/javascript">
+    function VerifyProjectDeletion()
+    {
+        var result = confirm("Are you sure you want to delete this project?  You will not be able to recover it later");
+        if (result)
+            ShowUpdatingPanel();
+        else
+            allowUnsavedDataAlert();
+        return result;
+    }
+    function ShowPublishPanel()
+    {
+        ShowUpdatingPanel();
+    }
+    function ShowUpdatingPanel()
+    {
+        var publishButton=$('#ctl00_ctl00_MasterContent_ProjectCountdown_PublishProject_PublishButton')[0];
+        var deleteButton=$('#ctl00_ctl00_MasterContent_ProjectCountdown_PublishProject_DeleteButton')[0];
+
+        setTimeout(function() { CodePlex.UpdateProgress.displayPanelAndDisableControls('Working...', publishButton, deleteButton) }, 1);
+    }
+</script>
+<div class="clear"></div>
+
+
+<script type="text/javascript">
+    // replaces the smartdatecontrol's "Today" with "today" or "on {Date}" for this user control
+    function formatDate() {
+        var dateSpan = $('#ctl00_ctl00_MasterContent_ProjectCountdown_PublishProject_DeletionDateLiteral');
+        if (dateSpan.text().toLowerCase() == "today")
+            dateSpan.text("today");
+        else
+            dateSpan.text("on " + dateSpan.text());
+    }
+    formatDate();
+</script>
+
+        </div>
+		<div class="clear"></div>
+        
+        
+
+	<ul id="page_box_links">
+
+		<li id="ctl00_ctl00_MasterContent_Tabs_homeTabCell" style="width: 63px;"><a id="ctl00_ctl00_MasterContent_Tabs_homeTab" class="box_home" href="http://thehelpertrinity.codeplex.com/">home</a></li>
+		<li id="ctl00_ctl00_MasterContent_Tabs_releasesTabCell" style="width:112px;"><a id="ctl00_ctl00_MasterContent_Tabs_releasesTab" class="box_downloads" href="http://thehelpertrinity.codeplex.com/releases/view/68688">downloads</a></li>
+        <li id="ctl00_ctl00_MasterContent_Tabs_documentationTabCell" style="width:143px;"><a id="ctl00_ctl00_MasterContent_Tabs_documentationTab" class="documentation_active" href="./The Helper Trinity_files/The Helper Trinity.htm">documentation</a></li>
+		<li id="ctl00_ctl00_MasterContent_Tabs_discussionTabCell" style="width:112px;"><a id="ctl00_ctl00_MasterContent_Tabs_discussionTab" class="box_discussions" href="http://thehelpertrinity.codeplex.com/discussions">discussions</a></li>
+		<li id="ctl00_ctl00_MasterContent_Tabs_workItemsTabCell" style="width:124px;"><a id="ctl00_ctl00_MasterContent_Tabs_workItemsTab" class="box_issue" href="http://thehelpertrinity.codeplex.com/workitem/list/basic">issue tracker</a></li>
+		<li id="ctl00_ctl00_MasterContent_Tabs_sourceTabCell" style="width:117px;"><a id="ctl00_ctl00_MasterContent_Tabs_sourceTab" class="box_source" href="http://thehelpertrinity.codeplex.com/SourceControl/list/changesets">source code</a></li>
+		<li id="ctl00_ctl00_MasterContent_Tabs_peopleTabCell" style="width:71px;"><a id="ctl00_ctl00_MasterContent_Tabs_peopleTab" class="box_people" href="http://thehelpertrinity.codeplex.com/team/view">people</a></li>
+		<li id="ctl00_ctl00_MasterContent_Tabs_licenseTabCell" style="width:96px; margin-right:15px;"><a id="ctl00_ctl00_MasterContent_Tabs_licenseTab" class="box_license" href="http://thehelpertrinity.codeplex.com/license">license</a></li>
+        <span class="stretch"></span>
+	</ul>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            return resizeProjectTabs();
+        });
+    </script>
+
+
+
+		<div class="clear"></div>
+
+        
+    <div id="DeleteWikiPagePanel" class="modal" style="display: none;">
+        <div class="row">
+            <h2>Are you Sure? <a href="javascript:return false;" class="close">X</a></h2>
+        </div>
+        <div class="modal_info">
+            By clicking Delete, all history, comments and attachments for this page will be deleted and cannot be restored.
+            <div class="modal_buttons">
+                <input type="button" id="CancelButton" class="cancel" value="Cancel">
+                <input type="button" id="DeleteButton" class="ok" value="Delete">
+            </div>
+            <div class="ClearBoth"></div>
+        </div>
+    </div>
+    
+		<ul class="page_box_sublinks">
+            
+                <li><a id="pageInfoHyperLink" href="http://thehelpertrinity.codeplex.com/wiki/PageInfo?title=Documentation">Page Info</a></li>
+            
+            <li class="last"><a id="changesHyperlink" href="http://thehelpertrinity.codeplex.com/wikipage/history">Change History (all pages)</a></li>
+		</ul>
+
+        
+<script type="text/javascript">
+    function toggleFavoriteProject() {
+        
+            location.href = 'https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fthehelpertrinity.codeplex.com%2f'
+        
+    }
+</script>
+
+<div id="favoriteProjectContainer">
+
+<p class="subtab_right">
+
+<span class="RatingStar EmptyRatingStar" onclick="toggleFavoriteProject();return false;" style="cursor:pointer;padding-right: 25px;"></span>
+
+
+    <a href="http://thehelpertrinity.codeplex.com/team/view">16 people</a> following this project
+
+
+<a id="followLink" href="http://thehelpertrinity.codeplex.com/documentation#" onclick="toggleFavoriteProject();return false;">(follow)</a>
+</p></div>
+
+
+    </div>
+
+    
+
+    <div id="ctl00_ctl00_MasterContent_ProjectContentPanel">
+	
+        
+<div id="left_column">
+    
+
+    <div class="WikiHolder">
+
+        
+            <div id="WikiContent" class="WikiContent">
+                <div class="wikidoc"><h2>Contents</h2>
+<ul><li><a href="http://thehelpertrinity.codeplex.com/documentation#Overview">Overview</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#ArgumentHelper">ArgumentHelper</a>
+<ul><li><a href="http://thehelpertrinity.codeplex.com/documentation#AssertNotNull">AssertNotNull()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#AssertGenericArgumentNotNull">AssertGenericArgumentNotNull()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#AssertNotNullOrEmpty">AssertNotNullOrEmpty()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#AssertEnumMember">AssertEnumMember()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#ArgumentHelperExtensionMethods">Extension Methods (.NET 3.5 onwards)</a></li></ul></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#EventHelper">EventHelper</a>
+<ul><li><a href="http://thehelpertrinity.codeplex.com/documentation#Raise">Raise()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#BeginRaise">BeginRaise()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#LazyEventArgumentCreation">Lazy Event Argument Creation</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#EventHelperExtensionMethods">Extension Methods (.NET 3.5 onwards)</a></li></ul></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#ExceptionHelper">ExceptionHelper</a>
+<ul><li><a href="http://thehelpertrinity.codeplex.com/documentation#SetUp">Set Up</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#ExceptionHelperXmlFormat">ExceptionHelper.xml Format</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#Resolve">Resolve()</a></li>
+<li><a href="http://thehelpertrinity.codeplex.com/documentation#ResolveAndThrowIf">ResolveAndThrowIf()</a></li></ul></li></ul>
+<a name="Overview"></a>
+<h2>Overview</h2>
+The Helper Trinity is a set of three helper classes that are applicable to any non-trivial .NET application. The classes are <span class="codeInline">ArgumentHelper</span>, <span class="codeInline">EventHelper</span> and <span class="codeInline">ExceptionHelper</span>. The goal of these classes is to save you time and avoid common programming errors.<br><a name="ArgumentHelper"></a>
+<h2>ArgumentHelper</h2>
+The <span class="codeInline">ArgumentHelper</span> class provides a number of methods for checking arguments. Any time an assertion fails, an <span class="codeInline">ArgumentNullException</span> or <span class="codeInline">ArgumentException</span> with an appropriate message will be thrown.<br><a name="AssertNotNull"></a>
+<h3>AssertNotNull()</h3>
+The <span class="codeInline">AssertNotNull()</span> methods allow you to make sure an argument is non-<span class="codeInline">null</span>. It works for both reference and nullable types:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(<span style="color:Blue;">string</span> arg1, <span style="color:Blue;">int</span>? arg2)
+	{
+		ArgumentHelper.AssertNotNull(arg1, <span style="color:#A31515;">"arg1"</span>);
+		ArgumentHelper.AssertNotNull(arg2, <span style="color:#A31515;">"arg2"</span>);
+	}
+}
+</pre></div>There is also an overload of <span class="codeInline">AssertNotNull</span> that allows you to assert that any enumerable argument is non-<span class="codeInline">null</span>, and optionally check each item in the enumeration for <span class="codeInline">null</span>:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(IList&lt;<span style="color:Blue;">string</span>&gt; arg)
+	{
+		<span style="color:Green;">// this will throw if arg is null, or if any item in the enumeration is null</span>
+		ArgumentHelper.AssertNotNull(arg, <span style="color:#A31515;">"arg"</span>, <span style="color:Blue;">true</span>);
+	}
+}
+</pre></div><a name="AssertGenericArgumentNotNull"></a>
+<h3>AssertGenericArgumentNotNull()</h3>
+The <span class="codeInline">AssertGenericArgumentNotNull()</span> method can be used in the special case where you have an unconstrained generic parameter that you want to ensure is non-<span class="codeInline">null</span>. Since the developer can not know whether the generic parameter will be a reference, value, or nullable type, this method is very useful:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass&lt;T&gt;
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod&lt;T&gt;(T arg)
+	{
+		<span style="color:Green;">// this will work regardless of type T</span>
+		ArgumentHelper.AssertGenericArgumentNotNull(arg, <span style="color:#A31515;">"arg"</span>);
+	}
+}
+</pre></div>In the case where type <span class="codeInline">T</span> above is a reference or nullable type, the call will work exactly the same as the <span class="codeInline">AssertNotNull()</span> equivalents. In the case where <span class="codeInline">T</span> is a value type, the call will be a no-op.<br><a name="AssertNotNullOrEmpty"></a>
+<h3>AssertNotNullOrEmpty()</h3>
+The <span class="codeInline">AssertNotNullOrEmpty()</span> methods are special-case assertions for <span class="codeInline">string</span> arguments. They allow you to ensure that a <span class="codeInline">string</span> argument is non-<span class="codeInline">null</span> and not an empty <span class="codeInline">string</span>. One overload allows the <span class="codeInline">string</span> to be trimmed, thus ensuring that the <span class="codeInline">string</span> is non-<span class="codeInline">null</span> and is not empty and does not consist entirely of whitespace.<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(<span style="color:Blue;">string</span> arg1, <span style="color:Blue;">string</span> arg2)
+	{
+		<span style="color:Green;">// this will throw if arg1 is null or "" but not if it is " "</span>
+		ArgumentHelper.AssertNotNullOrEmpty(arg1, <span style="color:#A31515;">"arg1"</span>);
+		<span style="color:Green;">// this will throw if arg2 is null or "" or " " or any combination of whitespace</span>
+		ArgumentHelper.AssertNotNullOrEmpty(arg2, <span style="color:#A31515;">"arg2"</span>, <span style="color:Blue;">true</span>);
+	}
+}
+</pre></div><a name="AssertEnumMember"></a>
+<h3>AssertEnumMember()</h3>
+The <span class="codeInline">AssertEnumMember()</span> methods allow you to check enumeration arguments for correctness. They work with both flags and non-flags enumerations. The basic usage is as follows:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">enum</span> MyEnum
+{
+	One,
+	Two,
+	Three
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(MyEnum arg)
+	{
+		<span style="color:Green;">// this will ensure that arg is a valid member of the MyEnum enumeration</span>
+		ArgumentHelper.AssertEnumMember(arg, <span style="color:#A31515;">"arg"</span>);
+	}
+}
+</pre></div>This is useful because calling <span class="codeInline">MyMethod</span> like this will fail at runtime:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">new</span> MyClass().MyMethod((MyEnum)3);
+</pre></div>Without the call to <span class="codeInline">AssertEnumMember()</span>, <span class="codeInline">MyMethod()</span> would attempt to use the invalid value of 3.<br><br>The above call to <span class="codeInline">AssertEnumMember()</span> uses <span class="codeInline">Enum.GetValues()</span> to determine the valid values for the enumeration. This may not be desirable for various reasons, including efficiency and correctness. <span class="codeInline">Enum.GetValue()</span> does have a performance penalty that may be significant in tight code loops, for example. And it might not make sense for your API to accept any value in the enumeration - you may want to only accept some values. To solve these problems, there is an overload of <span class="codeInline">AssertEnumMember()</span> that allows you to provide specific enumeration values that should be accepted:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">enum</span> MyEnum
+{
+	One,
+	Two,
+	Three
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">private</span> <span style="color:Blue;">static</span> <span style="color:Blue;">readonly</span> MyEnum[] _validValues = <span style="color:Blue;">new</span> MyEnum[] { MyEnum.One, MyEnum.Two };
+	
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(MyEnum arg)
+	{
+		<span style="color:Green;">// this will ensure that arg is either MyEnum.One or MyEnum.Two</span>
+		<span style="color:Green;">// any other value (including MyEnum.Three) will result in an exception</span>
+		ArgumentHelper.AssertEnumMember(arg, <span style="color:#A31515;">"arg"</span>, _validValues);
+	}
+}
+</pre></div>Using flag enumerations with these methods is also very simple and intuitive. Any valid combination of the flags you provide will pass the assertion.<br><div style="color:Black;background-color:White;"><pre>[Flags]
+<span style="color:Blue;">public</span> <span style="color:Blue;">enum</span> MyFlags
+{
+	One,
+	Two,
+	Three
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">private</span> <span style="color:Blue;">static</span> <span style="color:Blue;">readonly</span> MyFlags[] _validValues = <span style="color:Blue;">new</span> MyFlags[] { MyFlags.One, MyFlags.Two };
+	
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(MyFlags arg)
+	{
+		<span style="color:Green;">// this will throw for MyFlags.Three or (MyFlags.One | MyFlags.Three)</span>
+		<span style="color:Green;">// but it will work for MyFlags.One or (MyFlags.One | MyFlags.Two)</span>
+		ArgumentHelper.AssertEnumMember(arg, <span style="color:#A31515;">"arg"</span>);
+	}
+}
+</pre></div><a name="ArgumentHelperExtensionMethods"></a>
+<h3>Extension Methods (.NET 3.5 onwards only)</h3>
+For .NET 3.5 and onwards, the <span class="codeInline">Kent.Boogaart.HelperTrinity.Extensions</span> namespace can be imported to make argument checking even simpler and more intuitive:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(<span style="color:Blue;">string</span> arg1, <span style="color:Blue;">string</span> arg2)
+	{
+		arg1.AssertNotNullOrEmpty(<span style="color:#A31515;">"arg1"</span>);
+		arg2.AssertNotNullOrEmpty(<span style="color:#A31515;">"arg2"</span>, <span style="color:Blue;">true</span>);
+	}
+}
+</pre></div>All the capabilities of the <span class="codeInline">ArgumentHelper</span> class are exposed via the extension methods in the <span class="codeInline">Kent.Boogaart.HelperTrinity.Extensions</span> namespace.<br><a name="EventHelper"></a>
+<h2>EventHelper</h2>
+The <span class="codeInline">EventHelper</span> class provides methods for raising events in a safe and simple manner. Both generic and non-generic event delegates are supported.<br><a name="Raise"></a>
+<h3>Raise()</h3>
+The <span class="codeInline">Raise()</span> methods allow you to synchronously raise an event. The usage is simple:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler MyEvent;
+	
+	<span style="color:Blue;">protected</span> <span style="color:Blue;">virtual</span> <span style="color:Blue;">void</span> OnMyEvent(EventArgs e)
+	{
+		EventHelper.Raise(MyEvent, <span style="color:Blue;">this</span>, e);
+	}
+}
+</pre></div>The call to <span class="codeInline">Raise()</span> raises the event in a thread-safe manner. If there are no listeners, the event will not be raised. Events that leverage the generic <span class="codeInline">EventHandler&lt;T&gt;</span> delegate are also supported:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler&lt;MyEventArgs&gt; MyEvent;
+	
+	<span style="color:Blue;">protected</span> <span style="color:Blue;">virtual</span> <span style="color:Blue;">void</span> OnMyEvent(MyEventArgs e)
+	{
+		EventHelper.Raise(MyEvent, <span style="color:Blue;">this</span>, e);
+	}
+}
+</pre></div><a name="BeginRaise"></a>
+<h3>BeginRaise()</h3>
+The <span class="codeInline">BeginRaise()</span> methods can be used to asynchronously raise an event. Its use is very similar to <span class="codeInline">Raise()</span> except that some extra parameters may be provided for callback purposes:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler MyEvent;
+	
+	<span style="color:Blue;">protected</span> <span style="color:Blue;">virtual</span> <span style="color:Blue;">void</span> OnMyEvent(EventArgs e)
+	{
+		EventHelper.BeginRaise(MyEvent, <span style="color:Blue;">this</span>, e, MyCallback, <span style="color:#A31515;">"state"</span>);
+	}
+	
+	<span style="color:Blue;">private</span> <span style="color:Blue;">void</span> MyCallback(IAsyncResult result)
+	{
+		<span style="color:Green;">// this will display "state"</span>
+		MessageBox.Show(result.AsyncState);
+	}
+}
+</pre></div>The callback is entirely optional. If you don't need to be notified when the event has been raised, just pass in <span class="codeInline">null</span> for the callback and state parameters:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">protected</span> <span style="color:Blue;">virtual</span> <span style="color:Blue;">void</span> OnMyEvent(EventArgs e)
+{
+	EventHelper.BeginRaise(MyEvent, <span style="color:Blue;">this</span>, e, <span style="color:Blue;">null</span>, <span style="color:Blue;">null</span>);
+}
+</pre></div>Just like with <span class="codeInline">Raise()</span> methods, there are <span class="codeInline">BeginRaise()</span> overloads to support the generic <span class="codeInline">EventHandler&lt;T&gt;</span> delegate.<br><a name="LazyEventArgumentCreation"></a>
+<h3>Lazy Event Argument Creation</h3>
+Both the <span class="codeInline">Raise()</span> and <span class="codeInline">BeginRaise()</span> methods support overloads that take an instance of the <span class="codeInline">CreateEventArgs&lt;T&gt;</span> delegate instead of an instance of <span class="codeInline">EventArgs</span>. These overloads are intended for an esoteric use case. If all of the following is true, you should consider using these overloads when raising your event:
+<ul><li>Your event is raised very frequently</li>
+<li>Your event rarely has listeners</li>
+<li>Your event data is a custom <span class="codeInline">EventArgs</span> instance</li>
+<li>The instance of the <span class="codeInline">CreateEventArgs&lt;T&gt;</span> delegate does not need to be recreated every time you raise the event</li></ul>
+Even if all these points hold true, you should measure performance to prove that the extra complexity in your code base is warranted. For a complete example that that uses lazy event argument creation please see <a href="http://thehelpertrinity.codeplex.com/wikipage?title=LazyEventCreation&referringTitle=Documentation">here</a>.<br><a name="EventHelperExtensionMethods"></a>
+<h3>Extension Methods (.NET 3.5 onwards only)</h3>
+For .NET 3.5 and onwards, the <span class="codeInline">Kent.Boogaart.HelperTrinity.Extensions</span> namespace can be imported to make event raising even simpler and more intuitive:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">public</span> <span style="color:Blue;">event</span> EventHandler&lt;MyEventArgs&gt; MyEvent;
+	
+	<span style="color:Blue;">protected</span> <span style="color:Blue;">virtual</span> <span style="color:Blue;">void</span> OnMyEvent(MyEventArgs e)
+	{
+		MyEvent.Raise(<span style="color:Blue;">this</span>, e);
+	}
+}
+</pre></div>All the capabilities of the <span class="codeInline">EventHelper</span> class are exposed via the extension methods in the <span class="codeInline">Kent.Boogaart.HelperTrinity.Extensions</span> namespace.<br><a name="ExceptionHelper"></a>
+<h2>ExceptionHelper</h2>
+The <span class="codeInline">ExceptionHelper</span> class provides helper methods for raising exceptions. The main advantage to using the <span class="codeInline">ExceptionHelper</span> class is that your exception messages are centralized and easy to review for consistency and correctness. Another advantage is that your code will be cleaner and therefore clearer.<br><a name="SetUp"></a>
+<h3>Set Up</h3>
+The <span class="codeInline">ExceptionHelper</span> class relies on finding your exception messages in an embedded resource called <i>ExceptionHelper.xml</i>. The resource name used to look up this XML document is "<i>assembly name</i>.Properties.ExceptionHelper.xml", where the assembly is determined by the type you pass to the <span class="codeInline">ExceptionHelper</span> constructor. The easiest way to set this up in Visual Studio is:
+<ol><li>Add a new XML file called <i>ExceptionHelper.xml</i> to your project.</li>
+<li>View the properties of this file and change the <i>Build Action</i> to <i>Embedded Resource</i>.</li>
+<li>Drag the file under the <i>Properties</i> directory of your project.</li></ol>
+The end result should resemble this:<br><img src="./The Helper Trinity_files/Download" alt="ExceptionHelper.xml.png" title="ExceptionHelper.xml.png"><br><a name="ExceptionHelperXmlFormat"></a>
+<h3>ExceptionHelper.xml Format</h3>
+The format of the <i>ExceptionHelper.xml</i> file is quite simple. For each exception that you might throw, you should include an <span class="codeInline">&lt;exception/&gt;</span> element. These elements are grouped under <span class="codeInline">&lt;exceptionGroup&gt;</span> elements according to the type that might throw the exception. Here is an example:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">&lt;?</span><span style="color:#A31515;">xml</span> <span style="color:Red;">version</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">1.0</span><span style="color:Black;">"</span> <span style="color:Red;">encoding</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">utf-8</span><span style="color:Black;">"</span> <span style="color:Blue;">?&gt;</span>
+
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">exceptionHelper</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">exceptionGroup</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">MyNamespace.MyType, MyAssembly</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">exception</span> <span style="color:Red;">key</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">missing</span><span style="color:Black;">"</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">System.InvalidOperationException</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+            I can't find the byte array.
+        <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exception</span><span style="color:Blue;">&gt;</span>
+
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">exception</span> <span style="color:Red;">key</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">tooBig</span><span style="color:Black;">"</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">System.InvalidOperationException</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+            I found the byte array but it is too big ({0} bytes).
+        <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exception</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exceptionGroup</span><span style="color:Blue;">&gt;</span>
+
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">exceptionGroup</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">MyNamespace.MyOtherType, MyAssembly</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">exception</span> <span style="color:Red;">key</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">missing</span><span style="color:Black;">"</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">MyNamespace.MyException, MyAssembly</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+            I can't find the string.
+        <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exception</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exceptionGroup</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exceptionHelper</span><span style="color:Blue;">&gt;</span>
+</pre></div>When the <span class="codeInline">ExceptionHelper</span> needs to throw an exception, it will attempt to look up the exception details in this XML document. The type you pass to the <span class="codeInline">ExceptionHelper</span> constructor is used to find the correct exception group. This means that different types can use the same exception key without clashing.<br><br>Notice also that that the messages can include parameters, as is the case with the "tooBig" exception above. These parameters adhere to standard .NET formatting conventions.<br><a name="Resolve"></a>
+<h3>Resolve()</h3>
+The <span class="codeInline">Resolve()</span> methods are used to simply resolve an exception instance so that you can subsequently throw it:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">private</span> <span style="color:Blue;">static</span> <span style="color:Blue;">readonly</span> ExceptionHelper _exceptionHelper = <span style="color:Blue;">new</span> ExceptionHelper(<span style="color:Blue;">typeof</span>(MyClass));
+	
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod()
+	{
+		<span style="color:Blue;">try</span>
+		{
+			<span style="color:Green;">// dangerous call here</span>
+		}
+		<span style="color:Blue;">catch</span> (IOException ex)
+		{
+			<span style="color:Green;">// throw a different exception that wraps the IOException</span>
+			<span style="color:Blue;">throw</span> _exceptionHelper.Resolve(<span style="color:#A31515;">"SomeKey"</span>, ex);
+		}
+	}
+}
+</pre></div>Various overloads exist so that you can pass message arguments and additional constructor arguments.<br><a name="ResolveAndThrowIf"></a>
+<h3>ResolveAndThrowIf()</h3>
+The <span class="codeInline">ResolveAndThrowIf()</span> methods will resolve and throw an exception, but only if a specified condition is <span class="codeInline">true</span>. Various overloads exist so that you can pass message parameters, pass an inner exception, and pass additional constructor arguments for the exception type. A simple example of usage is:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass : IDisposable
+{
+	<span style="color:Blue;">private</span> <span style="color:Blue;">static</span> <span style="color:Blue;">readonly</span> ExceptionHelper _exceptionHelper = <span style="color:Blue;">new</span> ExceptionHelper(<span style="color:Blue;">typeof</span>(MyClass));
+	<span style="color:Blue;">private</span> <span style="color:Blue;">bool</span> _disposed;
+	
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> Dispose()
+	{
+		_disposed = <span style="color:Blue;">true</span>;
+		<span style="color:Green;">// other clean up code</span>
+	}
+	
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod()
+	{
+		_exceptionHelper.ResolveAndThrowIf(_disposed, <span style="color:#A31515;">"ObjectDisposed"</span>);
+		<span style="color:Green;">// other logic</span>
+	}
+}
+</pre></div>In this example, <span class="codeInline">MyMethod()</span> will throw an exception if the object has already been disposed. The exception group might be declared in the <i>ExceptionHelper.xml</i> file like this:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">&lt;</span><span style="color:#A31515;">exceptionGroup</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">MyClass, MyAssembly</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+	<span style="color:Blue;">&lt;</span><span style="color:#A31515;">exception</span> <span style="color:Red;">key</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">ObjectDisposed</span><span style="color:Black;">"</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">System.ObjectDisposedException</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+		Cannot access a disposed instance of MyClass.
+	<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exception</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exceptionGroup</span><span style="color:Blue;">&gt;</span>
+</pre></div>A more complicated example of using <span class="codeInline">ResolveAndThrowIf()</span> is:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyClass
+{
+	<span style="color:Blue;">private</span> <span style="color:Blue;">static</span> <span style="color:Blue;">readonly</span> ExceptionHelper _exceptionHelper = <span style="color:Blue;">new</span> ExceptionHelper(<span style="color:Blue;">typeof</span>(MyClass));
+	<span style="color:Blue;">private</span> <span style="color:Blue;">const</span> <span style="color:Blue;">int</span> _minLength = 3;
+	<span style="color:Blue;">private</span> <span style="color:Blue;">const</span> <span style="color:Blue;">int</span> _maxLength = 6;
+	
+	<span style="color:Blue;">public</span> <span style="color:Blue;">void</span> MyMethod(<span style="color:Blue;">string</span> userName)
+	{
+		ArgumentHelper.AssertNotNull(userName, <span style="color:#A31515;">"userName"</span>);
+		_exceptionHelper.ResolveAndThrowIf(
+                     userName.Length &lt; _minLength || userName.Length &gt; _maxLength,
+                     <span style="color:#A31515;">"InvalidUserName"</span>,
+                     userName,
+                     _minLength,
+                     _maxLength);
+
+		<span style="color:Green;">// other logic</span>
+	}
+</pre></div>The corresponding <i>ExceptionHelper.xml</i> might look like this:<br><div style="color:Black;background-color:White;"><pre><span style="color:Blue;">&lt;</span><span style="color:#A31515;">exceptionGroup</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">MyClass, MyAssembly</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+	<span style="color:Blue;">&lt;</span><span style="color:#A31515;">exception</span> <span style="color:Red;">key</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">InvalidUserName</span><span style="color:Black;">"</span> <span style="color:Red;">type</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">System.ArgumentException</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+		User name '{0}' is not between {1} and {2} characters long.
+	<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exception</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">exceptionGroup</span><span style="color:Blue;">&gt;</span>
+</pre></div></div><div class="ClearBoth"></div>
+            </div>
+        
+                <p>Last edited <span class="smartDate" title="2010/5/3 16:58:01" localtimeticks="1272931081">May 3 2010 at 4:58 PM</span> by <a id="wikiEditByLink" href="http://www.codeplex.com/site/users/view/kentcb">kentcb</a>, version 6</p>
+            
+                <div id="Comments">
+                    
+
+<script type="text/javascript">
+    var commentCount = 0;
+    function addComment() {
+        var input = $('#Comment');
+        input.val($.trim(input.val()));
+        if (MvcValidation_Validate('AddComment')) {
+            CodePlex.UpdateProgress.show();
+            $.post('http://thehelpertrinity.codeplex.com/wikipage/comment', { Comment: input.val(), title: $('#WikiTitle').val() }, function(data, textStatus) {
+                if (textStatus == 'success') {
+                    if(commentCount++ == 0)
+                        $('#wikiCommentsEmpty').empty();
+                    $('#wikiComments').append(data);
+                    input.val('');
+                }
+                CodePlex.UpdateProgress.hide();
+            });
+        }
+    }
+    function deleteComment(id) {
+        if (confirm('Are you sure you want to delete this comment?')) {
+            CodePlex.UpdateProgress.show();
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://thehelpertrinity.codeplex.com/wikipage/comment' + '/' + id,
+                success: function() {
+                    $('#comment' + id).empty();
+                    CodePlex.UpdateProgress.hide();
+                },
+                error: function() { CodePlex.UpdateProgress.hide(); }
+            });
+        }
+    }
+</script>
+
+<div id="CommentsAnchor">
+    <h2>Comments</h2>
+    <div id="wikiComments">
+        
+            <div id="wikiCommentsEmpty">No comments yet.<br><br></div>
+        
+    </div>
+    
+        <div id="addComment">
+            <a id="SignInToAddCommentLink" href="https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fthehelpertrinity.codeplex.com%2fdocumentation%3fFocusElement%3dComment">Sign in to add a comment</a>
+        </div>
+    
+</div>
+                </div>
+            
+    </div>
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#deleteWikiHyperLink').click(function () {
+                OpenDialog('#DeleteWikiPagePanel', true, '30em');
+            });
+            $('#DeleteButton').click(function () {
+                OpenDialog('#DeleteWikiPagePanel', false);
+                CodePlex.UpdateProgress.show();
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://thehelpertrinity.codeplex.com/documentation',
+                    data: {title: $('#WikiTitle').val()},
+                    success: function (data) {
+                        CodePlex.UpdateProgress.hide();
+                        window.location = data;
+                    },
+                    error: function (data) {
+                        CodePlex.UpdateProgress.hide();
+                    }
+                });
+            });
+            $('#CancelButton').click(function () {
+                OpenDialog('#DeleteWikiPagePanel', false);
+            });
+            
+            
+        });
+    </script>
+</div>
+
+        
+	<div id="right_sidebar">
+        
+
+<input name="" type="text" maxlength="500" id="wiki_search" class="EmptyTextBox"><a id="SearchButton" class="wiki_magnify" href="http://thehelpertrinity.codeplex.com/documentation#"></a>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $('#wiki_search').keypress(function (e) {
+            if (e.keyCode == 13) {
+                wikiSearch();
+                return false;
+            }
+        });
+
+        $('#SearchButton').click(function () {
+            wikiSearch();
+            return false;
+        });
+
+        $('#wiki_search').promptBox('Search Wiki & Documentation');
+
+    });
+    function setWikiCommentTextBoxFocus() {
+        $('#Comment').focus();
+        return false;
+    }
+
+    function wikiSearch() {
+        var $textbox = $('#wiki_search');
+        if($textbox.attr('dirty') != 'true')
+            return;
+        var searchText = encodeURIComponent(jQuery.trim($textbox.val()));
+        if(searchText != null & searchText.length > 0)
+            window.location.href = 'http://thehelpertrinity.codeplex.com/wiki/search?tab=Documentation&SearchText=' + searchText;
+    }
+
+</script>
+
+<script type="text/javascript">
+    var requirementsActionUri = 'http://thehelpertrinity.codeplex.com/documentation/requirements';
+    var requirementsToDelete = [];
+    
+    
+
+    function LoadRequirements(json) {
+        var html = '';
+        if (json === undefined || !json.length) {
+            html = '<div id="NoRequirementsDefined">There are currently no defined requirements.</div>';
+        } else {
+            for (var i = 0; i < json.length; i++) {
+               var requirementType = json[i];
+                html += '<h3>' + requirementType.Caption + '</h3><ul>';
+                for (var j = 0; j < requirementType.Requirements.length; j++) {
+                    var requirement = requirementType.Requirements[j];
+                    html += '<li>' + requirement.DisplayTitle + '</li>';
+                }
+                html += '</ul>';
+            }
+        }
+        
+        $('#RequirementsBody').html(html);
+    }
+
+    $(document).ready(function() {
+        LoadRequirements();
+    });
+</script>
+
+<div id="RequirementsContainer">
+    <h2>
+        System Requirements
+        
+    </h2>
+    <div class="clear"></div>
+    <div id="RequirementsBody"><div id="NoRequirementsDefined">There are currently no defined requirements.</div></div>
+</div>
+
+
+    </div>
+
+    
+</div>
+
+
+
+	<div class="clear"></div><!--keep footer down-->
+
+    <div id="footer">
+        <div class="row">
+            <hr>
+            <ul>
+                <li>© 2006-2012 Microsoft</li>
+                <li><a href="http://www.codeplex.com/site/help">Get Help</a></li>
+                <li><a href="http://thehelpertrinity.codeplex.com/site/legal/privacy">Privacy Statement</a></li>
+                <li><a href="http://www.codeplex.com/site/legal/terms">Terms of Use</a></li>
+                <li><a href="http://www.codeplex.com/site/legal/conduct">Code of Conduct</a></li>
+                <li><a href="http://www.lakequincy.com/" target="_blank">Advertise With Us</a></li>
+                <li>Version 6.7.2012.18999</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</form>
+
+<div style="display: none; z-index: 1000; outline-width: 0px; outline-style: initial; outline-color: initial; position: absolute; " class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-UpdateProgressPanel"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-UpdateProgressPanel">&nbsp;</span><a href="http://thehelpertrinity.codeplex.com/documentation#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="UpdateProgressPanel" class="loading_animation ui-dialog-content ui-widget-content" style="">
+    <div class="row">
+        <h2 class="anim_h2">
+            <span id="UpdateProgressText">Updating...</span>
+            <span id="animatedLoadingIconContainer">
+                <img id="animatedLoadingIcon" src="./The Helper Trinity_files/loading_animation.gif" class="anim_img">
+            </span>
+        </h2>
+    </div>
+</div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div><script src="./The Helper Trinity_files/broker-config.js"></script></body></html>

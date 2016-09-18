@@ -1,0 +1,68 @@
+﻿<Window x:Class="JinHong.View.Dialogs.ViewContractDetailDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pf="http://schemas.uniguy.com/presentation"
+        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="详情" SizeToContent="WidthAndHeight" ShowInTaskbar="False" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        x:Name="_this">
+    <Window.Resources>
+        <CollectionViewSource x:Key="cvsContractDetailTbl" CollectionViewType="ListCollectionView"
+                              Source="{Binding ContractDetailTbl,ElementName=_this}"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding ElementName=_this}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition  Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border  BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="租赁单位名称：" HorizontalAlignment="Left"    />
+        </Border>
+        <Border  Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="{ Binding SocialUnitName}"   />
+        </Border>
+
+        <ListView Grid.Row="1"  Grid.ColumnSpan="2" ItemsSource="{Binding Source={StaticResource cvsContractDetailTbl}}">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="序号" DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ListViewItem}}, Converter={StaticResource convIndex1}}"/>
+                    <pf:SortableGridViewColumn Header="座号" DisplayMemberBinding="{Binding BuildingId}" SortPropertyName="BuildingId"/>
+                    <pf:SortableGridViewColumn Header="室号" DisplayMemberBinding="{Binding RoomId}" SortPropertyName="RoomId"/>
+                    <pf:SortableGridViewColumn Header="面积" DisplayMemberBinding="{Binding Area,StringFormat='{}{0:F2}'}" SortPropertyName="Area"/>
+                    <pf:SortableGridViewColumn Header="平方租金/日" DisplayMemberBinding="{Binding DayRentalFee,StringFormat='{}{0:F2}'}" SortPropertyName="DayRentalFee"/>
+                    <pf:SortableGridViewColumn Header="月租金" DisplayMemberBinding="{Binding MonthRentalFee,StringFormat='{}{0:F2}'}" SortPropertyName="MonthRentalFee"/>
+                    <pf:SortableGridViewColumn Header="平方物业费/日" DisplayMemberBinding="{Binding DayPropManageFee,StringFormat='{}{0:F2}'}" SortPropertyName="DayPropManageFee"/>
+                    <pf:SortableGridViewColumn Header="月物业费" DisplayMemberBinding="{Binding MonthPropManageFee,StringFormat='{}{0:F2}'}" SortPropertyName="MonthPropManageFee"/>
+                    <GridViewColumn Header="备注" DisplayMemberBinding="{Binding Notes}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonOK" IsDefault="True" Margin="8" VerticalAlignment="Bottom" Width="80"
+                    Click="buttonOK_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushOK}" Width="16"/>
+                    <TextBlock Text="确定"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="buttonCancel" IsCancel="True" Margin="8" VerticalAlignment="Bottom" Width="80"
+                    Click="buttonCancel_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushCancel}" Width="16"/>
+                    <TextBlock Text="取消"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

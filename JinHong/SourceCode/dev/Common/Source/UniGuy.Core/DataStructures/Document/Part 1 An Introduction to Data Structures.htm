@@ -1,0 +1,961 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0062)http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Part 1: An Introduction to Data Structures</TITLE><LINK 
+href="http://msdn.microsoft.com/en-us/library/ms379570(v=vs.80).aspx" 
+rel=canonical><LINK 
+href="Part 1 An Introduction to Data Structures.files/024d86ac3c0dde3e6a230199128bdfe4.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="http://msdn.microsoft.com/en-US/library/ms379570(d=printer,v=VS.80).aspx" 
+rel=alternate>
+<META http-equiv=content-type content="text/html; charset=utf-8">
+<META content=/en-us/library/ms379570(d=lightweight,l=en-us,v=VS.80).aspx 
+name=DCS.dcsuri>
+<META 
+content=http://msdn.microsoft.com/en-us/library/ms379570(d=lightweight,l=en-us,v=VS.80).aspx 
+name=NormalizedUrl>
+<META 
+content=http://msdn.microsoft.com/en-us/library/ms379570(l=en-us,v=VS.80).aspx 
+name=VotingContextUrl>
+<META content="C0384794-11:19:50 AM" name=MN>
+<META content=ms379570 name=Search.ShortId>
+<META content=en-us name=Ms.Locale>
+<META content="MSHTML 6.00.2900.6049" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=header>
+<TABLE class="headerBar cl_lightweight_topnav_slice" cellSpacing=0 cellPadding=0 
+border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    class="leftSection cl_lightweight_header_leftSection_wave leftSectionImageClusterOverride">
+      <DIV class=tabContainer><A class=" headerTab" title=Home 
+      href="http://msdn.microsoft.com/en-US/">Home</A> <A 
+      class="headerTabSelected cl_lightweight_selected_tab_repeatX " 
+      title=Library href="http://msdn.microsoft.com/en-US/library">Library</A> 
+      <A class=" headerTab" title=Learn 
+      href="http://msdn.microsoft.com/en-US/bb188199.aspx">Learn</A> <A 
+      class=" headerTab" title=Downloads 
+      href="http://msdn.microsoft.com/en-US/aa570309.aspx">Downloads</A> <A 
+      class=" headerTab" title=Support 
+      href="http://msdn.microsoft.com/en-US/aa570318.aspx">Support</A> <A 
+      class=" headerTab" title=Community 
+      href="http://msdn.microsoft.com/en-US/aa497440.aspx">Community</A> 
+    </DIV></TD>
+    <TD 
+    class="rightSection cl_lightweight_header_rightSection_wave rightSectionImageClusterOverride">
+      <DIV class=tabContainer><A title="Sign in" 
+      href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1303496390&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http:%2F%2Fmsdn.microsoft.com%2Fen-US%2Flibrary%2Fms379570%2528v%3DVS.80%2529.aspx&amp;lc=1033&amp;cb=&amp;id=254354">Sign 
+      in </A><SPAN class=pipe>|</SPAN> <A title=中国（简体中文） 
+      href="http://msdn.microsoft.com/en-US/library/preferences/locale/?returnurl=%252fen-US%252flibrary%252fms379570(v%253dVS.80).aspx">中国（简体中文） 
+      </A><SPAN class=pipe>|</SPAN> <A title=Preferences 
+      href="http://msdn.microsoft.com/en-US/library/preferences/experience/?returnurl=%252fen-US%252flibrary%252fms379570(v%253dVS.80).aspx">Preferences</A> 
+      </DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV class=contentPlaceHolder>
+<DIV class=navigation id=Navigation style="PADDING-BOTTOM: 96px; WIDTH: 280px">
+<DIV class=searchcontainer>
+<FORM id=SearchForm 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px" 
+action=http://social.msdn.microsoft.com/Search/en-US method=get>
+<DIV class=searchBoxContainer>
+<TABLE class=searchBox cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=searchTextBoxTd><INPUT class=searchTextBox id=searchTextBox 
+      onblur="document.onkeydown = Presskey;WatermarkBlur(this, 'Search MSDN with Bing', 'searchTextBox')" 
+      onfocus="document.onkeydown = ''; WatermarkFocus(this, 'Search MSDN with Bing', 'searchTextBoxTrue') " 
+      maxLength=200 value="Search MSDN with Bing" name=query> </TD>
+    <TD class=searchButtonTd><A 
+      style="PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 19px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 19px" 
+      onclick="javascript:if(document.getElementById('searchTextBox').value == 'Search MSDN with Bing')document.getElementById('searchTextBox').value=''; document.getElementById('SearchForm').submit();" 
+      href="javascript:void(0)"><IMG class=cl_search_icon title=Search 
+      style="POSITION: relative" alt=Search 
+      src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"></A> 
+    </TD></TR></TBODY></TABLE></DIV></FORM></DIV>
+<DIV class=navcontainer>
+<DIV class=nav>
+<DIV class="toclevel0 ancestry">
+<DIV class="clip5x9 nav_root"><IMG class=cl_nav_bullet alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="MSDN Library" 
+href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN 
+Library</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Development Tools and Languages" 
+href="http://msdn.microsoft.com/en-us/library/aa187916.aspx">Development Tools 
+and Languages</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Visual Studio 2005" 
+href="http://msdn.microsoft.com/en-us/library/ms950416.aspx">Visual Studio 
+2005</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title="Technical Articles" 
+href="http://msdn.microsoft.com/en-us/library/aa468085.aspx">Technical 
+Articles</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A title=C# 
+href="http://msdn.microsoft.com/en-us/library/ms391942(v=VS.80).aspx">C#</A></DIV>
+<DIV class="clip5x9 nav_arrows"><IMG class=cl_nav_arrow alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=nav_div_currentroot><A 
+title="An Extensive Examination of Data Structures Using C# 2.0" 
+href="http://msdn.microsoft.com/en-us/library/ms364091(v=VS.80).aspx">An 
+Extensive Examination of Data Structures Using C# 2.0</A></DIV></DIV>
+<DIV class="clip13x9 nav_dots_current"><IMG class=cl_nav_dots alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class="toclevel1 current"><A 
+title="Part 1: An Introduction to Data Structures" 
+href="http://msdn.microsoft.com/en-us/library/ms379570(v=VS.80).aspx">Part 1: An 
+Introduction to Data Structures</A></DIV>
+<DIV class="toclevel2 children" 
+style="BORDER-BOTTOM: #bbbbbb 1px solid"></DIV><IMG 
+class="communityContentNavigationSeparator cl_lt_cc_line_top" alt=Separator 
+src="Part 1 An Introduction to Data Structures.files/030c41d9079671d09a62d8e2c1db6973.gif"> 
+</DIV></DIV></DIV><A class=tocResize id=TocResize style="LEFT: 280px" 
+onclick=onIncreaseToc() 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#"><IMG 
+class=cl_nav_resize_open onmousedown=onIncreaseToc() id=ResizeImageIncrease 
+title=Expand alt=Expand 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+<IMG class=cl_nav_resize_close onmousedown=onResetToc() id=ResizeImageReset 
+title=Minimize style="DISPLAY: none" alt=Minimize 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</A>
+<DIV class=content><IMG class="TOC_Fade_Top cl_lw_toc_fade_top" alt="" 
+src="Part 1 An Introduction to Data Structures.files/030c41d9079671d09a62d8e2c1db6973.gif"> 
+
+<DIV class="clip117x31 logo"><A 
+href="http://msdn.microsoft.com/en-US/default.aspx"><IMG class=msdn_body_logo 
+title=MSDN alt=MSDN 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</A></DIV>
+<DIV class=topicContainer>
+<DIV class=topic xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:mtps="http://msdn2.microsoft.com/mtps">
+<H1 class=title>An Extensive Examination of Data Structures Using C# 2.0</H1>
+<DIV class=lw_vs>
+<DIV id=curversion><STRONG>Visual Studio 2005</STRONG> </DIV></DIV>
+<DIV style="CLEAR: right"></DIV>
+<DIV id=nstext valign="bottom">&nbsp; 
+<P>Scott Mitchell<BR>4GuysFromRolla.com</P>
+<P>Update January 2005</P>
+<P><B>Summary:</B> This article kicks off a six-part article series that focuses 
+on important data structures and their use in application development. We'll 
+examine both built-in data structures present in the .NET Framework, as well as 
+essential data structures we'll build ourselves. This first part focuses on an 
+introduction to data structures, defining what data structures are, how the 
+efficiency of data structures are analyzed, and why this analysis is important. 
+In this article, we'll also examine two of the most commonly used data 
+structures present in the .NET Framework: the Array and List. (14 printed 
+pages)</P>
+<BLOCKQUOTE class=dtBlock><B>Editor's note&nbsp;&nbsp;&nbsp;</B>This six-part 
+  article series originally appeared on MSDN Online starting in November 2003. 
+  In January 2005 it was updated to take advantage of the new data structures 
+  and features available with the .NET Framework version 2.0, and C# 2.0. The 
+  original articles are still available at <A 
+  href="http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp">http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp</A>. 
+</BLOCKQUOTE>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>This article assumes 
+  the reader is familiar with C#.</BLOCKQUOTE>
+<H4 class=dtH1>Contents</H4>
+<P><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#datastructures20_1_topic1">Introduction</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#datastructures20_1_topic2">Analyzing 
+the Performance of Data Structures</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#datastructures20_1_topic3">Everyone's 
+Favorite Linear, Direct Access, Homogeneous Data Structure: The Array</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#datastructures20_1_topic4">Creating 
+Type-Safe, Performant, Reusable Data Structures</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#datastructures20_1_topic5">The 
+List – a Homogeneous, Self-Redimensioning Array</A><BR><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#datastructures20_1_topic6">Conclusion</A></P>
+<H2 class=dtH1><A name=datastructures20_1_topic1></A>Introduction</H2>
+<P>Welcome to the first in a six-part series on using data structures in .NET 
+2.0. This article series originally appeared on MSDN Online in October 2003, 
+focusing on the .NET Framework version 1.x, and can be accessed at <A 
+href="http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp">http://msdn.microsoft.com/vcsharp/default.aspx?pull=/library/en-us/dv_vstechart/html/datastructures_guide.asp</A>. 
+Version 2.0 of the .NET Framework adds new data structures to the Base Class 
+Library, along with new features, such as Generics, that make creating type-safe 
+data structures much easier than with version 1.x. This revised article series 
+introduces these new .NET Framework data structures and examines using these new 
+language features.</P>
+<P>Throughout this article series, we will examine a variety of data structures, 
+some of which are included in the .NET Framework's Base Class Library and others 
+that we'll build ourselves. If you're unfamiliar with the term, <I>data 
+structures</I> are classes that are used to organize data and provide various 
+operations upon their data. Probably the most common and well-known data 
+structure is the array, which contains a contiguous collection of data items 
+that can be accessed by an ordinal index.</P>
+<P>Before jumping into the content for this article, let's first take a quick 
+peek at the roadmap for this six-part article series, so that you can see what 
+lies ahead.</P>
+<P>In this first part of the six-part series, we'll look at why data structures 
+are important, and their effect on the performance of an algorithm. To determine 
+a data structure's effect on performance, we'll need to examine how the various 
+operations performed by a data structure can be rigorously analyzed. Finally, 
+we'll turn our attention to two similar data structures present in the .NET 
+Framework: the Array and the List. Chances are you've used these data structures 
+in past projects. In this article, we'll examine what operations they provide 
+and the efficiency of these operations.</P>
+<P>In the Part 2, we'll explore the List's "cousins," the Queue and Stack. Like 
+the List, both the Queue and Stack store a collection of data and are data 
+structures available in the .NET Framework Base Class Library. Unlike a List, 
+from which you can retrieve its elements in any order, Queues and Stacks only 
+allow data to be accessed in a predetermined order. We'll examine some 
+applications of Queues and Stacks, and see how these classes are implemented in 
+the .NET Framework. After examining Queues and Stacks, we'll look at hashtables, 
+which allow for direct access like an ArrayList, but store data indexed by a 
+string key.</P>
+<P>While arrays and Lists are ideal for directly accessing and storing contents, 
+when working with large amounts of data, these data structures are often 
+sub-optimal candidates when the data needs to be searched. In Part 3, we'll 
+examine the binary search tree data structure, which is designed to improve the 
+time needed to search a collection of items. Despite the improvement in search 
+time with the binary tree, there are some shortcomings. In Part 4, we'll look at 
+SkipLists, which are a mix between binary trees and linked lists, and address 
+some of the issues inherent in binary trees.</P>
+<P>In Part 5, we'll turn our attention to data structures that can be used to 
+represent graphs. A graph is a collection of nodes, with a set of edges 
+connecting the various nodes. For example, a map can be visualized as a graph, 
+with cities as nodes and the highways between them as edged between the nodes. 
+Many real-world problems can be abstractly defined in terms of graphs, thereby 
+making graphs an often-used data structure. </P>
+<P>Finally, in Part 6 we'll look at data structures to represent sets and 
+disjoint sets. A set is an unordered collection of items. Disjoint sets are a 
+collection of sets that have no elements in common with one another. Both sets 
+and disjoint sets have many uses in everyday programs, which we'll examine in 
+detail in this final part.</P>
+<H2 class=dtH1><A name=datastructures20_1_topic2></A>Analyzing the Performance 
+of Data Structures</H2>
+<P>When thinking about a particular application or programming problem, many 
+developers (myself included) find themselves most interested about writing the 
+algorithm to tackle the problem at hand or adding cool features to the 
+application to enhance the user's experience. Rarely, if ever, will you hear 
+someone excited about what type of data structure they are using. However, the 
+data structures used for a particular algorithm can greatly impact its 
+performance. A very common example is finding an element in a data structure. 
+With an unsorted array, this process takes time proportional to the number of 
+elements in the array. With binary search trees or SkipLists, the time required 
+is logarithmically proportional to the number of elements. When searching 
+sufficiently large amounts of data, the data structure chosen can make a 
+difference in the application's performance that can be visibly measured in 
+seconds or even minutes.</P>
+<P>Since the data structure used by an algorithm can greatly affect the 
+algorithm's performance, it is important that there exists a rigorous method by 
+which to compare the efficiency of various data structures. What we, as 
+developers utilizing a data structure, are primarily interested in is how the 
+data structures performance changes as the amount of data stored increases. That 
+is, for each new element stored by the data structure, how are the running times 
+of the data structure's operations effected?</P>
+<P>Consider the following scenario: imagine that you are tasked with writing a 
+program that will receive as input an array of strings that contain filenames. 
+Your program's job is to determine whether that array of strings contains any 
+filenames with a specific file extension. One approach to do this would be to 
+scan through the array and set some flag once an XML file was encountered. The 
+code might look like so:</P><PRE class=code>public bool DoesExtensionExist(string [] fileNames, string extension)
+{
+      int i = 0;
+      for (i = 0; i &lt; fileNames.Length; i++)
+         if (String.Compare(Path.GetExtension(fileNames[i]), extension, true) == 0)
+            return true;
+
+      return false;   // If we reach here, we didn't find the extension
+   }
+}
+</PRE>
+<P>Here we see that, in the worst-case—when there is no file with a specified 
+extension, or when there is such a file but it is the last file in the list—we 
+have to search through each element of the array exactly once. To analyze the 
+array's efficiency at sorting, we must ask ourselves the following: "Assume that 
+I have an array with <I>n</I> elements. If I add another element, so the array 
+has <I>n</I> + 1 elements, what is the new running time?" (The term "running 
+time," despite its name, does not measure the absolute time it takes the program 
+to run, but rather refers to the number of steps the program must perform to 
+complete the given task at hand. When working with arrays, typically the steps 
+considered are how many array accesses one needs to perform.) Since to search 
+for a value in an array we need to visit, potentially, every array value, if we 
+have <I>n</I> + 1 array elements, we might have to perform <I>n</I> + 1 checks. 
+That is, the time it takes to search an array is linearly proportional to the 
+number of elements in the array.</P>
+<P>This sort of analysis described here is called <I>asymptotic analysis</I>, as 
+it examines how the efficiency of a data structure changes as the data 
+structure's size approaches infinity. The notation commonly used in asymptotic 
+analysis is called <I>big-Oh notation</I>. The big-Oh notation to describe the 
+performance of searching an unsorted array would be denoted as 
+<I>O</I>(<I>n</I>). The large script <I>O</I> is where the terminology big-Oh 
+notation comes from, and the <I>n</I> indicates that the number of steps 
+required to search an array grows linearly as the size of the array grows.</P>
+<P>A more methodical way of computing the asymptotic running time of a block of 
+code is to follow these simple steps: </P>
+<OL type=1>
+  <LI>Determine the steps that constitute the algorithm's running time. As 
+  aforementioned, with arrays, typically the steps considered are the read and 
+  write accesses to the array. For other data structures, the steps might 
+  differ. Typically, you want to concern yourself with steps that involve the 
+  data structure itself, and not simple, atomic operations performed by the 
+  computer. That is, with the block of code above, I analyzed its running time 
+  by only bothering to count how many times the array needs to be accessed, and 
+  did not bother worrying about the time for creating and initializing variables 
+  or the check to see if the two strings were equal. 
+  <LI>Find the line(s) of code that perform the steps you are interested in 
+  counting. Put a 1 next to each of those lines. 
+  <LI>For each line with a 1 next to it, see if it is in a loop. If so, change 
+  the 1 to 1 times the maximum number of repetitions the loop may perform. If 
+  you have two or more nested loops, continue the multiplication for each loop. 
+  <LI>Find the largest single term you have written down. This is the running 
+  time. </LI></OL>
+<P>Let's apply these steps to the block of code above. We've already identified 
+that the steps we're interested in are the number of array accesses. Moving onto 
+step 2 note that there is only one line on which the array,<TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"> fileNames</TT>, is being accessed: 
+as a parameter in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">String.Compare() </TT>method, so mark 
+a 1 next to that line. Now, applying step 3 notice that the access to<TT 
+xmlns:asp="http://msdn2.microsoft.com/asp"> fileNames</TT> in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">String.Compare()</TT> method occurs 
+within a loop that runs at most <I>n</I> times (where <I>n</I> is the size of 
+the array). So, scratch out the 1 in the loop and replace it with <I>n</I>. This 
+is the largest value of <I>n</I>, so the running time is denoted as 
+<I>O</I>(<I>n</I>).</P>
+<P><I>O</I>(<I>n</I>), or linear-time, represents just one of a myriad of 
+possible asymptotic running times. Others include <I>O</I>(log<SUB>2</SUB> 
+<I>n</I>), <I>O</I>(<I>n</I> log<SUB>2</SUB> <I>n</I>), 
+<I>O</I>(<I>n</I><SUP>2</SUP>), <I>O</I>(2<SUP>n</SUP>), and so on. Without 
+getting into the gory mathematical details of big-Oh, the lower the term inside 
+the parenthesis for large values of <I>n</I>, the better the data structure's 
+operation's performance. For example, an operation that runs in <I>O</I>(log 
+<I>n</I>) is more efficient than one that runs in <I>O</I>(<I>n</I>) since log 
+<I>n</I> &lt; <I>n</I>.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>In case you need a 
+  quick mathematics refresher, log<SUB>a</SUB><SUB> </SUB>b = y is just another 
+  way to write a<SUP>y</SUP> = b. So, log<SUB>2</SUB> 4 = 2, since 2<SUP>2</SUP> 
+  = 4. Similarly, log<SUB>2</SUB> 8 = 3, since 2<SUP>3</SUP> = 8. Clearly, 
+  log<SUB>2</SUB> <I>n</I> grows much slower than <I>n</I> alone, because when 
+  <I>n</I> = 8, log<SUB>2</SUB> <I>n</I> = 3. In Part 3 we'll examine binary 
+  search trees whose search operation provides an <I>O</I>(log<SUB>2</SUB> 
+  <I>n</I>) running time.</BLOCKQUOTE>
+<P>Throughout this article series, each time we examine a new data structure and 
+its operations, we'll be certain to compute its asymptotic running time and 
+compare it to the running time for similar operations on other data 
+structures.</P>
+<H3 class=dtH1>Asymptotic Running Time and Real-World Algorithms</H3>
+<P>The asymptotic running time of an algorithm measures how the performance of 
+the algorithm fares as the number of steps that the algorithm must perform 
+approaches infinity. When the running time for one algorithm is said to be 
+greater than another's, what this means mathematically is that there exists some 
+number of steps such that once this number of steps is exceeded the algorithm 
+with the greater running time will always take longer to execute than the one 
+with the shorter running time. However, for instances with fewer steps, the 
+algorithm with the asymptotically-greater running time may run faster than the 
+one with the shorter running time.</P>
+<P>For example, there are a myriad of algorithms for sorting an array that have 
+differing running times. One of the simplest and most naïve sorting algorithms 
+is bubble sort, which uses a pair of nested <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">for</TT> loops to sort the elements 
+of an array. Bubble sort exhibits a running time of 
+<I>O</I>(<I>n</I><SUP>2</SUP>) due to the two <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">for</TT> loops. An alternative 
+sorting algorithm is merge sort, which divides the array into halves and 
+recursively sorts each half. The running time for merge sort is 
+<I>O</I>(<I>n</I> log<SUB>2</SUB> <I>n</I>). Asymptotically, merge sort is much 
+more efficient than bubble sort, but for small arrays, bubble sort may be more 
+efficient. Merge sort must not only incur the expense of recursive function 
+calls, but also of recombining the sorted array halves, whereas bubble sort 
+simply loops through the array quadratically, swapping pairs of array values as 
+needed. Overall, merge sort must perform fewer steps, but the steps merge sort 
+has to perform are more expensive than the steps involved in bubble sort. For 
+large arrays, this extra expense per step is negligible, but for smaller arrays, 
+bubble sort may actually be more efficient.</P>
+<P>Asymptotic analysis definitely has its place, as the asymptotic running time 
+of two algorithms can show how one algorithm will outperform another when the 
+algorithms are operating on sufficiently sized data. Using only asymptotic 
+analysis to judge the performance of an algorithm, though, is foolhardy, as the 
+actual execution times of different algorithms depends upon specific 
+implementation factors, such as the amount of data being plugged into the 
+algorithm. When deciding what data structure to employ in a real-world project, 
+consider the asymptotic running time, but also carefully profile your 
+application to ascertain the actual impact on performance your data structure 
+choice bears.</P>
+<H2 class=dtH1><A name=datastructures20_1_topic3></A>Everyone's Favorite Linear, 
+Direct Access, Homogeneous Data Structure: The Array</H2>
+<P>Arrays are one of the simplest and most widely used data structures in 
+computer programs. Arrays in any programming language all share a few common 
+properties: </P>
+<UL type=disc>
+  <LI>The contents of an array are stored in contiguous memory. 
+  <LI>All of the elements of an array must be of the same type or of a derived 
+  type; hence arrays are referred to as homogeneous data structures. 
+  <LI>Array elements can be directly accessed. With arrays if you know you want 
+  to access the <I>i</I><SUP>th</SUP> element, you can simply use one line of 
+  code: <I>arrayName</I>[<I>i</I>]. </LI></UL>
+<P>The common operations performed on arrays are: </P>
+<UL type=disc>
+  <LI>Allocation 
+  <LI>Accessing </LI></UL>
+<P>In C#, when an array (or any reference type variable) is initially declared, 
+it has a <TT xmlns:asp="http://msdn2.microsoft.com/asp">null</TT> value. That 
+is, the following line of code simply creates a variable named <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">booleanArray</TT> that equals <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">null</TT>:</P><PRE class=code>bool [] booleanArray;
+</PRE>
+<P>Before we can begin to work with the array, we must create an array instance 
+that can store a specific number of elements. This is accomplished using the 
+following syntax:</P><PRE class=code>booleanArray = new bool[10];
+</PRE>
+<P>Or more generically:</P><PRE class=code>arrayName = new arrayType[allocationSize];
+</PRE>
+<P>This allocates a contiguous block of memory in the CLR-managed heap large 
+enough to hold the <I>allocationSize</I> number of <I>arrayType</I>s. If 
+<I>arrayType</I> is a value type, then <I>allocationSize</I> number of unboxed 
+<I>arrayType</I> values are created. If <I>arrayType</I> is a reference type, 
+then <I>allocationSize</I> number of <I>arrayType</I> references are created. 
+(If you are unfamiliar with the difference between reference and value types and 
+the managed heap versus the stack, check out <A 
+href="http://www.awprofessional.com/catalog/article.asp?product_id={9DF6376A-23B4-4F31-B7EC-CEA27AC57999}">Understanding 
+.NET's Common Type System</A>.)</P>
+<P>To help hammer home how the .NET Framework stores the internals of an array, 
+consider the following example:</P><PRE class=code>bool [] booleanArray;
+FileInfo [] files;
+
+booleanArray = new bool[10];
+files = new FileInfo[10];
+</PRE>
+<P>Here, the <TT xmlns:asp="http://msdn2.microsoft.com/asp">booleanArray</TT> is 
+an array of the value type <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Boolean</TT>, while the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">files</TT> array is an array of a 
+reference type, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.IO.FileInfo</TT>. Figure 1 
+shows a depiction of the CLR-managed heap after these four lines of code have 
+executed.</P><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570.datastructures-fig01big(l=en-US,v=VS.80).gif"><IMG 
+alt="click for larger image" 
+src="Part 1 An Introduction to Data Structures.files/IC138387.gif" border=0 
+xmlns="http://www.w3.org/1999/xhtml"></A> 
+<P class=label><B>Figure 1. The contents of an array are laid out contiguously 
+in the managed heap.</B></P>
+<P>The thing to keep in mind is that the ten elements in the files array are 
+<I>references</I> to <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">FileInfo</TT> instances. Figure 2 
+hammers home this point, showing the memory layout if we assign some of the 
+values in the <TT xmlns:asp="http://msdn2.microsoft.com/asp">files</TT> array to 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">FileInfo</TT> instances.</P><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570.datastructures-fig02big(l=en-US,v=VS.80).gif"><IMG 
+alt="click for larger image" 
+src="Part 1 An Introduction to Data Structures.files/IC16912.gif" border=0 
+xmlns="http://www.w3.org/1999/xhtml"></A> 
+<P class=label><B>Figure 2. The contents of an array are laid out contiguously 
+in the managed heap.</B></P>
+<P>All arrays in .NET allow their elements to both be read and written to. The 
+syntax for accessing an array element is:</P><PRE class=code>// Read an array element
+bool b = booleanArray[7];
+
+// Write to an array element
+booleanArray[0] = false;
+</PRE>
+<P>The running time of an array access is denoted <I>O</I>(1) because it is 
+constant. That is, regardless of how many elements are stored in the array, it 
+takes the same amount of time to lookup an element. This constant running time 
+is possible solely because an array's elements are stored contiguously, hence a 
+lookup only requires knowledge of the array's starting location in memory, the 
+size of each array element, and the element to be indexed.</P>
+<P>Realize that in managed code, array lookups are a slight bit more involved 
+than this because with each array access the CLR checks to ensure that the index 
+being requested is within the array's bounds. If the array index specified is 
+out of bounds, an <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">IndexOutOfRangeException</TT> is 
+thrown. This check help ensures that when stepping through an array we do not 
+accidentally step past the last array index and into some other memory. This 
+check, though, does not affect the asymptotic running time of an array access 
+because the time to perform such checks does not increase as the size of the 
+array increases.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>This index-bounds check 
+  comes at a slight cost of performance for applications that make a large 
+  number of array accesses. With a bit of unmanaged code, though, this index out 
+  of bounds check can be bypassed. For more information, refer to Chapter 14 of 
+  <I>Applied Microsoft .NET Framework Programming</I> by Jeffrey 
+Richter.</BLOCKQUOTE>
+<P>When working with an array, you might need to change the number of elements 
+it holds. To do so, you'll need to create a new array instance of the specified 
+size and copy the contents of the old array into the new, resized array. This 
+process can be accomplished with the following code:</P><PRE class=code>// Create an integer array with three elements
+int [] fib = new int[3];
+fib[0] = 1;
+fib[1] = 1;
+fib[2] = 2;
+      
+// Redimension message to a 10 element array
+int [] temp = new int[10];
+
+// Copy the fib array to temp
+fib.CopyTo(temp, 0);
+      
+// Assign temp to fib
+fib = temp;   
+</PRE>
+<P>After the last line of code, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">fib</TT> references a ten-element <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Int32</TT> array. The elements 3 
+through 9 in the <TT xmlns:asp="http://msdn2.microsoft.com/asp">fib</TT> array 
+will have the default <TT xmlns:asp="http://msdn2.microsoft.com/asp">Int32</TT> 
+value—0.</P>
+<P>Arrays are excellent data structures to use when storing a collection of 
+homogeneous types that you only need to access directly. Searching an unsorted 
+array has linear running time. While this is acceptable when working with small 
+arrays, or when performing very few searches, if your application is storing 
+large arrays that are searched frequently, there are a number of other data 
+structures better suited for the job. We'll look at some such data structures in 
+upcoming pieces of this article series. Realize that if you are searching an 
+array on some property and the array is <I>sorted</I> by that property, you can 
+use an algorithm called binary search to search the array in <I>O</I>(log 
+<I>n</I>) running time, which is on par with the search times for binary search 
+trees. In fact, the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Array</TT> 
+class contains a static, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BinarySearch()</TT> method. For more 
+information on this method, check out an earlier article on mine, <A 
+href="http://aspnet.4guysfromrolla.com/articles/110602-1.aspx">Efficiently 
+Searching a Sorted Array</A>.</P>
+<BLOCKQUOTE class=dtBlock><B>Note&nbsp;&nbsp;&nbsp;</B>The .NET Framework 
+  allows for multi-dimensional arrays as well. Multi-dimensional arrays, like 
+  single-dimensional arrays, offer a constant running time for accessing 
+  elements. Recall that the running time to search through a <I>n</I>-element 
+  single dimensional array was denoted <I>O</I>(<I>n</I>). For an 
+  <I>n</I>x<I>n</I> two-dimensional array, the running time is denoted 
+  <I>O</I>(<I>n</I><SUP>2</SUP>) because the search must check 
+  <I>n</I><SUP>2</SUP> elements. More generally, a <I>k</I>-dimensional array 
+  has a search running time of <I>O</I>(<I>n</I><SUP>k</SUP>). Keep in mind here 
+  than <I>n</I> is the number of elements in each dimension, not the total 
+  number of elements in the multi-dimensional array.</BLOCKQUOTE>
+<H2 class=dtH1><A name=datastructures20_1_topic4></A>Creating Type-Safe, 
+Performant, Reusable Data Structures</H2>
+<P>When creating a data structure for a particular problem, oftentimes the data 
+structure's internals can be customized to the specifics of the problem. For 
+example, imagine that you were working on a payroll application. One of the 
+entities of this system would be an employee, so you might create an <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> class with applicable 
+properties and methods. To represent a set of employees, you could use an array 
+of type <TT xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT>, but 
+perhaps you need some extra functionality not present in the array, or you 
+simply don't want to have to concern yourself with writing code to watch the 
+capacity of the array and resize it when necessary. One option would be to 
+create a custom data structure that uses an internal array of <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> instances, and offered 
+methods to extend the base functionality of an array, such as automatic 
+resizing, searching of the array for a particular <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> object, and so on. </P>
+<P>This data structure would likely prove very helpful in your application, so 
+much so that you might want to reuse it in other applications. However, this 
+data structure is not open to reuse because it is tightly-coupled to the payroll 
+application, only being able to store elements of type <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> (or types derived from 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT>). One option to 
+make a more flexible data structure is to have the data structure maintain an 
+internal array of <TT xmlns:asp="http://msdn2.microsoft.com/asp">object</TT> 
+instances, as opposed to <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Employee</TT> instances. Because all 
+types in the .NET Framework are derived from the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">object</TT> type, the data structure 
+could store any type. This would make your collection data structure usable in 
+other applications and scenarios.</P>
+<P>Not surprisingly, the .NET Framework already contains a data structure that 
+provides this functionality—the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Collections.ArrayList</TT> 
+class. The ArrayList maintains an internal <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">object</TT> array and provides 
+automatic resizing of the array as the number of elements added to the ArrayList 
+grows. Because the ArrayList uses an object array, developers can add any 
+type—strings, integers, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">FileInfo</TT> objects, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Form</TT> instances, anything.</P>
+<P>While the ArrayList provides added flexibility over the standard array, this 
+flexibility comes at the cost of performance. Because the ArrayList stores an 
+array of <TT xmlns:asp="http://msdn2.microsoft.com/asp">objects</TT>, when 
+reading the value from an ArrayList you need to explicitly cast it to the data 
+type being stored in the specified location. Recall that an array of a value 
+type—such as a <TT xmlns:asp="http://msdn2.microsoft.com/asp">System.Int32</TT>, 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">System.Double</TT>, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Boolean</TT>, and so on—is 
+stored contiguously in the managed heap in its unboxed form. The ArrayList's 
+internal array, however, is an array of <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">object</TT> references. Therefore, 
+even if you have an ArrayList that stores nothing but value types, each 
+ArrayList element is a reference to a boxed value type, as shown in Figure 
+3.</P><A 
+href="http://msdn.microsoft.com/en-US/library/ms379570.datastructures-fig03big(l=en-US,v=VS.80).gif"><IMG 
+alt="click for larger image" 
+src="Part 1 An Introduction to Data Structures.files/IC96005.gif" border=0 
+xmlns="http://www.w3.org/1999/xhtml"></A> 
+<P class=label><B>Figure 3. The ArrayList contains a contiguous block of object 
+references</B></P>
+<P>The boxing and unboxing, along with the extra level of indirection, that 
+comes with using value types in an ArrayList can hamper the performance of your 
+application when using large ArrayLists with many reads and writes. As Figure 3 
+illustrates, the same memory layout occurs for reference types in both 
+ArrayLists and arrays.</P>
+<P>Having an <TT xmlns:asp="http://msdn2.microsoft.com/asp">object</TT> array 
+also introduces potential bugs that won't be noticed until run-time. A developer 
+may intend to only add elements of a particular type to an ArrayList, but since 
+the ArrayList allows any type to be added, adding an incorrect type won't be 
+caught during compilation. Instead, such a mistake would not be apparent until 
+run-time, meaning the bug would not be found until testing or, in the worse 
+case, during actual use.</P>
+<H3 class=dtH1>Generics to the Rescue</H3>
+<P>Fortunately, the typing and performance issues associated with the ArrayList 
+have been remedied in the .NET Framework 2.0, thanks to <I>Generics</I>. 
+Generics allow for a developer creating a data structure to defer type 
+selection. The types associated with a data structure can, instead, be chosen by 
+the developer utilizing the data structure. To better understand Generics, let's 
+look at an example of creating a type-safe collection. Specifically, we'll 
+create a class that maintains an internal array of a to-be specified type, with 
+methods to read and add items from the internal array.</P><PRE class=code>public class TypeSafeList&lt;T&gt;
+{
+    T[] innerArray = new T[0];
+    int currentSize = 0;
+    int capacity = 0;
+
+    public void Add(T item)
+    {
+        // see if array needs to be resized
+        if (currentSize == capacity)
+        {
+            // resize array
+            capacity = capacity == 0 ? 4 : capacity * 2;  // double capacity 
+            T[] copy = new T[capacity];    // create newly sized array
+            Array.Copy(innerArray, copy, currentSize);  // copy over the array
+            innerArray = copy;    // assign innerArray to the new, larger array
+        }
+
+        innerArray[currentSize] = item;
+        currentSize++;
+    }
+
+    public T this[int index]
+    {
+        get
+        {
+            if (index &lt; 0 || index &gt;= currentSize)
+                throw new IndexOutOfRangeException();
+            return innerArray[index];
+        }
+        set
+        {
+            if (index &lt; 0 || index &gt;= currentSize)
+                throw new IndexOutOfRangeException();
+            innerArray[index] = value;
+        }
+    }
+
+    public override string ToString()
+    {
+        string output = string.Empty;
+        for (int i = 0; i &lt; currentSize - 1; i++)
+            output += innerArray[i] + ", ";
+
+        return output + innerArray[currentSize - 1];
+    }
+}
+</PRE>
+<P>Notice that in the first line of code, in the class definition, a type 
+identifier, <TT xmlns:asp="http://msdn2.microsoft.com/asp">T</TT>, is defined. 
+What this syntax indicates is that the class will require the developer using it 
+to specify a single type. This developer-specified type is aliased as <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">T</TT>, although any other valid 
+variable name could have been used. The type identifier is used within the 
+class's properties and methods. For example, the inner array is of type <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">T</TT>, and the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method accepts an input 
+parameter of type <TT xmlns:asp="http://msdn2.microsoft.com/asp">T</TT>, which 
+is then added to the array.</P>
+<P>To declare a variable of this class, a developer would need to specify the 
+type <TT xmlns:asp="http://msdn2.microsoft.com/asp">T</TT>, like so:</P><PRE class=code>TypeSafeList&lt;type&gt; variableName;
+</PRE>
+<P>The following code snippet demonstrates creating an instance of TypeSafeList 
+that stores integers, and populating the list with the first 25 Fibonacci 
+numbers.</P><PRE class=code>TypeSafeList&lt;int&gt; fib = new TypeSafeList&lt;int&gt;();
+fib.Add(1);
+fib.Add(1);
+
+for (int i = 2; i &lt; 25; i++)
+    fib.Add(fib[i - 2] + fib[i - 1]);
+
+Console.WriteLine(fib.ToString());
+</PRE>
+<P>The main advantages of Generics include: </P>
+<UL type=disc>
+  <LI><B>Type-safety:</B> a developer using the TypeSafeList class can only add 
+  elements that are of the type or are derived from the type specified. For 
+  example, trying to add a string to the <TT 
+  xmlns:asp="http://msdn2.microsoft.com/asp">fib</TT> TypeSafeList in the 
+  example above would result in a compile-time error. 
+  <LI><B>Performance:</B> Generics remove the need to type check at run-time, 
+  and eliminate the cost associated with boxing and unboxing. 
+  <LI><B>Reusability:</B> Generics break the tight-coupling between a data 
+  structure and the application for which it was created. This provides a higher 
+  degree of reuse for data structures. </LI></UL>
+<P>Many of the data structures we'll be examining throughout this series are 
+data structures that utilize Generics, and when creating data structures—such as 
+the binary tree data structure we'll build in Part 3—we'll be utilizing Generics 
+ourselves.</P>
+<H2 class=dtH1><A name=datastructures20_1_topic5></A>The List: a Homogeneous, 
+Self-Redimensioning Array</H2>
+<P>An array, as we saw, is designed to store a specific number of items of the 
+same type in a contiguous fashion. Arrays, while simple to use, can quickly 
+become a nuisance if you find yourself needing to regularly resize the array, or 
+don't know how many elements you'll need when initializing the array. One option 
+to avoid having to manually resize an array is to create a data structure that 
+serves as a wrapper for an array, providing read/write access to the array and 
+automatically resizing the array as needed. We started creating our own such 
+data structure in the previous section—the TypeSafeList, but there's no need to 
+implement this yourself as the .NET Framework provides such a class for you. 
+This class, the <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> class, 
+is found in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Collections.Generics</TT> 
+namespace.</P>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> class contains 
+an internal array and exposes methods and properties that, among other things, 
+allow read and write access to the elements of the internal array. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> class, like an array, is a 
+homogeneous data structure, meaning that you can only store items of the same 
+type or from a derived type within a given <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> utilizes Generics, a new 
+feature in version 2.0 of the .NET Framework, in order to let the developer 
+specify at development time the type of data a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> will hold.</P>
+<P>Therefore, when creating a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> instance, you must specify 
+the data type of the <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>'s 
+contents using the Generics syntax:</P><PRE class=code>// Create a List of integers
+List&lt;int&gt; myFavoriteIntegers = new List&lt;int&gt;();
+
+// Create a list of strings
+List&lt;string&gt; friendsNames = new List&lt;string&gt;();
+</PRE>
+<P>Note that the type of data the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> can store is specified in 
+the declaration and instantiation of the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>. When creating a new <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>, you don't have to specify 
+a <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> size, although you 
+can specify a default starting size by passing in an integer into the 
+constructor, or through the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>'s <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Capacity</TT> property. To add an 
+item to a <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>, simply use 
+the <TT xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>, like the array, can have 
+its elements directly accessed via an ordinal index. The following code snippet 
+shows creating a <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> of 
+integers, populating the list with some initial values with the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method, and then reading 
+and writing the <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>'s 
+values through an ordinal index.</P><PRE class=code>// Create a List of integers
+List&lt;int&gt; powersOf2 = new List&lt;int&gt;();
+
+// Add 6 integers to the List
+powersOf2.Add(1);
+powersOf2.Add(2);
+powersOf2.Add(4);
+powersOf2.Add(8);
+powersOf2.Add(16);
+powersOf2.Add(32);
+
+// Change the 2nd List item to 10
+powersOf2[1] = 10;
+
+// Compute 2^3 + 2^4
+int sum = powersOf2[2] + powersOf2[3];
+</PRE>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> takes the basic 
+array and wraps it in a class that hides the implementation complexity. When 
+creating a <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>, you don't 
+need to explicitly specify an initial starting size. When adding items to the 
+<TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>, you don't need to 
+concern yourself with resizing the data structure, as you do with an array. 
+Furthermore, the <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> has a 
+number of other methods that take care of common array tasks. For example, to 
+find an element in an array, you'd need to write a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">for</TT> loop to scan through the 
+array (unless the array was sorted). With a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>, you can simply use the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Contains()</TT> method to determine 
+if an element exists in an array, or <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">IndexOf()</TT> to find the ordinal 
+position of an element. The List class also contains a <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">BinarySearch()</TT> method to 
+efficiently search a sorted array, and methods like <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Find()</TT>, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">FindAll()</TT>, <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Sort()</TT>, and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">ConvertAll()</TT>, which can utilize 
+delegates to perform operations that would require several lines of code using 
+arrays.</P>
+<P>The asymptotic running time of the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>'s operations are the same 
+as those of the standard array's. While the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> does indeed have more 
+overhead, the relationship between the number of elements in the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> and the cost per operation 
+is the same as the standard array.</P>
+<H2 class=dtH1><A name=datastructures20_1_topic6></A>Conclusion</H2>
+<P>This article, the first in a series of six, started our discussion on data 
+structures by identifying why studying data structures was important, and by 
+providing a means of how to analyze the performance of data structures. This 
+material is important to understand, as being able to analyze the running times 
+of various data structure operations is a major tool used when deciding what 
+data structure to use for a particular programming problem.</P>
+<P>After studying how to analyze data structures, we turned to examining two of 
+the most common data structures in the .NET Framework Base Class Library: <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Array</TT> and <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">System.Collections.Generics.List</TT>. 
+Arrays allow for a contiguous block of homogeneous types and derived types. 
+Their main benefit is that they provide lightning-fast access to reading and 
+writing array elements. Their weak point lies in searching arrays, as each and 
+every element must potentially be visited (in an unsorted array), and the fact 
+that resizing the array requires writing a bit of code. </P>
+<P>The <TT xmlns:asp="http://msdn2.microsoft.com/asp">List</TT> class wraps the 
+functionality of an array with a number of helpful methods. For example, the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">Add()</TT> method adds an element to 
+the List and automatically re-dimensions the array if needed. The <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">IndexOf()</TT> method aids the 
+developer by searching the <TT 
+xmlns:asp="http://msdn2.microsoft.com/asp">List</TT>'s contents for a particular 
+item. The functionality provided by a List is nothing that you couldn't 
+implement using plain old arrays, but the List class saves you the trouble of 
+having to write the code to perform these common tasks yourself.</P>
+<P>In the next part of this article series we'll turn our attention first to two 
+"cousins" of the <B>List</B>: the <B>Stack</B> and <B>Queue</B> classes. We'll 
+also look at associative arrays, which are arrays indexed by a string key as 
+opposed to an integer value. Associative arrays are provided in the .NET 
+Framework Base Class Library using the <B>Hashtable</B> and <B>Dictionary</B> 
+classes.</P>
+<P>Happy Programming!</P>
+<P><B>Scott Mitchell</B>, author of six books and founder of 4GuysFromRolla.com, 
+has been working with Microsoft Web technologies since January 1998. Scott works 
+as an independent consultant, trainer, and writer, and holds a Masters degree in 
+Computer Science from the University of California – San Diego. He can be 
+reached at <A 
+href="mailto:mitchell@4guysfromrolla.com">mitchell@4guysfromrolla.com</A>, or 
+via his blog at <A 
+href="http://scottonwriting.net/">http://scottonwriting.net/</A>.</P>
+<DIV class=footer><BR>
+<P></P>
+<P><A href="http://msdn.microsoft.com/en-US/library/ms369863(v=VS.80).aspx">© 
+Microsoft Corporation. All rights 
+reserved.</A></P></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class=footer>
+<DIV class="footerContainer cl_footer_slice" id=footer>
+<DIV class=footerLogoContainer>
+<DIV class=footerContent>
+<DIV class=copyright>© 2011 Microsoft. All rights reserved.</DIV>
+<DIV class="footerLogo cl_footer_logo"></DIV><A 
+href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</A><SPAN class=pipe> 
+| </SPAN><A 
+href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</A><SPAN 
+class=pipe> | </SPAN><A 
+href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</A> <SPAN 
+class=pipe>| </SPAN><A class=FeedbackLink title=Feedback 
+onclick=javascript:ShowFeedbackDialog(); 
+href="http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx#footerLink">Feedback 
+<SPAN class="FeedbackButton clip20x21" id=FeedbackButton><IMG 
+class=cl_footer_feedback_icon alt=Feedback 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</SPAN></A>
+<DIV class=FeedbackContainer id=FeedbackContainer>
+<FORM action=/en-US/library/feedback/add/ms379570(v=VS.80).aspx method=post>
+<DIV class=FeedbackTitleContainer>
+<DIV class=FeedbackTitle>Feedback</DIV>
+<DIV class=FeedbackCancel><A 
+onclick="document.getElementById('FeedbackContainer').style.display = 'none';" 
+href="javascript:;">x</A> </DIV></DIV>
+<DIV class=FeedbackData>
+<DIV class=FeedbackInfoText>Tell us about your experience... </DIV>
+<DIV class=QuestionText>Did the page load quickly? </DIV>
+<DIV class=AnswerText><SPAN>Yes<SPAN> <INPUT id=searchBox type=radio value=1 
+name=searchBox></SPAN></SPAN> <SPAN>No<SPAN> <INPUT id=searchBox type=radio 
+value=0 name=searchBox></SPAN></SPAN> </DIV>
+<DIV class=QuestionText>Do you like the page design? </DIV>
+<DIV class=AnswerText><SPAN>Yes<SPAN> <INPUT id=tabbedCode type=radio value=1 
+name=tabbedCode></SPAN></SPAN> <SPAN>No<SPAN> <INPUT id=tabbedCode type=radio 
+value=0 name=tabbedCode></SPAN></SPAN> </DIV>
+<DIV class=QuestionText>How useful is this topic? </DIV>
+<DIV class="FeedbackGraphicHolder clip269x23"><IMG 
+class="cl_online_scale FeedbackSiderGraphic" alt="" 
+src="Part 1 An Introduction to Data Structures.files/a19e30a4020fe81d2b1209058013a360.png"> 
+</DIV>
+<DIV class=RadioButtonHolder>
+<DIV class=RateRadioOne><INPUT id=topicUseful title="Really disliked it" 
+type=radio value=1 name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title="Disliked it" type=radio 
+value=2 name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title=OK type=radio value=3 
+name=topicUseful> </DIV>
+<DIV class=RateRadio><INPUT id=topicUseful title=Good type=radio value=4 
+name=topicUseful> </DIV>
+<DIV class=RateRadioLast><INPUT id=topicUseful title="Really Good" type=radio 
+value=5 name=topicUseful> </DIV></DIV>
+<DIV class=QuestionText>Tell us more </DIV>
+<DIV class=FeedbackTextAreaContainer><TEXTAREA class=FeedbackTextArea onkeydown="LimitText(this, 4000);" onblur="document.onkeydown = Presskey;" onkeyup="LimitText(this, 4000);" onfocus="document.onkeydown = '';" name=feedbackText rows=5 cols=25></TEXTAREA> 
+<TEXTAREA id=feedbackDescription onkeydown="LimitText(this, 4000);" onkeyup="LimitText(this, 4000);" style="DISPLAY: none" name=feedbackDescription rows=10 cols=25>Enter description here.</TEXTAREA> 
+<INPUT id=feedbackPriority type=hidden name=feedbackPriority> <INPUT 
+id=feedbackSourceUrl type=hidden name=feedbackSourceUrl> <INPUT id=ClientIP 
+type=hidden name=ClientIP> <INPUT id=ClientOS type=hidden name=ClientOS> <INPUT 
+id=ClientBrowser type=hidden name=ClientBrowser> <INPUT id=ClientTime 
+type=hidden name=ClientTime> <INPUT id=ClientTimeZone type=hidden 
+name=ClientTimeZone> </DIV>
+<DIV><INPUT class=FeedbackSubmit onclick="document.getElementById('feedbackDescription').value='';document.getElementById('feedBackVersion').value = '-1';" type=submit value=Send> 
+</DIV></DIV><INPUT id=returnUrl type=hidden 
+value=http://msdn.microsoft.com/en-US/library/ms379570(v=VS.80).aspx 
+name=returnUrl> <INPUT id=feedBackVersion type=hidden value=1 
+name=feedBackVersion> </FORM></DIV></DIV></DIV></DIV></DIV>
+<DIV class=MetricsContainer>
+<DIV class=WebtrendsContainer>
+<SCRIPT language=javascript type=text/javascript>
+//<![CDATA[
+  var literalNormalizedUrl = '/en-us/library/ms379570(d=lightweight,l=en-us,v=VS.80).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    document.write("<scr" + "ipt type='text/javascript' src='" + "http" + (window.location.protocol.indexOf('https:') == 0 ? 's' : '') + "://" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\\/scr" + "ipt>");
+  }
+  var detectedLocale = 'en-US';
+  var wtsp = 'msdnlib_devtools_lang';
+  var gTrackEvents = '0';
+/*]]>*/
+</SCRIPT>
+<NOSCRIPT>
+<DIV><IMG id=Img1 height=1 alt=DCSIMG 
+src="Part 1 An Introduction to Data Structures.files/njs.gif" 
+width=1></DIV></NOSCRIPT></DIV>
+<DIV class=OmnitureContainer>
+<SCRIPT type=text/javascript>
+  var omni_guid = '91dab110-33fb-4908-a242-b25f0cfab055'; 
+</SCRIPT>
+<NOSCRIPT><A title="Web Analytics" href="http://www.omniture.com/"><IMG height=1 
+alt="" src="Part 1 An Introduction to Data Structures.files/0.gif" width=1 
+border=0></A> </NOSCRIPT></DIV></DIV>
+<SCRIPT language=javascript 
+src="Part 1 An Introduction to Data Structures.files/broker.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="Part 1 An Introduction to Data Structures.files/c2b4b2079ab4502f4c4e4b7eddfdc341.js" 
+type=text/javascript xmlns="http://www.w3.org/1999/xhtml"></SCRIPT>
+</BODY></HTML>

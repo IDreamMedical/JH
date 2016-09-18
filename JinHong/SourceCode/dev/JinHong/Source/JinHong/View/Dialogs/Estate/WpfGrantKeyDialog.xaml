@@ -1,0 +1,95 @@
+﻿<Window x:Class="JinHong.View.Dialogs.WpfGrantKeyDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pf="http://schemas.uniguy.com/presentation"
+        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="新增钥匙发放" Height="300" Width="300">
+    <Grid DataContext="{Binding ElementName=_this}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition MinWidth="100" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="名称"   />
+        </Border>
+        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox   Text="{Binding GrantKey.SocialUnitName}"   />
+        </Border>
+
+        <Border Grid.Row="1"  Grid.Column="0"  BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="室号"   />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox   Text="{Binding GrantKey.RoomName}"   />
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0" MinWidth="120" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="手机或者电话"   />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox MaxLines="20"  Text="{Binding GrantKey.Description}"  
+                     TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    VerticalScrollBarVisibility="Visible" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="钥匙把数："   />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  Text="{Binding GrantKey.Content}"   
+                      TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    VerticalScrollBarVisibility="Visible" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="发放日期："   />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <tk:DateTimePicker Name="dtpEffectiveDate"  MinWidth="160" Value="{Binding GrantKey.RepairDate}"  Format="Custom" FormatString="yyyy年MM月dd日" />
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="签名："   />
+        </Border>
+        <Border Grid.Row="5" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  Text="{Binding GrantKey.Result}"   
+                      TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    VerticalScrollBarVisibility="Visible" />
+        </Border>
+
+        <Border Grid.Row="6" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="备注："   />
+        </Border>
+        <Border Grid.Row="6" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  Text="{Binding GrantKey.SocialUnitEmpName}"     />
+        </Border>
+
+      
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="9" Grid.ColumnSpan="2">
+            <Button Margin="4" Command="{Binding BtnOKCommand}"  IsDefault="True" Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushOK}" Width="16"/>
+                    <TextBlock Text="确定"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="8,4,4,4"  Command="{Binding BtnCancelCommand}" IsCancel="True"  Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushCancel}" Width="16"/>
+                    <TextBlock Text="取消"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

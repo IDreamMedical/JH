@@ -1,0 +1,56 @@
+﻿<Window x:Class="JinHong.View.Dialogs.ViewRentalFeeDetailDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pf="http://schemas.uniguy.com/presentation"
+        xmlns:tk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="详情" SizeToContent="WidthAndHeight" ShowInTaskbar="False" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        x:Name="_this">
+    <Window.Resources>
+        <CollectionViewSource x:Key="cvsRentalFeeDetailTbl" CollectionViewType="ListCollectionView"
+                              Source="{Binding RentalFeeDetailTbl,ElementName=_this}"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding ElementName=_this}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition  Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+           
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border  BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="租赁单位名称：" HorizontalAlignment="Left"    />
+        </Border>
+        <Border  Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="{ Binding SocialUnitName}"   />
+        </Border>
+
+        <ListView Grid.Row="1"  Grid.ColumnSpan="2" ItemsSource="{Binding Source={StaticResource cvsRentalFeeDetailTbl}}">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="序号" DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type ListViewItem}}, Converter={StaticResource convIndex1}}"/>
+                    <pf:SortableGridViewColumn Header="室号" DisplayMemberBinding="{Binding RoomId}" SortPropertyName="RoomId"/>
+                    <pf:SortableGridViewColumn Header="缴费日期" DisplayMemberBinding="{Binding Date,StringFormat='{}{0:yyyy/MM/dd/}'}" SortPropertyName="Date"/>
+                    <pf:SortableGridViewColumn Header="起始日期" DisplayMemberBinding="{Binding TimeFrom,StringFormat='{}{0:yyyy/MM/dd/}'}" SortPropertyName="TimeFrom"/>
+                    <pf:SortableGridViewColumn Header="截止日期" DisplayMemberBinding="{Binding TimeTo,StringFormat='{}{0:yyyy/MM/dd/}'}" SortPropertyName="TimeTo"/>
+                    <pf:SortableGridViewColumn Header="金额" DisplayMemberBinding="{Binding Amount,StringFormat='{}{0:F2}'}" SortPropertyName="Amount"/>
+                    <pf:SortableGridViewColumn Header="状态" DisplayMemberBinding="{Binding Notes}" SortPropertyName="Notes"/>
+                    <GridViewColumn Header="备注" DisplayMemberBinding="{Binding Notes}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Border  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBlock  Text="{ Binding Info}"   />
+        </Border>
+    </Grid>
+</Window>

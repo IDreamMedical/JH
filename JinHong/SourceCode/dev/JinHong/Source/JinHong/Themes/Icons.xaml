@@ -1,0 +1,177 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--<SolidColorBrush x:Key="scbGreen" Color="#FF11B86F"/>-->
+    <SolidColorBrush x:Key="scbThemeColor" Color="#FF116FB8"/>
+    
+    <!-- TODO: 放一些矢量图资源, DrawingBrush等等 -->
+    
+    <!-- 按钮图标 -->
+    <DrawingBrush x:Key="brushRefresh" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.49867,3.05176e-005C 2.88133,0.0386963 -0.0319901,3.00668 0,6.62537C 0.034668,10.2414 3.008,13.1534 6.62267,13.12C 10.2387,13.084 13.1529,10.1174 13.12,6.49734C 13.0827,2.88269 10.1147,-0.0279846 6.49867,3.05176e-005 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 10.4224,8.6615L 7.6424,6.0575L 8.77306,5.88016C 8.77306,5.88016 8.69573,3.85883 6.32107,3.17084C 3.89174,2.46548 2.77974,3.5495 2.77974,3.5495C 3.8584,2.28415 5.5504,1.59082 7.31306,1.86816C 9.31973,2.18283 10.8517,3.66016 11.3331,5.50684L 12.5117,5.40414L 10.4224,8.6615 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 2.69586,4.03909L 5.47853,6.6431L 4.34653,6.82043C 4.34653,6.82043 4.42386,8.84177 6.79854,9.52975C 9.22787,10.2351 10.3399,9.15109 10.3399,9.15109C 9.2612,10.4178 7.5692,11.1098 5.80653,10.8324C 3.8012,10.5164 2.26787,9.03909 1.78653,7.19241L 0.609207,7.2951L 2.69586,4.03909 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushOK" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.55334,-3.05176e-005C 2.90667,0.0413208 -0.0319977,3.03198 0,6.68265C 0.0360031,10.3267 3.03334,13.2627 6.67733,13.2293C 10.324,13.1946 13.2627,10.2013 13.2293,6.55466C 13.192,2.9093 10.1987,-0.0280151 6.55334,-3.05176e-005 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 6.61587,11.0287L 2.34921,6.76331L 6.61587,2.49799L 10.8812,6.76331L 6.61587,11.0287 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushCancel" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.58002,0C 2.91867,0.0413513 -0.0333252,3.04401 0,6.70935C 0.0360107,10.3694 3.04668,13.3174 6.70534,13.2853C 10.3667,13.2507 13.3187,10.2454 13.284,6.58267C 13.2467,2.92001 10.2413,-0.0279846 6.58002,0 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 10.7226,7.76962L 2.56213,7.76962L 2.56213,5.74026L 10.7226,5.74026L 10.7226,7.76962 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushExit" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.45865,-3.05176e-005C 2.86398,0.0412903 -0.0333557,2.98929 0,6.58664C 0.034668,10.1813 2.98933,13.0746 6.58266,13.04C 10.176,13.008 13.0733,10.056 13.04,6.4613C 13.004,2.86664 10.052,-0.0280457 6.45865,-3.05176e-005 Z "/>
+                    <GeometryDrawing Brush="#FFFFFF00" Geometry="F1 M 7.95599,1.83984L 7.95599,3.14517C 9.24532,3.70117 10.1493,4.98383 10.1493,6.47852C 10.1493,8.48251 8.52399,10.1078 6.51999,10.1078C 4.51466,10.1078 2.89066,8.48251 2.89066,6.47852C 2.89066,4.98383 3.79465,3.70117 5.084,3.14517L 5.084,1.83984C 3.10266,2.45316 1.66531,4.29718 1.66531,6.47852C 1.66531,9.15982 3.83865,11.3332 6.51999,11.3332C 9.20132,11.3332 11.3746,9.15982 11.3746,6.47852C 11.3746,4.29718 9.93599,2.45316 7.95599,1.83984 Z "/>
+                    <GeometryDrawing Brush="#FFFFFF00" Geometry="F1 M 7.3844,5.90744C 7.3844,6.38342 6.99771,6.77011 6.5204,6.77011C 6.04172,6.77011 5.65506,6.38342 5.65506,5.90744L 5.65506,2.5741C 5.65506,2.09677 6.04172,1.71011 6.5204,1.71011C 6.99771,1.71011 7.3844,2.09677 7.3844,2.5741L 7.3844,5.90744 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushAdd" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 7.74001,10.4707L 5.46533,10.4947L 5.44135,7.78403L 2.79468,7.80939L 2.77333,5.49872L 5.41733,5.4787L 5.39467,2.83871L 7.67067,2.8187L 7.69467,5.45203L 10.304,5.42804L 10.324,7.73871L 7.71468,7.7627M 6.48933,3.05176e-005C 2.87733,0.0413818 -0.0320129,3.05072 0,6.72137C 0.034668,10.388 3.00266,13.3414 6.61334,13.308C 10.224,13.2734 13.1347,10.2627 13.1013,6.59338C 13.0653,2.92538 10.1,-0.0292969 6.48933,3.05176e-005 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushDelete_Normal" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 4.66199,9.89355L 3.06198,8.32422L 4.90201,6.44955L 3.04199,4.62155L 4.61002,3.0242L 6.46732,4.8522L 8.26065,3.02554L 9.86066,4.59622L 8.07266,6.42154L 9.90601,8.22156L 8.33533,9.82022L 6.50198,8.0202 M 10.97,1.84155C 8.42599,-0.646454 4.33667,-0.610443 1.84067,1.92953C -0.650009,4.46954 -0.607346,8.56287 1.93134,11.0549C 4.47,13.5455 8.56198,13.5096 11.0567,10.9682C 13.546,8.42688 13.5073,4.33621 10.97,1.84155Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushDelete" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FFFF0000" Geometry="F1 M 4.66199,9.89355L 3.06198,8.32422L 4.90201,6.44955L 3.04199,4.62155L 4.61002,3.0242L 6.46732,4.8522L 8.26065,3.02554L 9.86066,4.59622L 8.07266,6.42154L 9.90601,8.22156L 8.33533,9.82022L 6.50198,8.0202 M 10.97,1.84155C 8.42599,-0.646454 4.33667,-0.610443 1.84067,1.92953C -0.650009,4.46954 -0.607346,8.56287 1.93134,11.0549C 4.47,13.5455 8.56198,13.5096 11.0567,10.9682C 13.546,8.42688 13.5073,4.33621 10.97,1.84155Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushDelete_InnerRed" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="M 10.97,1.84155C 8.42599,-0.646454 4.33667,-0.610443 1.84067,1.92953C -0.650009,4.46954 -0.607346,8.56287 1.93134,11.0549C 4.47,13.5455 8.56198,13.5096 11.0567,10.9682C 13.546,8.42688 13.5073,4.33621 10.97,1.84155 Z"/>
+                    <GeometryDrawing Brush="#FFFF0000" Geometry="F1 M 4.66199,9.89355L 3.06198,8.32422L 4.90201,6.44955L 3.04199,4.62155L 4.61002,3.0242L 6.46732,4.8522L 8.26065,3.02554L 9.86066,4.59622L 8.07266,6.42154L 9.90601,8.22156L 8.33533,9.82022L 6.50198,8.0202Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushModify" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44666,-3.05176e-005C 2.85867,0.0386353 -0.0333252,2.98129 0,6.57462C 0.0333252,10.1613 2.98401,13.0493 6.57068,13.0173C 10.1573,12.9839 13.0507,10.0373 13.0173,6.44662C 12.9813,2.85995 10.0347,-0.0293579 6.44666,-3.05176e-005 Z "/>
+                    <GeometryDrawing Brush="#FFF7F7F7" Geometry="M 2.45053,11.0286L 3.50787,10.974L 4.56653,10.9206L 3.61053,9.91797L 2.65454,8.91797L 2.55319,9.97397L 2.45053,11.0286 Z "/>
+                    <GeometryDrawing Brush="#FFF7F7F7" Geometry="M 9.65573,2.19916L 3.45441,8.12982L 5.36908,10.1312L 11.5691,4.2005L 9.65573,2.19916 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushFind" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF11B86F" Geometry="F1 M 6.44531,0C 2.85864,0.0386658 -0.0320129,2.98135 0,6.57202C 0.034668,10.1573 2.98398,13.0453 6.56799,13.0133C 10.1547,12.9774 13.0466,10.0347 13.012,6.44534C 12.976,2.85867 10.0306,-0.0279846 6.44531,0 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 4.77411,3.65363C 3.87146,4.29361 3.66077,5.54694 4.30212,6.44827C 4.94476,7.34961 6.19678,7.56161 7.09811,6.91895C 8.00079,6.27762 8.21146,5.0256 7.57013,4.12427C 6.92743,3.22162 5.67545,3.01096 4.77411,3.65363 Z M 8.36478,3.59628C 9.31946,4.93762 9.00479,6.79626 7.66345,7.75229C 6.32346,8.70694 4.46344,8.39227 3.50745,7.05228C 2.55411,5.71094 2.86743,3.84961 4.2088,2.89627C 5.55011,1.94162 7.41013,2.25494 8.36478,3.59628 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 9.8197,9.78253C 9.87839,9.86655 9.71838,10.0799 9.46506,10.2572C 9.20905,10.4359 8.95572,10.5106 8.89703,10.4265L 7.09973,7.85587C 7.04239,7.77054 7.19971,7.55853 7.45438,7.37988C 7.70905,7.20255 7.96371,7.12656 8.0224,7.21188L 9.8197,9.78253 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushExport" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44537,0C 2.8587,0.0400085 -0.0306702,2.98135 0,6.57202C 0.034668,10.1573 2.98267,13.0453 6.56799,13.012C 10.1547,12.9774 13.0467,10.0334 13.012,6.44534C 12.976,2.86002 10.032,-0.0279846 6.44537,0 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 10.1811,4.39987L 7.21576,6.74387L 7.20908,5.60788C 7.20908,5.60788 5.21442,5.38522 4.18909,7.61188C 3.13974,9.89188 4.03973,11.1425 4.03973,11.1425C 2.95709,9.89722 2.52777,8.13586 3.05975,6.44522C 3.6651,4.52655 5.33972,3.24255 7.22107,3.0412L 7.29575,1.87189L 10.1811,4.39987 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushView" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44531,0C 2.85864,0.039978 -0.0307007,2.98132 0,6.57199C 0.034668,10.1573 2.98267,13.0453 6.56802,13.012C 10.1547,12.9773 13.0453,10.0333 13.012,6.44531C 12.976,2.85999 10.032,-0.0280151 6.44531,0 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 0.644531,6.74347C 5.02856,3.86481 7.95923,3.99545 12.2126,6.74347C 8.25122,9.62079 4.47388,9.30478 0.644531,6.74347 Z "/>
+                    <GeometryDrawing Brush="#FF11B86F" Geometry="F1 M 8.25137,6.70837C 8.25137,7.81638 7.43399,8.71371 6.42871,8.71371C 5.42334,8.71371 4.60602,7.81638 4.60602,6.70837C 4.60602,5.6004 5.42334,4.70306 6.42871,4.70306C 7.43399,4.70306 8.25137,5.6004 8.25137,6.70837 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushMoney" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44531,-3.05176e-005C 2.85864,0.039978 -0.0306702,2.98132 0,6.57199C 0.034668,10.1573 2.98267,13.0453 6.56799,13.012C 10.1547,12.9773 13.0467,10.0333 13.012,6.44531C 12.976,2.85999 10.032,-0.0280151 6.44531,-3.05176e-005 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 7.05466,10.6013L 5.52667,10.6013L 5.52667,4.78931L 7.05466,4.78931L 7.05466,10.6013 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 3.24802,7.15198L 9.332,7.15198L 9.332,8.23599L 3.24802,8.23599L 3.24802,7.15198 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 6.38733,6.68997L 5.35266,5.6553L 8.29669,2.7113L 9.33136,3.74597L 6.38733,6.68997 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 6.29095,6.64185L 7.13095,5.80185L 4.14694,2.81784L 3.30695,3.65784L 6.29095,6.64185 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushImport" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44531,-1.52588e-005C 2.85864,0.0399628 -0.0306702,2.98131 0,6.57201C 0.0346375,10.1573 2.98267,13.0453 6.56799,13.012C 10.1547,12.9773 13.0466,10.0333 13.012,6.4453C 12.976,2.86 10.032,-0.0280304 6.44531,-1.52588e-005 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 2.83147,8.62236L 5.7968,6.27837L 5.80347,7.41435C 5.80347,7.41435 7.7981,7.63701 8.82346,5.41039C 9.87277,3.13039 8.97278,1.87968 8.97278,1.87968C 10.0555,3.12505 10.4848,4.88637 9.9528,6.57704C 9.34746,8.49571 7.67278,9.77971 5.79147,9.98106L 5.7168,11.1504L 2.83147,8.62236 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushMoveUpward" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44534,-3.05176e-005C 2.85867,0.039978 -0.0306396,2.98132 0,6.57196C 0.034668,10.1573 2.98267,13.0453 6.56802,13.012C 10.1547,12.9773 13.0467,10.0333 13.012,6.44531C 12.976,2.85999 10.032,-0.0280151 6.44534,-3.05176e-005 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 7.57283,10.146L 5.44083,10.146L 5.44083,4.66998L 7.57283,4.66998L 7.57283,10.146 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 3.90816,6.51556L 6.50684,2.86758L 9.10416,6.51556L 3.90816,6.51556 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="brushMoveDownward" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{StaticResource scbThemeColor}" Geometry="F1 M 6.44536,0C 2.85869,0.039978 -0.0306396,2.98132 0,6.57199C 0.034668,10.1573 2.98267,13.0453 6.56799,13.012C 10.1547,12.9773 13.0467,10.0333 13.012,6.44531C 12.976,2.85999 10.032,-0.0280151 6.44536,0 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 7.57149,2.86731L 5.4395,2.86731L 5.4395,8.34198L 7.57149,8.34198L 7.57149,2.86731 Z "/>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M 3.90759,6.49731L 6.50627,10.144L 9.10359,6.49731L 3.90759,6.49731 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+</ResourceDictionary>

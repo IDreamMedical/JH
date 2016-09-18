@@ -1,0 +1,77 @@
+﻿<Window x:Class="JinHong.View.Dialogs.AddMonitorProbeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ug_w="http://schemas.uniguy.com/presentation"
+            xmlns:local="clr-namespace:JinHong.View.Dialogs" 
+
+        Title="新增探头" SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        x:Name="_this">
+    <Grid DataContext="{Binding }">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" MinWidth="128"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Border  Grid.Column="0" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <Label Content="名称" Margin="4" x:Name="label1"/>
+        </Border>
+        <Border  Grid.Column="1" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  x:Name="txtName" Grid.Column="1" VerticalAlignment="Center" MaxLength="40">
+                <TextBox.Text>
+                    <Binding Path="MonitorProbe.RegionName" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ug_w:NotEmptyValidationRule ErrorMessage="探头名不能为空"/>
+                            <ug_w:RegexValidationRule RegexText="^\w.{1,}$" ErrorMessage="探头名必须在2位以上"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </Border>
+
+        <Border  Grid.Row="1" Grid.Column="0" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <Label Content="描述" Margin="4" x:Name="label2" Grid.Row="1" />
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="1" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  Text="{Binding MonitorProbe.Description}" />
+        </Border>
+
+        <Border  Grid.Row="2" Grid.Column="0" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <Label Content="状态" Margin="4"  Grid.Row="1" />
+        </Border>
+        <Border  Grid.Row="2" Grid.Column="1" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  Text="{Binding MonitorProbe.Status}" />
+        </Border>
+        <Border  Grid.Row="3" Grid.Column="0" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <Label Content="备注" Margin="4"  Grid.Row="1" />
+        </Border>
+        <Border  Grid.Row="3" Grid.Column="1" MinWidth="80"   BorderThickness="1" BorderBrush="Black" Padding="4">
+            <TextBox  Text="{Binding MonitorProbe.Notes}" />
+        </Border>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4" Grid.ColumnSpan="2">
+            <Button Margin="4" x:Name="buttonAccept"  Command="{Binding BtnOKCommand}" IsDefault="True" Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushOK}" Width="16"/>
+                    <TextBlock Text="确定"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="8,4,4,4" x:Name="buttonCancel" Command="{Binding BtnCancelCommand}" IsCancel="True"  Padding="8,4">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{StaticResource brushCancel}" Width="16"/>
+                    <TextBlock Text="取消"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
